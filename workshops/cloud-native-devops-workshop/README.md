@@ -3,7 +3,7 @@
 
 #### Client Image vm
 
-This workshop will use Client Image vm provisioned on Oracle Compute with required tools for this workshop. You can use your client environment if you have required tools, here is the list of requirements ??
+This workshop will use Client Image vm provisioned on Oracle Compute with required tools for this workshop. You can use your client environment if you have [required tools](https://github.com/dvukmano/learning-library/blob/PTF-India/workshops/cloud-native-devops-workshop/ClientTools.md).
 
 #### Oracle Public Cloud PaaS  account
 
