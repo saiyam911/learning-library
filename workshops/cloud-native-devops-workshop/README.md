@@ -40,7 +40,6 @@ The content contains several independent modules that cover different aspects of
 
 + [Deploy Apache Tomcat based application to Oracle Application Container Cloud](accs-tomcat/README.md)
 + [Monitor and tune SpringBoot application deployed on Oracle Application Container Cloud Service](monitor-tune/README.md)
-+ [Deploying APM Agent on Apache Tomcat based application and setting up Application Performance Monitoring](apm/README.md)
 
 
 #### Theme : Admin / IT related ####
