@@ -40,6 +40,9 @@ The content contains several independent modules that cover different aspects of
 
 + [Deploy Apache Tomcat based application to Oracle Application Container Cloud](accs-tomcat/README.md)
 + [Monitor and tune SpringBoot application deployed on Oracle Application Container Cloud Service](monitor-tune/README.md)
+  > ###### Create Oracle Developer Cloud Service project for Spring Boot sample application
+  > ###### Create continuous build integration using Oracle Developer Cloud Service and Oracle Application Container Cloud Service
+  > ###### Using Eclipse IDE (Oracle Enterprise Pack for Eclipse) with Oracle Developer Cloud Service
 
 
 #### Theme : Admin / IT related ####
