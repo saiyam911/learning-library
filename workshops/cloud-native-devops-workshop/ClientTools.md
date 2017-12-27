@@ -1,6 +1,5 @@
 Client Tools prerequisites:
 
-- JDK ??
-- maven 
-- Eclipse
-- 
+- JDK
+- Maven 
+- Eclipse + Git Plugin
