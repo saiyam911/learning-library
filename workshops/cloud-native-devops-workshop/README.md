@@ -53,6 +53,7 @@ The content contains several independent modules that cover different aspects of
   >- ###### Running Java Cloud Service instance configured to access to the prepared Database Cloud Service
   >- ###### Running Database Cloud Service instance to prepare
 + [Scale-Out Oracle Java Cloud Service using user interface](jcs-scale-ui/README.md)
+  > ###### Deployed sample application on Java Cloud Service
 + [Scale-In Oracle Java Cloud Service using PaaS Service Manager (PSM) Command Line Interface (CLI)](jcs-scale-psm/README.md)
 + [Oracle Java Cloud Service Policy Based Auto Scaling](jcs-autoscale/README.md)
 + [Delete Java Cloud, Database Cloud and Database Container Services using user interface](cleanup/cleanup-ui.md)
