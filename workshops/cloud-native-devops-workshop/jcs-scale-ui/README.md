@@ -12,7 +12,7 @@ You can also scale up the node, for more information about scaling an Oracle Jav
 ### Prerequisites ###
 
 - [Deployed sample application on Java Cloud Service](../jcs-deploy/README.md)
-- Check available OCPU resource on Cloud Dashboard, you need 1 OCPU for this lab available, for example delete *tomcat* ACCS service from previous labs using console, check [environment setup](https://github.com/dvukmano/learning-library/blob/PTF-India/workshops/cloud-native-devops-workshop/EnvSetup.md) for steps
+- Check available OCPU resource on Cloud Dashboard, you need 1 OCPU for this lab available, for example delete *tomcat* ACCS service from previous labs using following [Delete Application Cloud Container Service using PaaS Service Manager (PSM) Command Line Interface (CLI)](https://github.com/dvukmano/learning-library/blob/PTF-India/workshops/cloud-native-devops-workshop/cleanup/cleanup-psm.md) steps
 
 ### Steps ###
 Navigate to the Oracle Java Cloud Service Console.[Sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/sign-in](https://cloud.oracle.com/sign-in). On the dashboard open the Java Cloud Service Console.
