@@ -59,6 +59,8 @@ The content contains several independent modules that cover different aspects of
 + [Oracle Java Cloud Service Policy Based Auto Scaling](jcs-autoscale/README.md)
 + [Delete Java Cloud, Database Cloud and Database Container Services using user interface](cleanup/cleanup-ui.md)
 + [Delete Application Cloud Container Service using PaaS Service Manager (PSM) Command Line Interface (CLI)](cleanup/cleanup-psm.md)
+  > ###### Deploy Tomcat sample application to Oracle Application Container Cloud
+  > ###### Install and configure PaaS Service Manager (PSM) Command Line Interface (CLI)
 
 ---
 
