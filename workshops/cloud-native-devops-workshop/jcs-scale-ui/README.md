@@ -23,13 +23,17 @@ Click the service instance hosts sample application.
 
 ![](images/01.png)
 
-Navigate to the Topology page. Click Add Node.
+Navigate to the Overview page. Click Add Node.
 
 ![](images/02.png)
 
 To confirm you want to scale out the cluster, click Add Node.
 
 ![](images/03.png)
+
+Confirm that you want to scale out WL cluster and not OTD cluster.
+
+![](images/035.png)
 
 After a few moments the Topology tile will show Scaling... and the service instance will change to maintenance mode (yellow exclamation mark). If it has not changed click the Refresh icon to update the page. You can also click Activity to check in the history that Scale-Out is in progress.
 ![](images/04.png)
