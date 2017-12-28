@@ -79,14 +79,21 @@ Scroll down and you will see private and public key, on private key's Action men
 
 ![](images/EnvSetup/pkey-04.png)
 
+## Python ##
+In order to use PSM CLI tool you need to have Python 3.3+, you can check Python version with:
+        
+        python --version
 
-weblogic
-sysem passwd
+If you need to install newer Python version with pip tool (package management system used to install and manage software packages written in Python) run this commands and create soft links:
 
-Delete ACCS
+        sudo yum install python34
+        sudo yum install python34-pip
+        sudo ln -s /usr/bin/python3 /bin/python
+        sudo ln -s /bin/python3 python
 
 
-Install curl
+## Alpha2014 passwords ##
 
-Instal Python
+weblogic/Alpha2014_
 
+system/Alpha2014_@PDB1
