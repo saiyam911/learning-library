@@ -11,3 +11,5 @@ gse keey
 
 weblogic
 sysem passwd
+
+Delete ACCS
