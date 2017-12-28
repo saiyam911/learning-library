@@ -13,3 +13,9 @@ weblogic
 sysem passwd
 
 Delete ACCS
+
+
+Install curl
+
+Instal Python
+
