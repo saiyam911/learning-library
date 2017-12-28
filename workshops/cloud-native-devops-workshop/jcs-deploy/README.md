@@ -18,7 +18,7 @@ This tutorial demonstrates how to:
 ### Prerequisites ###
 
 - [Prepared Database Cloud Service](../dbcs-prepare/README.md) instance which holds the TechCo Demo application's data.
-- Running [Java Cloud Service instance](../jcs-create/README.md) configured to access to the prepared Database Cloud Service (Alpha01A-JCS)
+- Running [Java Cloud Service instance](../jcs-create/README.md) configured to access to the prepared Database Cloud Service `(Alpha01A-JCS)`
 
 ### Steps ###
 
