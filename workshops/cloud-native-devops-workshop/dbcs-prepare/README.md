@@ -23,7 +23,7 @@ This tutorial demonstrates how to:
 
 - [Running Database Cloud Service](../dbcs-create/README.md) instance to prepare `(Alpha01A-DBCS)`.
 - The IP address of a compute node associated with a database deployment on Database Cloud Service. The Public IP address is listed on the Database Cloud Service Overview page.
-- The SSH private key file that matches the public key associated with the deployment.
+- The SSH private key file that matches the public key associated with the deployment, check [environment setup](https://github.com/dvukmano/learning-library/blob/PTF-India/workshops/cloud-native-devops-workshop/EnvSetup.md) page.
 
 ### Steps ###
 [Sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/sign-in](https://cloud.oracle.com/sign-in). On the dashboard open the Database Cloud Service Console.
