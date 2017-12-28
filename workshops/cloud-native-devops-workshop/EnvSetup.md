@@ -1,12 +1,46 @@
 # Here is the setup for Client Image running on compute. #
 
 ## Local Git clone ##
-Before trying any demo, repoitory cloning is required, we will use Git client integrated with Eclipse tool.
+Before trying any demo, repoitory cloning is required, we will use Git client integrated with Eclipse tool. Statrt Eclipse using shortcut on desktop.
 
 ![](images/EnvSetup/git-eclipse-01.png)
 
-Eclipse ...??
+On the toolbar go to Window --> Show View --> Other...
 
+![](images/EnvSetup/git-eclipse-02.png)
+
+Enter *git* into search field, choose *Git Repositories* and click OK.
+
+![](images/EnvSetup/git-eclipse-03.png)
+
+Open browser and go to repository on GitHub, https://github.com/dvukmano/cloud-native-devops-workshop. 
+
+![](images/EnvSetup/git-eclipse-04.png)
+
+Go back to Eclipse and on *Git Repositories* TAB click on **Clone a Git repository**.
+
+![](images/EnvSetup/git-eclipse-05.png)
+
+Then click on *Clone URI*, Next.
+
+![](images/EnvSetup/git-eclipse-06.png)
+
+Paste link from github that you copied 3 steps before into field URI, the data should be automatically filled, Next.
+- URI: https://github.com/dvukmano/cloud-native-devops-workshop.git
+- Host: github.com
+- Repository path: /dvukmano/cloud-native-devops-workshop.git
+
+![](images/EnvSetup/git-eclipse-07.png)
+
+Choose master branch.
+
+![](images/EnvSetup/git-eclipse-08.png)
+
+Enter local directory, */u01/content/cloud-native-devops-workshop*
+
+Remote server, *origin*, you can leave, Finish.
+
+![](images/EnvSetup/git-eclipse-09.png)
 
 ## Maven ##
 When open terminal window, if you need to run maven, firts check if you can run it with:
