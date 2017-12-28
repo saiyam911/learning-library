@@ -158,7 +158,6 @@ Before the load generation create `ssh` access to the VM hosts Managed Server to
 	RSA key fingerprint is b7:3b:1a:a0:9b:f0:e4:44:78:ac:c2:a8:81:4f:03:a3.
 	Are you sure you want to continue connecting (yes/no)? yes
 	Warning: Permanently added '144.21.73.75' (RSA) to the list of known hosts.
-	Enter passphrase for key '../pk.openssh': 
 	[opc@winsdemowls-wls-1 ~]$ 
 
 Now you have established `ssh` connection to the VM. Run `top` to check the CPU utilization  of the VM hosting Managed Server during the load generation.
