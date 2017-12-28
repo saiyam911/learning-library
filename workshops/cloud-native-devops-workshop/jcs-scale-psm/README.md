@@ -274,7 +274,7 @@ View the available parameters for a specific command along with examples.
 	
 	[oracle@localhost Desktop]$ 
 
-####Use the Command Line Interface####
+#### Use the Command Line Interface ####
 To get more details about specific service use psm service -s servicename command:
 
 	[oracle@localhost Desktop]$ psm jcs service -s Alpha01A-JCS
@@ -793,7 +793,7 @@ To get more details about specific service use psm service -s servicename comman
 
 Leave this terminal open.
 
-####Scale-In a Java Cloud Service instance####
+#### Scale-In a Java Cloud Service instance ####
 
 First we need to check that the previously submitted Scale-Out request has been finished.[Sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/sign-in](https://cloud.oracle.com/sign-in). On the dashboard open the Java Cloud Service Console.
 
