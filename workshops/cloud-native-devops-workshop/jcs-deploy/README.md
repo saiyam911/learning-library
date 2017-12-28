@@ -187,7 +187,7 @@ Click the name of the service instance to which the application is deployed.
 
 ![](images/26.png)
 
-On the service instance details pages, find the list of nodes, and take note of the public IP address for the virtual machine that contains the Administration Server and Managed Server. In case if your Java Cloud Service have Load Balancer configured then use its public IP address.
+On the service instance details pages, find the list of nodes, and take note of the public IP address for the virtual machine that contains the Administration Server and Managed Server. In case if your Java Cloud Service have Load Balancer configured then use its public IP address (and we have Load Balancer for Alpha01A-JCS).
 
 ![](images/27.png)
 
