@@ -857,9 +857,9 @@ Go back to the terminal where psm was used and get the help of the scale-in comm
 
 	[oracle@localhost Desktop]$ 
 
-According to the help give the necessary parameters to scale in the **Alpha01A-JCS** service.
+According to the help give the necessary parameters to scale in the **Alpha01A-JCS** service, before running scaling command you can check content of *scale-in-payload.json* in */u01/content/cloud-native-devops-workshop/jcs-scale-in*.
 
-	[oracle@localhost Desktop]$ psm jcs scale-in -s Alpha01A-JCS -c scale-in-payload.json
+	[oracle@localhost Desktop]$ psm jcs scale-in -s Alpha01A-JCS -c /u01/content/cloud-native-devops-workshop/jcs-scale-in/scale-in-payload.json
 	{
 	    "details":{
 		"message":"Submitted job to scale in service [Alpha01A-JCS] in domain [gse00012625].",
