@@ -1,4 +1,4 @@
-# Here is the setup for Client Image running on compute. #
+# Setup for Client Image running on compute #
 
 ## Local Git clone ##
 Before trying any demo, repoitory cloning is required, we will use Git client integrated with Eclipse tool. Statrt Eclipse using shortcut on desktop.
@@ -42,7 +42,7 @@ Remote server, *origin*, you can leave, Finish.
 
 ![](images/EnvSetup/git-eclipse-09.png)
 
-## Maven ##
+## Maven  ##
 When open terminal window, if you need to run maven, firts check if you can run it with:
 
     [oracle@b42492 OPCWorkshop]$ mvn --version
