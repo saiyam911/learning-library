@@ -83,6 +83,10 @@ Scroll down and you will see private and public key, on private key's Action men
 In order to use PSM CLI tool you need to have Python 3.3+, you can check Python version with:
         
         python --version
+        
+        or
+        
+        python3 --version
 
 If you need to install newer Python version with pip tool (package management system used to install and manage software packages written in Python) run this commands and create soft links:
 
