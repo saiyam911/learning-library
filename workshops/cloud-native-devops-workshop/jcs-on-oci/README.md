@@ -113,15 +113,56 @@ Important: Copy and store the generated password. You'll need it later while cre
 
 
 
+#### 2. Provision DBCS service in OCI using PSM ####
+
+Go back to OCI-C console, log into the My Services Dashboard, on the dashboard click on Database service and Select **Open Service Console** ..and on the service console, launch the provisioning wizard by clicking **Create Service**.
+
+First, on the basic service information page, I'll give my database instance a name
+Then I'll select the same region in which I had created the OCI resources earlier..
+Selecting the region spawns two additional, required fields: the availability domain and the subnet.
+I'll select values for these fields, based on the information I recorded while creating the infrastructure resources.
+Since I want to use the default values for the rest of the subscription details, I'll click Next and move on to the Wizard's service details page...
+
+First, I'll create and confirm an Administration password, which I can use when I need to access the database administration console.
+Then, I'll select a compute shape that will meet my load and processing requirements. My options will include only the OCI shapes.
+Next, I'll insert an SSH public key, which provides authentication when connecting to a node in my instance through a Secure Shell client. I'll click Edit to open the Public Key Access for VM dialog box... ...and here click Browse to open my local file system
+I'll select a public key.
+And then click Enter
+And the Public key hasbeen inserted.
+Next, I'll ensure I'm using both Cloud Storage and Local Storage for any backups.
+For my Cloud Storage Container, I'll enter the URL for the object storage bucket I created as one of my infrastructure resources. This can be a rather long entry, since I need to enter the full URL in this fixed format.
+The variables in that format are the region, tenant, & bucket. This is why I made sure to copy the name after I created the bucket.
+Now, I'll enter my username and the swift password I generated earlier...
+... then accept the remaining defaults and click Next.
+
+I'll verify the details of my service, paying particular attention to the:
+
+Compute shape
+
+Region
+
+Availability domain
+
+Subnet
+
+and the storage configuration.
+
+Those all look fine, so I'll click Create.
+
+In a moment, my new service will appear on the DBCS console.
+
+
+I can trackprovisioning progress here, in the Service Create and Delete History panel, simply by clicking Details.
+
+And I can see that my service instance has been successfully provisioned.
 
 
 
 
 
 
+#### 3. Provision JCS service in OCI using PSM ####
 
-
-.-.-.-.-.-.-..--.
 On the dashboard click the hamburger icon on the Java tile. Select **Open Service Console**.
 
 ![](images/01.png)
@@ -134,5 +175,84 @@ To create new instance click **Create Service** button.
 
 ![](images/03.png)
 
-Select subscription type. Select the fully managed Oracle Java Cloud Service and the desired billing format. For more details about subscription types see the [documentation](https://docs.oracle.com/cloud/latest/jcs_gs/JSCUG/GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#JSCUG-GUID-98DD6CE1-480F-4AA9-8131-A1D3D274440F).
-![](images/create.jcs.03.png)
+
+s with my database instance, before provisioning the Java Cloud Service instance, I'll need to have following information available:
+The availability domain
+The subnet name, which must be part of the same VCN that I created earlier with the other OCI resources.
+The object storage bucket name
+And the swift password
+
+Using my service credentials, I'll log into the My Services Dashboard.
+
+From the action menu for my JCS account, I'll select Open Service Console...
+
+...and on the service console click Create Service and from the drop-down control select Oracle Java Clooud Service.
+
+First, on the basic service information page, I'll give my Java Cloud Service instance a name... 
+	
+...and select the region from the drop-down list. This should be the same region that I created the OCI resource and DBCS deployment in.
+
+As with the database service instance, selecting the region spawns the availability domain and the subnet fields.
+
+I'll select values for these fields, based on the information I recorded while creating the infrastructure resources.
+
+First, I'll select a compute shape that will meet my load and processing requirements. Note that I can only select an Oracle Cloud Infrastructure compute shape. 
+
+Next, I'll insert an SSH public key, which provides authentication when connecting to a node in my instance through a Secure Shell client.
+
+I'll click Edit to open the Public Key Access for VM dialog box..
+
+...and here click Browse to open my local file system
+
+I'll select a public key.
+
+And then click Enter
+And the Public key has been inserted.
+Now, I'll select Enable Access to Administration Consoles so that I can access consoles such as WebLogic Server or Fusion Middleware from within the service instance
+
+Next, I'll create and confirm an Administration password, which I can use when I need to access the database administration console.
+
+I'll now select the database instance a created in the earlier exercise...
+
+...and enter the appropriate username and password.
+
+For the For the Backup Destination, I'll first select Both Remote and Disk Storage, which will spawn three new data fields:
+
+Cloud Storage Container
+
+Username
+
+and Password
+
+For my Cloud Storage Container, I'll enter the URL for the object storage bucket I created as one of my infrastructure resources. This can be a rather long entry, since I need to enter the full URL in this fixed format.
+
+The variables in that format are the region, tenant, & bucket. This is why I made sure to copy the name after I created the bucket.
+
+Now, I'll enter my username and the swift password I generated earlier...
+
+... then accept the remaining defaults and click Next.
+
+I'll verify the details of my service, paying particular attention to the:
+
+Compute shape
+
+Region
+
+Availability domain
+
+Subnet
+
+and the storage configuration.
+
+Those all look fine, so I'll click Create.
+
+In a moment, my new service will appear on the JCS console.
+
+I can track provisioning progress here, in the Service Create and Delete History panel, simply by clicking Details.
+
+And I can see that my service instance has been successfully provisioned.
+
+run test app
+
+DODATI SSH??
+
