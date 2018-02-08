@@ -29,7 +29,6 @@ There are three major steps in order to setup JCS on OCI:
 
 #### 1. pre-requisites for provisioning PaaS services on OCI ####
 
-
 [Sign in??](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/en_US/sign-in](https://cloud.oracle.com/en_US/sign-in). 
 
 Where I am now after sign in, on OCI Classic??
@@ -41,20 +40,25 @@ Go to Compute, click the hamburger icon, Open Service Console and log in to OCI 
 
 ![](images/oci.2.png)
 
-For PaaS provisioning, the OCI tenancy has an additional compartment and two policies provisioned by default. Compartment name is ManagedCompartmenForPAAS. One policy (PSM-mgd-comp-policy) is under  ManagedCompartmenForPAAS compartment. ??
+And here is OCI console where you can see your tenancy and default region and Oracle Cloud Identifier (OCID). 
+
+![](images/oci.3.png)
+
+:information_source: Every Oracle Cloud Infrastructure resource has an Oracle-assigned unique ID called an Oracle Cloud Identifier (OCID). For PaaS provisioning, the OCI tenancy has an additional compartment and two policies provisioned by default. Compartment name is ManagedCompartmenForPAAS. One policy (PSM-mgd-comp-policy) is under  ManagedCompartmenForPAAS compartment. ??
 And second policy (PSM-root-policy)  is under root compartment ??
 
-Picture PREREQ.3 OCI console .149
-
-1. Create a Compartment
-You can select an existing compartment to create the Oracle Cloud Infrastructure resources required for Java Cloud Service. But for this tutorial, we'll use a new compartment.??
+#### 1. Create a Compartment ####
+You can select an existing compartment to create the Oracle Cloud Infrastructure resources required for Java Cloud Service or create new one. For this tutorial, we'll crreate a new compartment, if you have one then you can skip this step.
 
 Click **Identity**, and then click **Compartments**.
+
+![](images/oci.4.png)
+
 Enter a name and description for the new compartment, and click **Create Compartment**.
 
-PREREQ..4
+![](images/oci.5.png)
 
-2. Create a Virtual Cloud Network
+#### 2. Create a Virtual Cloud Network ####
 In the Oracle Cloud Infrastructure web console, click **Networking** and then **Virtual Cloud Networks**.
 Click **Create Virtual Cloud Network**.
 Select the compartment !!important that you created earlier, enter a name for the Virtual Cloud Network, and let the service create a Virtual Cloud Network and related resources.
