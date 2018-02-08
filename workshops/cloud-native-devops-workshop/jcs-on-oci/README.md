@@ -86,10 +86,13 @@ Add the following policy statements, one at a time.
 
 Remember to replace <compartment_name> with the name of the compartment you created earlier, MyPaaScompartment in this tutorial.
 
-Allow service PSM to inspect vcns in compartment MyPaaScompartment
-Allow service PSM to use subnets in compartment MyPaaScompartment
-Allow service PSM to use vnics in compartment MyPaaScompartment
-Allow service PSM to manage security-lists in compartment MyPaaScompartment
+`Allow service PSM to inspect vcns in compartment MyPaaScompartment`
+
+`Allow service PSM to use subnets in compartment MyPaaScompartment`
+
+`Allow service PSM to use vnics in compartment MyPaaScompartment`
+
+`Allow service PSM to manage security-lists in compartment MyPaaScompartment`
 
 ![](images/oci.9.png)
 
@@ -121,11 +124,15 @@ Important: Copy and store the generated password. You'll need it later while cre
 #### 2. Provision DBCS service in OCI using PSM ####
 Go back to OCI-C console, log into the My Services Dashboard, on the dashboard click on Database service and Select **Open Service Console** ..and on the service console, launch the provisioning wizard by clicking **Create Service**.
 
+![](images/dbcs.1.png)
+
 First, on the basic service information page, I'll give my database instance a name
 Then I'll select the same region in which I had created the OCI resources earlier..
 Selecting the region spawns two additional, required fields: the availability domain and the subnet.
 I'll select values for these fields, based on the information I recorded while creating the infrastructure resources.
 Since I want to use the default values for the rest of the subscription details, I'll click Next and move on to the Wizard's service details page...
+
+![](images/dbcs.2.png)
 
 First, I'll create and confirm an Administration password, which I can use when I need to access the database administration console.
 Then, I'll select a compute shape that will meet my load and processing requirements. My options will include only the OCI shapes.
@@ -139,31 +146,20 @@ The variables in that format are the region, tenant, & bucket. This is why I mad
 Now, I'll enter my username and the swift password I generated earlier...
 ... then accept the remaining defaults and click Next.
 
+![](images/dbcs.3.png)
+
 I'll verify the details of my service, paying particular attention to the:
+Compute shape, Region, Availability domain, Subnet and the storage configuration.
 
-Compute shape
+Those all look fine, so I'll click Create. In a moment, my new service will appear on the DBCS console.
 
-Region
+![](images/dbcs.4.png)
 
-Availability domain
-
-Subnet
-
-and the storage configuration.
-
-Those all look fine, so I'll click Create.
-
-In a moment, my new service will appear on the DBCS console.
-
-
-I can trackprovisioning progress here, in the Service Create and Delete History panel, simply by clicking Details.
+You can track provisioning progress here, in the Service Create and Delete History panel, simply by clicking Details.
 
 And I can see that my service instance has been successfully provisioned.
 
-
-
-
-
+Picture??
 
 #### 3. Provision JCS service in OCI using PSM ####
 
