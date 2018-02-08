@@ -35,11 +35,11 @@ There are three major steps in order to setup JCS on OCI:
 Where I am now after sign in, on OCI Classic??
 The OCI-Classic console also has OCI services provisioned. Clicking on an OCI services redirects to OCI Console of Home region (Phoenix/Ashburn/Frankfurt).
 
-Picture PREREQ.1
+![](images/oci.1.png)
 
 Go to Compute, click the hamburger icon, Open Service Console and log in to OCI console. Depends on how your account is set up you can use SSO or OCI account to log in. 
 
-Picture PRERQ.2
+![](images/oci.2.png)
 
 For PaaS provisioning, the OCI tenancy has an additional compartment and two policies provisioned by default. Compartment name is ManagedCompartmenForPAAS. One policy (PSM-mgd-comp-policy) is under  ManagedCompartmenForPAAS compartment. ??
 And second policy (PSM-root-policy)  is under root compartment ??
