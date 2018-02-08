@@ -163,30 +163,16 @@ Picture??
 
 #### 3. Provision JCS service in OCI using PSM ####
 
-On the dashboard click the hamburger icon on the Java tile. Select **Open Service Console**.
-
-![](images/01.png)
-
-This is the Java Cloud Service Console page. If this is the first time opening Java console then Welcome page will appear. In this case click **Go to Console** button.
-
-![](images/02.png)
-
-To create new instance click **Create Service** button.
-
-![](images/03.png)
-
-
-s with my database instance, before provisioning the Java Cloud Service instance, I'll need to have following information available:
+As with my database instance, before provisioning the Java Cloud Service instance, I'll need to have following information available:
 The availability domain
 The subnet name, which must be part of the same VCN that I created earlier with the other OCI resources.
 The object storage bucket name
 And the swift password
 
-Using my service credentials, I'll log into the My Services Dashboard.
-
 From the action menu for my JCS account, I'll select Open Service Console...
-
 ...and on the service console click Create Service and from the drop-down control select Oracle Java Clooud Service.
+
+![](images/jcs.1.png)
 
 First, on the basic service information page, I'll give my Java Cloud Service instance a name... 
 	
@@ -232,19 +218,25 @@ Now, I'll enter my username and the swift password I generated earlier...
 
 ... then accept the remaining defaults and click Next.
 
+![](images/jcs.2.png)
+
+Advanced options - LB:
+
+![](images/jcs.3.png)
+
+Advanced options + LB:
+
+![](images/jcs.4.png)
+
+
+Next.
+
 I'll verify the details of my service, paying particular attention to the:
-
-Compute shape
-
-Region
-
-Availability domain
-
-Subnet
-
-and the storage configuration.
+Compute shape, Region, Availability domain, Subnet and the storage configuration.
 
 Those all look fine, so I'll click Create.
+
+Summary Picture??
 
 In a moment, my new service will appear on the JCS console.
 
@@ -254,5 +246,5 @@ And I can see that my service instance has been successfully provisioned.
 
 run test app
 
-DODATI SSH??
+SSH connection ??
 
