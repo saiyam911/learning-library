@@ -164,14 +164,11 @@ Now enter your username and the swift password you generated earlier, then accep
 
 ![](images/dbcs.3.png)
 
-I'll verify the details of my service, paying particular attention to the:
-Compute shape, Region, Availability domain, Subnet and the storage configuration.
-
-Those all look fine, so I'll click Create. In a moment, my new service will appear on the DBCS console.
+You can erify the details on Confirm page and click Create.
 
 ![](images/dbcs.4.png)
 
-You can track provisioning progress here, in the Service Create and Delete History panel, simply by clicking Details.
+In a moment, your new service will appear on the DBCS console. You can track provisioning progress in the Service Create and Delete History panel, simply by clicking Details.
 
 And I can see that my service instance has been successfully provisioned.
 
