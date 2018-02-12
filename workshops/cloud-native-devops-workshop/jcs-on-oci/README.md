@@ -133,11 +133,17 @@ Go back to OCI-C console, log into the My Services Dashboard, on the dashboard c
 ![](images/dbcs.1.png)
 
 On the Instance page provide a name and description for the database deployment, and provide information about its high-level characteristics:
+
 Instance Name: Alpha01A
+
 Region: us-ashburn-1 (the same region in which you had created the OCI resources earlier)
+
 Availability Domain: (The availability domain (within the region) where the database deployment will be placed.)
+
 Subnet: QnsC:US-ASHBURN-AD-1 (select values based on the information you recorded while creating the infrastructure resources)
+
 Software Release: Oracle Database 12c Release 2
+
 Use the default values for the rest of the subscription details and click Next to move on to the Wizard's service details page.
 
 ![](images/dbcs.2.png)
