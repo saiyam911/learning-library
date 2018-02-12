@@ -45,8 +45,9 @@ And here is OCI console where you can see your tenancy and default region and Or
 
 :information_source: Every Oracle Cloud Infrastructure resource has an Oracle-assigned unique ID called an Oracle Cloud Identifier (OCID). For PaaS provisioning, the OCI tenancy has an additional compartment and two policies provisioned by default. Compartment name is ManagedCompartmenForPAAS. One policy (PSM-mgd-comp-policy) is under  ManagedCompartmenForPAAS compartment. And second policy (PSM-root-policy)  is under root compartment.
 
-##### 1. Create a Compartment #####
+##### 1.1. Create a Compartment #####
 You can select an existing compartment to create the Oracle Cloud Infrastructure resources required for Java Cloud Service or create new one. For this tutorial, we'll crreate a new compartment, if you have one then you can skip this step.
+:information_source: You cannot use ManagedCompartmenForPAAS and you cannot delete Compartments, but you can rename it.
 
 Click **Identity**, and then click **Compartments**.
 
@@ -56,8 +57,8 @@ Enter a name and description for the new compartment, and click **Create Compart
 
 ![](images/oci.5.png)
 
-##### 2. Create a Virtual Cloud Network #####
-In the Oracle Cloud Infrastructure web console, click **Networking**, :grey_exclamation: select the compartment tat you created earlier, then **Virtual Cloud Networks**.
+##### 1.2. Create a Virtual Cloud Network #####
+In the Oracle Cloud Infrastructure web console, click **Networking**, :grey_exclamation: select the compartment that you created earlier, then **Virtual Cloud Networks**.
 Click **Create Virtual Cloud Network**.
 
 ![](images/oci.6.png)
@@ -70,14 +71,16 @@ Scroll down, and click **Create Virtual Cloud Network**.
 
 ![](images/oci.8.png)
 
-The service creates a Virtual Cloud Network with the CIDR 10.0.0.0/16 and one subnet per AD.
+The service creates a Virtual Cloud Network with the CIDR 10.0.0.0/16 and one subnet per AD. CIDR - Classless Inter-Domain Routing is a method for allocating IP addresses and IP routing.
 :memo: Note the name of the subnet you want to use for the Java Cloud Service instance.
 
-##### 3. Permit Platform Services to Use the Virtual Cloud Network You Created #####
+##### 1.3. Permit Platform Services to Use the Virtual Cloud Network You Created #####
 
-In the Oracle Cloud Infrastructure web console, click Identity and then Policies.
-Select the root compartment for your tenancy.
+In the Oracle Cloud Infrastructure web console, click Identity and then Policies, check thatr your compartment is selected.
 Click Create Policy.
+
+![](images/oci.85.png)
+
 Enter a name and description for the policy.
 In the Policy Versioning field, select Keep Policy Current to keep it current with any future changes to the definitions of policy verbs and resources. To limit access according to the definitions that were current on a specific date, select Use Version Date and enter that date in the YYYY-MM-DD format. 
 Add the following policy statements, one at a time.
