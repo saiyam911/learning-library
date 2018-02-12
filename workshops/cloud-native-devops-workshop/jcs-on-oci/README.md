@@ -99,11 +99,13 @@ Remember to replace <compartment_name> with the name of the compartment you crea
 
 Click Create.
 
-##### 4. Create an Object Storage Bucket #####
+##### 1.4. Create an Object Storage Bucket #####
 In the Oracle Cloud Infrastructure web console, click Storage and then Object Storage.
-In the navigation pane on the left, select the compartment that you created earlier.
-Click Create Bucket.
-Enter a name for the bucket, and click Create Bucket. (Important: Note this name. You'll need it later while creating the Java Cloud Service instance.)
+In the navigation pane on the left, select the compartment that you created earlier. Click Create Bucket.
+
+![](images/oci.93.png)
+
+Enter a name for the bucket, and click Create Bucket. :memo: Note this name. You'll need it later while creating the Java Cloud Service instance.
 
 ![](images/oci.10.png)
 
