@@ -29,10 +29,9 @@ There are three major steps in order to setup JCS on OCI:
 
 #### 1. pre-requisites for provisioning PaaS services on OCI ####
 
-[Sign in??](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/en_US/sign-in](https://cloud.oracle.com/en_US/sign-in). 
+[Sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/en_US/sign-in](https://cloud.oracle.com/en_US/sign-in). 
 
-Where I am now after sign in, on OCI Classic??
-The OCI-Classic console also has OCI services provisioned. Clicking on an OCI services redirects to OCI Console of Home region (Phoenix/Ashburn/Frankfurt).
+After sign-in is successful, the My Services application opens. The Welcome section enables you to get started with activities that you would typically perform upon logging in to My Services. From the Customize Dashboard dialog box, you can control the tiles to be displayed on the dashboard. Notice that some service have "Classic" in the name and some have "OCI". Clicking on an OCI services redirects to OCI Console of Home region (Phoenix/Ashburn/Frankfurt).
 
 ![](images/oci.1.png)
 
@@ -44,8 +43,7 @@ And here is OCI console where you can see your tenancy and default region and Or
 
 ![](images/oci.3.png)
 
-:information_source: Every Oracle Cloud Infrastructure resource has an Oracle-assigned unique ID called an Oracle Cloud Identifier (OCID). For PaaS provisioning, the OCI tenancy has an additional compartment and two policies provisioned by default. Compartment name is ManagedCompartmenForPAAS. One policy (PSM-mgd-comp-policy) is under  ManagedCompartmenForPAAS compartment. ??
-And second policy (PSM-root-policy)  is under root compartment ??
+:information_source: Every Oracle Cloud Infrastructure resource has an Oracle-assigned unique ID called an Oracle Cloud Identifier (OCID). For PaaS provisioning, the OCI tenancy has an additional compartment and two policies provisioned by default. Compartment name is ManagedCompartmenForPAAS. One policy (PSM-mgd-comp-policy) is under  ManagedCompartmenForPAAS compartment. And second policy (PSM-root-policy)  is under root compartment.
 
 ##### 1. Create a Compartment #####
 You can select an existing compartment to create the Oracle Cloud Infrastructure resources required for Java Cloud Service or create new one. For this tutorial, we'll crreate a new compartment, if you have one then you can skip this step.
