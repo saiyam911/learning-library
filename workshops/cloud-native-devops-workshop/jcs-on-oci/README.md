@@ -150,7 +150,7 @@ Use the default values for the rest of the subscription details and click Next t
 
 On the Details page provide following information:
 
-Create and confirm an Administration password: xxxxxx (you can use when you need to access the database)
+Create and confirm an Administration password: Ach1z0#d (you can use when you need to access the database)
 
 Compute shape: VM.Standard1.1 (shape that will meet your load and processing requirements)
 
