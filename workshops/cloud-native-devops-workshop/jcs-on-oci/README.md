@@ -111,7 +111,7 @@ Enter a name for the bucket, and click Create Bucket. :memo: Note this name. You
 
 Also create bucket for DBCS.
 
-##### 5. Generate a Swift password #####
+##### 1.5. Generate a Swift password #####
 In the Oracle Cloud Infrastructure web console, click your user name near the upper-right corner and click User Settings.
 
 ![](images/oci.11.png)
@@ -122,7 +122,10 @@ Enter a description for the password, and click Generate Password.
 
 ![](images/oci.12.png)
 
-Important: Copy and store the generated password. You'll need it later while creating the Java Cloud Service instance.
+:memo: Copy and store the generated password. You'll need it later while creating the Java Cloud Service instance.
+
+:information_source: Swift Password is used for Swift client to access Object Storage for the purposes of backing
+up an Oracle Database System (DB System) database and JCS. OpenStack Object Storage (swift) is used for redundant, scalable data storage using clusters of standardized servers to store petabytes of accessible data. It is a long-term storage system for large amounts of static data which can be retrieved and updated.
 
 #### 2. Provision DBCS service in OCI using PSM ####
 Go back to OCI-C console, log into the My Services Dashboard, on the dashboard click on Database service and Select **Open Service Console** ..and on the service console, launch the provisioning wizard by clicking **Create Service**.
