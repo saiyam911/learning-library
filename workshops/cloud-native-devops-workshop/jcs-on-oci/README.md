@@ -148,17 +148,19 @@ Use the default values for the rest of the subscription details and click Next t
 
 ![](images/dbcs.2.png)
 
-First, I'll create and confirm an Administration password, which I can use when I need to access the database administration console.
-Then, I'll select a compute shape that will meet my load and processing requirements. My options will include only the OCI shapes.
-Next, I'll insert an SSH public key, which provides authentication when connecting to a node in my instance through a Secure Shell client. I'll click Edit to open the Public Key Access for VM dialog box... ...and here click Browse to open my local file system
-I'll select a public key.
-And then click Enter
-And the Public key hasbeen inserted.
-Next, I'll ensure I'm using both Cloud Storage and Local Storage for any backups.
-For my Cloud Storage Container, I'll enter the URL for the object storage bucket I created as one of my infrastructure resources. This can be a rather long entry, since I need to enter the full URL in this fixed format.
-The variables in that format are the region, tenant, & bucket. This is why I made sure to copy the name after I created the bucket.
-Now, I'll enter my username and the swift password I generated earlier...
-... then accept the remaining defaults and click Next.
+On the Details page provide following information:
+
+Create and confirm an Administration password: xxxxxx (you can use when you need to access the database)
+
+Compute shape: VM.Standard1.1 (shape that will meet your load and processing requirements)
+
+SSH public key: click Edit to open the Public Key Access for VM dialog box and click "Create a New Key" and Enter, then click on Download button to save the key pair on your laptop and Done, and the Public key has been inserted. (provides authentication when connecting to a node in my instance through a Secure Shell client)
+
+Backup destination: Both Cloud Storage and Local Storage
+
+Cloud Storage Container: https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/gse0000255/myDBCSbucket (URL for the object storage bucket you created as one of your infrastructure resources, https://swiftobjectstorage.<region>.oraclecloud.com/v1/<namespace>/<container>, the variables in that format are the region, tenant, & bucket, <region> = us-ashburn-1, <namespace> = tenant/cloud account, <container> = bucket name)
+
+Now enter your username and the swift password you generated earlier, then accept the remaining defaults and click Next.
 
 ![](images/dbcs.3.png)
 
