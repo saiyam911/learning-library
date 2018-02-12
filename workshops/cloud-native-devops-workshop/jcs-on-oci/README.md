@@ -158,7 +158,7 @@ SSH public key: click Edit to open the Public Key Access for VM dialog box and c
 
 Backup destination: Both Cloud Storage and Local Storage
 
-Cloud Storage Container: https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/gse0000255/myDBCSbucket (URL for the object storage bucket you created as one of your infrastructure resources, https://swiftobjectstorage.<region>.oraclecloud.com/v1/<namespace>/<container>, the variables in that format are the region, tenant, & bucket, <region> = us-ashburn-1, <namespace> = tenant/cloud account, <container> = bucket name)
+Cloud Storage Container: https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/gse0000255/myDBCSbucket (URL for the object storage bucket you created as one of your infrastructure resources, https://swiftobjectstorage.REGION.oraclecloud.com/v1/NAMESPACE/CONTAINER, the variables in that format are the region, tenant, & bucket, REGION = us-ashburn-1, NAMESPACE = tenant/cloud account, CONTAINER = bucket name)
 
 Now enter your username and the swift password you generated earlier, then accept the remaining defaults and click Next.
 
