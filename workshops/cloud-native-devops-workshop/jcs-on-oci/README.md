@@ -128,15 +128,17 @@ Enter a description for the password, and click Generate Password.
 up an Oracle Database System (DB System) database and JCS. OpenStack Object Storage (swift) is used for redundant, scalable data storage using clusters of standardized servers to store petabytes of accessible data. It is a long-term storage system for large amounts of static data which can be retrieved and updated.
 
 #### 2. Provision DBCS service in OCI using PSM ####
-Go back to OCI-C console, log into the My Services Dashboard, on the dashboard click on Database service and Select **Open Service Console** ..and on the service console, launch the provisioning wizard by clicking **Create Service**.
+Go back to OCI-C console, log into the My Services Dashboard, on the dashboard click on Database service and Select **Open Service Console** and on the service console, launch the provisioning wizard by clicking **Create Service**.
 
 ![](images/dbcs.1.png)
 
-First, on the basic service information page, I'll give my database instance a name
-Then I'll select the same region in which I had created the OCI resources earlier..
-Selecting the region spawns two additional, required fields: the availability domain and the subnet.
-I'll select values for these fields, based on the information I recorded while creating the infrastructure resources.
-Since I want to use the default values for the rest of the subscription details, I'll click Next and move on to the Wizard's service details page...
+On the Instance page provide a name and description for the database deployment, and provide information about its high-level characteristics:
+Instance Name: Alpha01A
+Region: us-ashburn-1 (the same region in which you had created the OCI resources earlier)
+Availability Domain: (The availability domain (within the region) where the database deployment will be placed.)
+Subnet: QnsC:US-ASHBURN-AD-1 (select values based on the information you recorded while creating the infrastructure resources)
+Software Release: Oracle Database 12c Release 2
+Use the default values for the rest of the subscription details and click Next to move on to the Wizard's service details page.
 
 ![](images/dbcs.2.png)
 
