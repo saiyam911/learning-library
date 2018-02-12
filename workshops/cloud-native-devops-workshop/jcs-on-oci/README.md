@@ -164,7 +164,7 @@ Now enter your username and the swift password you generated earlier, then accep
 
 ![](images/dbcs.3.png)
 
-You can erify the details on Confirm page and click Create.
+You can verify the details on Confirm page and click Create.
 
 ![](images/dbcs.4.png)
 
