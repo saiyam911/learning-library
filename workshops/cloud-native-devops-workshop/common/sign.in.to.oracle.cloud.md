@@ -9,7 +9,7 @@
 ![](images/sign.02.select.datacenter.png)
 
 3. Enter username and password of user. Click **Sign In**.
-![](images/sign.03.credentials.png)
+![](images/sign.04.credentials.png)
 
 4. On the Dashboard there are predefined tiles for different services. If the shortcut doesn't appear for a service click **Customize Dashboard** and mark the service to show on the dashboard. Notice that some service has "Classic" in name and some has "OCI".
 ![](images/sign.05.dashboard.png)
