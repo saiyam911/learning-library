@@ -213,8 +213,9 @@ Database Instance Name: Alpha01A (select the database instance a created in the 
 
 Enter the appropriate username and password (sys/Ach1z0#d if you followed instructions)
 
-Click "Advanced" button on Instance Details page and add following information:
 ![](images/jcs.16.png)
+
+Click "Advanced" button on Instance Details page and add following information:
 
 Enable access to Administration Consoles: select (so that you can access consoles such as WebLogic Server or Fusion Middleware from within the service instance)
 
@@ -229,12 +230,10 @@ Enter your username and the swift password you generated earlier.
 Accept the remaining defaults and click Next.
 
 ![](images/jcs.2.png)
-????? slika s Advanced i backupom
 
 Verify the details of your JCS service and click Create.
 
 ![](images/jcs.3.png)
-?????ista ta review image
 
 In a moment, your new service will appear on the JCS console. You can track provisioning progress in the Service Create and Delete History panel, simply by clicking Details.
 
@@ -247,8 +246,8 @@ After JCS instance has been successfully provisioned you can check if everithing
 On the Instance Overview page you can find public IP address.
 
 ![](images/jcs.6.png)
-
+????
 Enter following URL into browser: https://129.213.48.93/sample-app/
 
 ![](images/jcs.7.png)
-?????
+????
