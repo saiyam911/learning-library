@@ -243,11 +243,11 @@ After JCS instance has been successfully provisioned you can check if everithing
 
 ![](images/jcs.5.png)
 
-On the Instance Overview page you can find public IP address.
+On the Instance Overview page you can find public IP address and click on Sample Application URL.
 
 ![](images/jcs.6.png)
-????
-Enter following URL into browser: https://129.213.48.93/sample-app/
+
+And here is Sample Application running.
 
 ![](images/jcs.7.png)
-????
+
