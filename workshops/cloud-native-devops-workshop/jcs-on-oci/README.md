@@ -134,7 +134,7 @@ Go back to OCI-C console, log into the My Services Dashboard, on the dashboard c
 
 On the Instance page provide a name and description for the database deployment, and provide information about its high-level characteristics:
 
-Instance Name: Alpha01A
+Instance Name: Alpha01A (please avoid having service name with hyphen or having more than 30 characters)
 
 Region: us-ashburn-1 (the same region in which you had created the OCI resources earlier)
 
@@ -185,7 +185,7 @@ On My Services Dashboard page, from the action menu on JCS, select Open Service 
 
 On the Instance page provide information about high level charateristci:
 
-Instance Name: Alpha01A
+Instance Name: Alpha01A (please avoid having service name with hyphen or having more than 30 characters)
 	
 Region: us-ashburn-1 (this have to be the same region where you created the OCI resource and DBCS deployment in)
 
@@ -193,7 +193,7 @@ Selecting the region spawns the availability domain and the subnet fields.
 
 Availability Domain: QnsC:US-ASHBURN-AD-1 (the availability domain (within the region) where the JCS deployment will be placed, the AD where DBCS deployment is in)
 
-Subnet: Public Subnet QnsC:US-ASHBURN-AD-1 (same subnet where DBCS deployment is in) ??dodatne informacije oko Subneta?? ??kada biraš subnet onda staviš miša da vidiš ime??
+Subnet: Public Subnet QnsC:US-ASHBURN-AD-1 (same subnet where DBCS deployment is in)
 
 Use the default values for the rest of the subscription details and click Next to move on to the Wizard's service details page.
 
@@ -214,6 +214,7 @@ Database Instance Name: Alpha01A (select the database instance a created in the 
 Enter the appropriate username and password (sys/Ach1z0#d if you followed instructions)
 
 Click "Advanced" button on Instance Details page and add following information:
+![](images/jcs.16.png)
 
 Enable access to Administration Consoles: select (so that you can access consoles such as WebLogic Server or Fusion Middleware from within the service instance)
 
@@ -228,24 +229,26 @@ Enter your username and the swift password you generated earlier.
 Accept the remaining defaults and click Next.
 
 ![](images/jcs.2.png)
-
-Advanced options - LB:
-
-![](images/jcs.3.png)
-
-Advanced options + LB:
-
-![](images/jcs.4.png)
-
+????? slika s Advanced i backupom
 
 Verify the details of your JCS service and click Create.
 
-Summary Picture??
+![](images/jcs.3.png)
+?????ista ta review image
 
 In a moment, your new service will appear on the JCS console. You can track provisioning progress in the Service Create and Delete History panel, simply by clicking Details.
 
-Picture??
+![](images/jcs.4.png)
 
-And I can see that my service instance has been successfully provisioned.
+After JCS instance has been successfully provisioned you can check if everithing works ok by running Sample Application. Click on the JCS instance that you just created.
 
-run test app
+![](images/jcs.5.png)
+
+On the Instance Overview page you can find public IP address.
+
+![](images/jcs.6.png)
+
+Enter following URL into browser: https://129.213.48.93/sample-app/
+
+![](images/jcs.7.png)
+?????
