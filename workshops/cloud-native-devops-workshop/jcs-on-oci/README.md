@@ -191,9 +191,9 @@ Region: us-ashburn-1 (this have to be the same region where you created the OCI 
 
 Selecting the region spawns the availability domain and the subnet fields.
 
-Availability Domain: QnsC:US-ASHBURN-AD-1 (the availability domain (within the region) where the JCS deployment will be placed, the AD where DBCS deployment is in)
+Availability Domain: QnsC:US-ASHBURN-AD-1 (the availability domain (within the region) where the JCS deployment will be placed, the AD where DBCS deployment is in) (The concept of availability domains (AD) is specific to OCI, an AD is a set of data centers within a region. A region can have multiple isolated ADs with separate power, cooling, etc. The ADs within a region are interconnected via a low-latency network.)
 
-Subnet: Public Subnet QnsC:US-ASHBURN-AD-1 (same subnet where DBCS deployment is in)
+Subnet: Public Subnet QnsC:US-ASHBURN-AD-1 (same subnet where DBCS deployment is in, subnets can be different but must be in the sane Virtual Cloud Network)
 
 Use the default values for the rest of the subscription details and click Next to move on to the Wizard's service details page.
 
@@ -222,7 +222,7 @@ Backup destination: Both Remote and Disk Storage
 
 This will spawn three new data fields:
 
-Cloud Storage Container: https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/gse0000255/myJCSbucket (URL for the object storage bucket you created as one of your infrastructure resources, https://swiftobjectstorage.REGION.oraclecloud.com/v1/NAMESPACE/CONTAINER, the variables in that format are the region, tenant, & bucket, REGION = us-ashburn-1, NAMESPACE = tenant/cloud account, CONTAINER = bucket name)
+Cloud Storage Container: https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/gse0000255/myJCSbucket (URL for the object storage bucket you created as one of your infrastructure resources, https://swiftobjectstorage.REGION.oraclecloud.com/v1/NAMESPACE/CONTAINER, the variables in that format are the region, tenant, & bucket, REGION = us-ashburn-1, NAMESPACE = tenant/cloud account, CONTAINER = bucket name) (Bucket must be created upfront)
 
 Enter your username and the swift password you generated earlier.
 
