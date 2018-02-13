@@ -138,9 +138,11 @@ Instance Name: Alpha01A
 
 Region: us-ashburn-1 (the same region in which you had created the OCI resources earlier)
 
-Availability Domain: (The availability domain (within the region) where the database deployment will be placed.)
+Selecting the region spawns the availability domain and the subnet fields.
 
-Subnet: QnsC:US-ASHBURN-AD-1 (select values based on the information you recorded while creating the infrastructure resources)
+Availability Domain: QnsC:US-ASHBURN-AD-1 (The availability domain (within the region) where the database deployment will be placed.)
+
+Subnet: Public Subnet QnsC:US-ASHBURN-AD-1 (select values based on the information you recorded while creating the infrastructure resources)
 
 Software Release: Oracle Database 12c Release 2
 
@@ -168,30 +170,38 @@ You can verify the details on Confirm page and click Create.
 
 ![](images/dbcs.4.png)
 
-In a moment, your new service will appear on the DBCS console. You can track provisioning progress in the Service Create and Delete History panel, simply by clicking Details.
+In a moment, your new service will appear on the DBCS console. You can track provisioning progress in the Service Create and Delete History panel, simply by clicking Details, at the bottom of the Oracle Database Cloud Service page.
 
-And I can see that my service instance has been successfully provisioned.
-
-Picture??
+After DB instance has been successfully provisioned you can start JCS instance provisioning.
 
 #### 3. Provision JCS service in OCI using PSM ####
 
-As with my database instance, before provisioning the Java Cloud Service instance, I'll need to have following information available:
-The availability domain
-The subnet name, which must be part of the same VCN that I created earlier with the other OCI resources.
-The object storage bucket name
-And the swift password
+As with DBCS instance, before provisioning the JCS instance, you'll need to have following information available:
+availability domain, subnet name (which must be part of the same VCN that you created earlier with the other OCI resources), object storage bucket name and the swift password.
 
-From the action menu for my JCS account, I'll select Open Service Console...
-...and on the service console click Create Service and from the drop-down control select Oracle Java Clooud Service.
+On My Services Dashboard page, from the action menu on JCS, select Open Service Console. On the service console click Create Service and from the drop-down control select Oracle Java Clooud Service.
 
 ![](images/jcs.1.png)
 
-First, on the basic service information page, I'll give my Java Cloud Service instance a name... 
-	
-...and select the region from the drop-down list. This should be the same region that I created the OCI resource and DBCS deployment in.
+On the Instance page provide information about high level charateristci:
 
-As with the database service instance, selecting the region spawns the availability domain and the subnet fields.
+Instance Name: Alpha01A
+	
+Region: us-ashburn-1 (this have to be the same region where you created the OCI resource and DBCS deployment in)
+
+Selecting the region spawns the availability domain and the subnet fields.
+
+Availability Domain: QnsC:US-ASHBURN-AD-1 (the availability domain (within the region) where the JCS deployment will be placed, the AD where DBCS deployment is in)
+
+Subnet: Public Subnet QnsC:US-ASHBURN-AD-1 (same subnet where DBCS deployment is in) ??dodatne informacije oko Subneta??
+
+Use the default values for the rest of the subscription details and click Next to move on to the Wizard's service details page.
+
+![](images/jcs.15.png)
+
+
+
+
 
 I'll select values for these fields, based on the information I recorded while creating the infrastructure resources.
 
