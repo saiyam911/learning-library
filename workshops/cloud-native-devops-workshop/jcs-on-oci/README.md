@@ -2,7 +2,7 @@
 ---
 # ORACLE Cloud-Native DevOps workshop #
 
-## Create Java Cloud Service instance using user interface on Oracle Cloud Infractructure (JCS on OCI) ##
+## Create Java Cloud Service instance using user interface on Oracle Cloud Infrastructure (JCS on OCI) ##
 
 ### Introduction ###
 
@@ -27,7 +27,7 @@ There are three major steps in order to setup JCS on OCI:
 2. Provision DBCS service in OCI using PSM
 3. Provision JCS service in OCI using PSM
 
-#### 1. pre-requisites for provisioning PaaS services on OCI ####
+#### 1. Pre-requisites for provisioning PaaS services on OCI ####
 
 [Sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/en_US/sign-in](https://cloud.oracle.com/en_US/sign-in). 
 
@@ -39,14 +39,14 @@ Go to Compute, click the hamburger icon, Open Service Console and log in to OCI 
 
 ![](images/oci.2.png)
 
-And here is OCI console where you can see your tenancy and default region and Oracle Cloud Identifier (OCID). 
+Here is OCI console where you can see your tenancy and default region and Oracle Cloud Identifier (OCID). 
 
 ![](images/oci.3.png)
 
-:information_source: Every Oracle Cloud Infrastructure resource has an Oracle-assigned unique ID called an Oracle Cloud Identifier (OCID). For PaaS provisioning, the OCI tenancy has an additional compartment and two policies provisioned by default. Compartment name is ManagedCompartmenForPAAS. One policy (PSM-mgd-comp-policy) is under  ManagedCompartmenForPAAS compartment. And second policy (PSM-root-policy)  is under root compartment.
+:information_source: Every Oracle Cloud Infrastructure resource has an Oracle-assigned unique ID called an Oracle Cloud Identifier (OCID). For PaaS provisioning, the OCI tenancy has an additional compartment and two policies provisioned by default. Compartment name is ManagedCompartmenForPAAS. One policy (PSM-mgd-comp-policy) is under ManagedCompartmenForPAAS compartment. And second policy (PSM-root-policy) is under root compartment.
 
 ##### 1.1. Create a Compartment #####
-You can select an existing compartment to create the Oracle Cloud Infrastructure resources required for Java Cloud Service or create new one. For this tutorial, we'll crreate a new compartment, if you have one then you can skip this step.
+You can select an existing compartment to create the Oracle Cloud Infrastructure resources required for Java Cloud Service or create new one. For this tutorial, we will create a new compartment, if you have one then you can skip this step.
 :information_source: You cannot use ManagedCompartmenForPAAS and you cannot delete Compartments, but you can rename it.
 
 Click **Identity**, and then click **Compartments**.
@@ -85,7 +85,7 @@ Enter a name and description for the policy.
 In the Policy Versioning field, select Keep Policy Current to keep it current with any future changes to the definitions of policy verbs and resources. To limit access according to the definitions that were current on a specific date, select Use Version Date and enter that date in the YYYY-MM-DD format. 
 Add the following policy statements, one at a time.
 
-Remember to replace <compartment_name> with the name of the compartment you created earlier, MyPaaScompartment in this tutorial.
+Remember to replace <compartment_name> with the name of the compartment, you created earlier, MyPaaScompartment in this tutorial.
 
 `Allow service PSM to inspect vcns in compartment MyPaaScompartment`
 
@@ -105,7 +105,7 @@ In the navigation pane on the left, select the compartment that you created earl
 
 ![](images/oci.93.png)
 
-Enter a name for the bucket, and click Create Bucket. :memo: Note this name. You'll need it later while creating the Java Cloud Service instance.
+Enter a name for the bucket, and click Create Bucket. :memo: Note this name. You will need it later while creating the Java Cloud Service instance.
 
 ![](images/oci.10.png)
 
@@ -122,10 +122,10 @@ Enter a description for the password, and click Generate Password.
 
 ![](images/oci.12.png)
 
-:memo: Copy and store the generated password. You'll need it later while creating the Java Cloud Service instance.
+:memo: Copy and store the generated password. You will need it later while creating the Java Cloud Service instance.
 
 :information_source: Swift Password is used for Swift client to access Object Storage for the purposes of backing
-up an Oracle Database System (DB System) database and JCS. OpenStack Object Storage (swift) is used for redundant, scalable data storage using clusters of standardized servers to store petabytes of accessible data. It is a long-term storage system for large amounts of static data which can be retrieved and updated.
+up an Oracle Database System (DB System) database and JCS. OpenStack Object Storage (swift) is used for redundant, scalable data storage using clusters of standardized servers to store petabytes of accessible data. It is a long-term storage system for large amounts of static data, which can be retrieved and updated.
 
 #### 2. Provision DBCS service in OCI using PSM ####
 Go back to OCI-C console, log into the My Services Dashboard, on the dashboard click on Database service and Select **Open Service Console** and on the service console, launch the provisioning wizard by clicking **Create Service**.
@@ -150,7 +150,7 @@ Use the default values for the rest of the subscription details and click Next t
 
 ![](images/dbcs.2.png)
 
-On the Details page provide following information:
+On the Details page, provide following information:
 
 Create and confirm an Administration password: Ach1z0#d (you can use when you need to access the database)
 
@@ -172,18 +172,18 @@ You can verify the details on Confirm page and click Create.
 
 In a moment, your new service will appear on the DBCS console. You can track provisioning progress in the Service Create and Delete History panel, simply by clicking Details, at the bottom of the Oracle Database Cloud Service page.
 
-After DB instance has been successfully provisioned you can start JCS instance provisioning.
+After DB instance has been successfully provisioned, you can start JCS instance provisioning.
 
 #### 3. Provision JCS service in OCI using PSM ####
 
-As with DBCS instance, before provisioning the JCS instance, you'll need to have following information available:
+As with DBCS instance, before provisioning the JCS instance, you will need to have following information available:
 availability domain, subnet name (which must be part of the same VCN that you created earlier with the other OCI resources), object storage bucket name and the swift password.
 
-On My Services Dashboard page, from the action menu on JCS, select Open Service Console. On the service console click Create Service and from the drop-down control select Oracle Java Clooud Service.
+On My Services Dashboard page, from the action menu on JCS, select Open Service Console. On the service console click Create Service and from the drop-down control select Oracle Java Cloud Service.
 
 ![](images/jcs.1.png)
 
-On the Instance page provide information about high level charateristci:
+On the Instance page provide information about high level characteristics:
 
 Instance Name: Alpha01A (please avoid having service name with hyphen or having more than 30 characters)
 	
@@ -199,7 +199,7 @@ Use the default values for the rest of the subscription details and click Next t
 
 ![](images/jcs.15.png)
 
-On the Details page provide details for this Oracle Java Cloud Service instance:
+On the Details page, provide details for this Oracle Java Cloud Service instance:
 
 Compute shape: VM.Standard1.1 (shape that will meet your load and processing requirements)
 
@@ -239,15 +239,14 @@ In a moment, your new service will appear on the JCS console. You can track prov
 
 ![](images/jcs.4.png)
 
-After JCS instance has been successfully provisioned you can check if everithing works ok by running Sample Application. Click on the JCS instance that you just created.
+After JCS instance has been successfully provisioned, you can check if everything works ok by running Sample Application. Click on the JCS instance that you just created.
 
 ![](images/jcs.5.png)
 
-On the Instance Overview page you can find public IP address and click on Sample Application URL.
+On the Instance Overview page, you can find public IP address and click on Sample Application URL.
 
 ![](images/jcs.6.png)
 
-And here is Sample Application running.
+Moreover, here is Sample Application running.
 
 ![](images/jcs.7.png)
-
