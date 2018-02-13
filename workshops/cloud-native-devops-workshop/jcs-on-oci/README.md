@@ -193,53 +193,39 @@ Selecting the region spawns the availability domain and the subnet fields.
 
 Availability Domain: QnsC:US-ASHBURN-AD-1 (the availability domain (within the region) where the JCS deployment will be placed, the AD where DBCS deployment is in)
 
-Subnet: Public Subnet QnsC:US-ASHBURN-AD-1 (same subnet where DBCS deployment is in) ??dodatne informacije oko Subneta??
+Subnet: Public Subnet QnsC:US-ASHBURN-AD-1 (same subnet where DBCS deployment is in) ??dodatne informacije oko Subneta?? ??kada biraš subnet onda staviš miša da vidiš ime??
 
 Use the default values for the rest of the subscription details and click Next to move on to the Wizard's service details page.
 
 ![](images/jcs.15.png)
 
+On the Details page provide details for this Oracle Java Cloud Service instance:
 
+Compute shape: VM.Standard1.1 (shape that will meet your load and processing requirements)
 
+Server Count: 1 (the number of managed servers in the cluster)
 
+SSH public key: use the same key that you used for DBCS provisioning, click Edit to open the Public Key Access for VM dialog box, click Browse to open my local file system, select a public key (unzip sshkeybundle.zip), click Enter and the Public key has been inserted (provides authentication when connecting to a node in JCS instance through a Secure Shell client)
 
-I'll select values for these fields, based on the information I recorded while creating the infrastructure resources.
+Create and confirm an Administration password for WebLogic administration user: Ach1z0#d (you can use when you need to access the WebLogic console)
 
-First, I'll select a compute shape that will meet my load and processing requirements. Note that I can only select an Oracle Cloud Infrastructure compute shape. 
+Database Instance Name: Alpha01A (select the database instance a created in the earlier exercise, JCS provisions the selected database with the required schemas for running a service instance)
 
-Next, I'll insert an SSH public key, which provides authentication when connecting to a node in my instance through a Secure Shell client.
+Enter the appropriate username and password (sys/Ach1z0#d if you followed instructions)
 
-I'll click Edit to open the Public Key Access for VM dialog box..
+Click "Advanced" button on Instance Details page and add following information:
 
-...and here click Browse to open my local file system
+Enable access to Administration Consoles: select (so that you can access consoles such as WebLogic Server or Fusion Middleware from within the service instance)
 
-I'll select a public key.
+Backup destination: Both Remote and Disk Storage
 
-And then click Enter
-And the Public key has been inserted.
-Now, I'll select Enable Access to Administration Consoles so that I can access consoles such as WebLogic Server or Fusion Middleware from within the service instance
+This will spawn three new data fields:
 
-Next, I'll create and confirm an Administration password, which I can use when I need to access the database administration console.
+Cloud Storage Container: https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/gse0000255/myJCSbucket (URL for the object storage bucket you created as one of your infrastructure resources, https://swiftobjectstorage.REGION.oraclecloud.com/v1/NAMESPACE/CONTAINER, the variables in that format are the region, tenant, & bucket, REGION = us-ashburn-1, NAMESPACE = tenant/cloud account, CONTAINER = bucket name)
 
-I'll now select the database instance a created in the earlier exercise...
+Enter your username and the swift password you generated earlier.
 
-...and enter the appropriate username and password.
-
-For the For the Backup Destination, I'll first select Both Remote and Disk Storage, which will spawn three new data fields:
-
-Cloud Storage Container
-
-Username
-
-and Password
-
-For my Cloud Storage Container, I'll enter the URL for the object storage bucket I created as one of my infrastructure resources. This can be a rather long entry, since I need to enter the full URL in this fixed format.
-
-The variables in that format are the region, tenant, & bucket. This is why I made sure to copy the name after I created the bucket.
-
-Now, I'll enter my username and the swift password I generated earlier...
-
-... then accept the remaining defaults and click Next.
+Accept the remaining defaults and click Next.
 
 ![](images/jcs.2.png)
 
@@ -252,22 +238,14 @@ Advanced options + LB:
 ![](images/jcs.4.png)
 
 
-Next.
-
-I'll verify the details of my service, paying particular attention to the:
-Compute shape, Region, Availability domain, Subnet and the storage configuration.
-
-Those all look fine, so I'll click Create.
+Verify the details of your JCS service and click Create.
 
 Summary Picture??
 
-In a moment, my new service will appear on the JCS console.
+In a moment, your new service will appear on the JCS console. You can track provisioning progress in the Service Create and Delete History panel, simply by clicking Details.
 
-I can track provisioning progress here, in the Service Create and Delete History panel, simply by clicking Details.
+Picture??
 
 And I can see that my service instance has been successfully provisioned.
 
 run test app
-
-SSH connection ??
-
