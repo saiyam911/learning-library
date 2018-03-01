@@ -71,6 +71,7 @@ The content contains several independent modules that cover different aspects of
 + [Direct access and management of Oracle Java Cloud Service](jcs-direct/README.md)
 + [Scale-Out Oracle Java Cloud Service using user interface](jcs-scale-ui/README.md)
 + [Scale-In Oracle Java Cloud Service using PaaS Service Manager (PSM) Command Line Interface (CLI)](jcs-scale-psm/README.md)
++ :new: [Create Java Cloud Service Instance using PSM CLI on Oracle Cloud Infrastructure (OCI)](jcs-on-oci-psm/README.md)
 
 #### Making Java Cloud Service elastically scalable through Policy based Auto-scaling ####
 
