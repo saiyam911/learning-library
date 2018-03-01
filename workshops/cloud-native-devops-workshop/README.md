@@ -48,7 +48,7 @@ The content contains several independent modules that cover different aspects of
 + [Monitor and tune SpringBoot application deployed on Oracle Application Container Cloud Service](monitor-tune/README.md)
 
 #### Integrate telemetry into continuous delivery and monitor an application using the Oracle Management Cloud ####
-+ [Deploying APM Agent on Apache Tomcat based application and setting up Application Performance Monitoring](apm/README.md)
++ :new: [Deploying APM Agent on Apache Tomcat based application and setting up Application Performance Monitoring](apm/README.md)
 
 #### Deploy complex cloud environment using Oracle Cloud Stack Manager ###
 + [Deploy complex cloud environment using Oracle Cloud Stack Manager](stack/README.md)
