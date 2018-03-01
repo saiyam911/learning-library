@@ -31,36 +31,22 @@ During the execution you will create several public cloud service instances what
 The content contains several independent modules that cover different aspects of the application development in the Oracle Cloud. These modules could be executed independently unless you find in the Prerequisites that they are dependent on each other.
 
 ----
-#### Theme : Developer centric approach ####
+#### Theme : Java application deployment on Java Cloud Service ####
 
-+ [DevOps JCS Pipeline using Oracle Stack Manager](https://oracle.github.io/learning-library/workshops/jcs-devops/)
-
-
-#### Theme: Development + Troubleshooting / Monitoring  ####
-
-+ [Deploy Apache Tomcat based application to Oracle Application Container Cloud](accs-tomcat/README.md)
-+ [Monitor and tune SpringBoot application deployed on Oracle Application Container Cloud Service](monitor-tune/README.md)
-  > ###### Create Oracle Developer Cloud Service project for Spring Boot sample application
-  > ###### Create continuous build integration using Oracle Developer Cloud Service and Oracle Application Container Cloud Service
-  > ###### Using Eclipse IDE (Oracle Enterprise Pack for Eclipse) with Oracle Developer Cloud Service
++ [JK lab 1 - DB deployment] (https://??)
++ [JK Lab 2 - App Deployment](https://??)
 
 
-#### Theme : Admin / IT related ####
+#### Theme: Common Platform Tools  ####
 
-+ [Direct access and management of Oracle Java Cloud Service](jcs-direct/README.md)
-  > ###### Deployed sample application on Java Cloud Service
-  > ###### Prepared Database Cloud Service instance which holds the TechCo Demo application's data
-  >- ###### Running Java Cloud Service instance configured to access to the prepared Database Cloud Service
-  >- ###### Running Database Cloud Service instance to prepare
-+ [Scale-Out Oracle Java Cloud Service using user interface](jcs-scale-ui/README.md)
-  > ###### Deployed sample application on Java Cloud Service
-+ [Scale-In Oracle Java Cloud Service using PaaS Service Manager (PSM) Command Line Interface (CLI)](jcs-scale-psm/README.md)
-  > ###### [Running Java Cloud Service,](../jcs-deploy/README.md) which has 2 nodes cluster or [scaled out Java Cloud Service](../jcs-scale-ui/README.md)
-+ [Oracle Java Cloud Service Policy Based Auto Scaling](jcs-autoscale/README.md)
-+ [Delete Java Cloud, Database Cloud and Database Container Services using user interface](cleanup/cleanup-ui.md)
-+ [Delete Application Cloud Container Service using PaaS Service Manager (PSM) Command Line Interface (CLI)](cleanup/cleanup-psm.md)
-  > ###### Deploy Tomcat sample application to Oracle Application Container Cloud
-  > ###### Install and configure PaaS Service Manager (PSM) Command Line Interface (CLI)
++ [Dusko lab PSM CLI](https://)
++ [Anil lab SM](https://)
+
+#### Theme : Cloud Native Application Development ####
+
++ [Bind Frontend ACCS with with backend resources running on JCS](devops-bind/README.md)
++ [Anil - Twitter DHCS lab](https://??)
+
 
 ---
 
