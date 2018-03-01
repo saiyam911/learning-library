@@ -1,4 +1,4 @@
-# Client Image users:
+# Client Image users (compute running on OCI-C):
 ## TigerVNC:
 
 The latest release of TigerVNC can be downloaded from our [GitHub release page](https://github.com/TigerVNC/tigervnc/releases).
