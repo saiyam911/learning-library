@@ -10,4 +10,6 @@ Binaries are available from bintray: https://bintray.com/tigervnc/stable/tigervn
 
 - JDK 8
 - Maven 
+- Git client
 - Eclipse + Git Plugin
+- Python 3.3 or later
