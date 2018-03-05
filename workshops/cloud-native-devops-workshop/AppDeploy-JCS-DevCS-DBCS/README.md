@@ -147,6 +147,10 @@ Now that we have the source code in our managed GIT repository, we need to creat
 
 ![](images/Alpha_Office_Application_Workshop-20.png)
 
+**Before moving to the next step please complete the steps to Load Data and configure weblogic dataSource** 
+
+[Load DB Data & Configure WLS DataSource](https://github.com/dvukmano/learning-library/blob/master/workshops/cloud-native-devops-workshop/AppDataLoad-DevCS-DBCS/README.md)
+
 ##### 5. Deploy the application you built into JCS instance #####
 
 + Switch over to browser tab for cloud services. Click on the far left navigation icon and select **Oracle Java Cloud Service**.
