@@ -52,7 +52,7 @@ Follow the below steps to enable the port for your appliaction access.
 
 + Select **Enable** in the popup screen.
 
-+ Open **Developer cloud Service** and click on the **Project** you have created**Alpha Offic**
++ Open **Developer cloud Service** and click on the **Project** you have created **Alpha Office**
 
 + On navigation panel, click **Build** to access the build page and click **New Job**.
 
