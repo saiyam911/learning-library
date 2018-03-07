@@ -89,7 +89,7 @@ Oracle Developer Cloud Service provides a complete development platform that str
 
 **Initial content:** `Import existing repository`
 
-**Enter the URL:** `https://github.com/jsudeesh/AlphaOfficeProductCatalogUI.git`
+**Enter the URL:** `https://github.com/dvukmano/cloud-native-devops-workshop.git`
 
 ![](images/Alpha_Office_Application_Workshop-10.png)
 
