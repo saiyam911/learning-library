@@ -33,8 +33,8 @@ The content contains several independent modules that cover different aspects of
 ----
 #### Theme : Java application deployment on Java Cloud Service ####
 
-+ [JK lab 1 - DB deployment] (https://??)
-+ [JK Lab 2 - App Deployment](https://??)
++ [Creating DB Schema, Loading Application Data and Creating WebLogic DataSource](AppDataLoad-DevCS-DBCS/README.md)
++ [Deploy J2EE Application on JCS using DevCS & DBCS](AppDeploy-JCS-DevCS-DBCS/README.md)
 
 
 #### Theme: Common Platform Tools  ####
