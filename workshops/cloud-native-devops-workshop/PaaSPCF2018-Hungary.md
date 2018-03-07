@@ -40,7 +40,7 @@ The content contains several independent modules that cover different aspects of
 #### Theme: Common Platform Tools  ####
 
 + [Dusko lab PSM CLI](https://)
-+ [Anil lab SM](https://)
++ [Creating a Template for Oracle Cloud Stack Manager](stack-template/README.md)
 
 #### Theme : Cloud Native Application Development ####
 
