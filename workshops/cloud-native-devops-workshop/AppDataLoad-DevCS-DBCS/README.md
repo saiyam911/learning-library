@@ -90,7 +90,7 @@ Oracle Developer Cloud Service provides a complete development platform that str
 ![](images/Alpha_Office_Application_Workshop-10.png)
 
 
-##### 3. Creating DB Schema and Loading Application Data #####
+##### 4. Creating DB Schema and Loading Application Data #####
 
 Before you start loading data into the Database, the SQL port 1521 of your DBCS instace will be diabled by default.
 
@@ -174,7 +174,7 @@ Follow the below steps to enable the port for your appliaction access.
 
 + In the next screen click **Build Now**
 
-##### 3. Creating Weblogic DataSource #####
+##### 5. Creating Weblogic DataSource #####
 
 + Login to your cloud account and click on **Java** from the dashboard
 
