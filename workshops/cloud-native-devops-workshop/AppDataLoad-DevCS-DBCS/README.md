@@ -148,6 +148,7 @@ Follow the below steps to enable the port for your appliaction access.
 
 **SQL File Path:** `AlphaOfficeProductCatalogUI/AlphaProducts/ConfigFiles/DB/createUserAlpha.sql`
 
+![](images/AppDataLoad-DevCS-DBCS-16.png)
 
 + Click **Add Build Step**  and select **Invoke SQLcl**
 
@@ -166,6 +167,8 @@ Follow the below steps to enable the port for your appliaction access.
 **Source:** `SQL File` 
 
 **SQL statements:** `AlphaOfficeProductCatalogUI/AlphaProducts/ConfigFiles/DB/createProducts.sql`
+
+![](images/AppDataLoad-DevCS-DBCS-17.png)
 
 + Click **Save**
 
