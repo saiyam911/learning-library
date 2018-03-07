@@ -18,13 +18,16 @@ This tutorial demonstrates how to:
 
 + Oracle Java Cloud Service uses Oracle Database Cloud Service to host the Oracle Fusion Middleware component schemas required by Oracle Java Required Files (JRF).
 + Oracle DevCS account access
-+ Oracle DBCS access
++ Oracle DBCS/MySQL access
++ **If you are using DBCS please completed the below lab before proceeding futher**
+
+[Load DB Data & Configure WLS DataSource](https://github.com/dvukmano/learning-library/blob/master/workshops/cloud-native-devops-workshop/AppDataLoad-DevCS-DBCS/README.md)
 
 ### Steps ###
 
 There are three major steps in order to deploy an Applcation on JCS:
 1. Clone and build the Alpha office source code using DevCS 
-2. Load application data into DBCS 
+2. Load application data into DBCS - Completed as part of Prerequisite step
 3. Deploy the application in JCS using DevCS
 
 #### 1. Log into your Cloud Account ####
@@ -41,6 +44,8 @@ There are three major steps in order to deploy an Applcation on JCS:
 
 
 ##### 2. Create a Project in Developer Cloud Service #####
+
+**Skip this step you have already completed lab to load data into DBCS and directly got Step 4:- Creating a Build Process **
 
 Oracle Developer Cloud Service provides a complete development platform that streamlines team development processes and automates software delivery. The integrated platform includes an issue tracking system, agile development dashboards, code versioning and review platform, continuous integration and delivery automation, as well as team collaboration features such as wikis and live activity stream. With a rich web based dashboard and integration with popular development tools, Oracle Developer Cloud Service helps deliver better applications faster.
 
@@ -76,6 +81,8 @@ Oracle Developer Cloud Service provides a complete development platform that str
 ![](images/Alpha_Office_Application_Workshop-08.png)
 
 ##### 3. Create Initial GIT Repository  #####
+
+**Skip this step you have already completed lab to load data into DBCS**
 
 + Click on **New Repository** to create a new Git Repository.
 
@@ -147,9 +154,6 @@ Now that we have the source code in our managed GIT repository, we need to creat
 
 ![](images/Alpha_Office_Application_Workshop-20.png)
 
-**Before moving to the next step please complete the steps to Load Data and configure weblogic dataSource** 
-
-[Load DB Data & Configure WLS DataSource](https://github.com/dvukmano/learning-library/blob/master/workshops/cloud-native-devops-workshop/AppDataLoad-DevCS-DBCS/README.md)
 
 ##### 5. Deploy the application you built into JCS instance #####
 
