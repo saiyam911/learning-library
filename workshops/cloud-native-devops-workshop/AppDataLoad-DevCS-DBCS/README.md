@@ -10,12 +10,19 @@ This lab goes through the process of loading application data into DBCS. First w
 
 Once the data loading is complete we would create a DataSocurce in weblogic using which application can access the data.
 
+### Prerequisites ###
+
++ Oracle DevCS account access
++ Oracle DBCS access
+
+
 
 ### Steps ###
 
-There are three major steps in order to deploy an Applcation on JCS:
-1. Creating DB schema and loading data
-2. Creating weblogic DataSource
+
+1. Clone the Alpha office source code using DevCS 
+2. Creating DB schema and loading data
+3. Creating weblogic DataSource
 
 #### 1. Log into your Cloud Account ####
 
@@ -29,8 +36,61 @@ There are three major steps in order to deploy an Applcation on JCS:
 
 + In the next screen provide the appropriate identity Domain assigned to you and login using the username password provided.
 
+##### 2. Create a Project in Developer Cloud Service #####
 
-##### 2. Creating DB Schema and Loading Application Data #####
+Oracle Developer Cloud Service provides a complete development platform that streamlines team development processes and automates software delivery. The integrated platform includes an issue tracking system, agile development dashboards, code versioning and review platform, continuous integration and delivery automation, as well as team collaboration features such as wikis and live activity stream. With a rich web based dashboard and integration with popular development tools, Oracle Developer Cloud Service helps deliver better applications faster.
+
++	Open Developer Cloud Service console
++	From the Cloud UI dashboard click on the **Developer** service. In our example, the Developer Cloud Service is named **developer#####**.
+
+![](images/Alpha_Office_Application_Workshop-03.png)
+
++	Click on **Open Service Console** 
+
+![](images/Alpha_Office_Application_Workshop-04.png)
+
++ Click **New Project** to start the project create wizard. **Note:** Depending on the status of your developer cloud service, it is possible that the button may be labeled **Create Project**
+
++ On Details screen enter the following data and click on **Next**.
+
+**Name:** `Alpha Office`
+
+**Description:** `Alpha Office Product Catalog`
+
+![](images/Alpha_Office_Application_Workshop-05.png)
+
++ Leave default template set to **Empty Project** and click **Next**
+
+![](images/Alpha_Office_Application_Workshop-06.png)
+
++ Select your **Wiki Markup** preference to **MARKDOWN** and click **Finish**.
+
+![](images/Alpha_Office_Application_Workshop-07.png)
+
++ The Project Creation will take about 1 minute.
+
+![](images/Alpha_Office_Application_Workshop-08.png)
+
+##### 3. Create Initial GIT Repository  #####
+
++ Click on **New Repository** to create a new Git Repository.
+
+![](images/Alpha_Office_Application_Workshop-09.png)
+
++	In the New Repository wizard enter the following information and click **Create**.
+
+**Name:** `AlphaOfficeProductCatalogUI`
+
+**Description:** `Alpha Office Product Catalog UI`
+
+**Initial content:** `Import existing repository`
+
+**Enter the URL:** `https://github.com/dvukmano/cloud-native-devops-workshop.git`
+
+![](images/Alpha_Office_Application_Workshop-10.png)
+
+
+##### 3. Creating DB Schema and Loading Application Data #####
 
 Before you start loading data into the Database, the SQL port 1521 of your DBCS instace will be diabled by default.
 
@@ -59,6 +119,12 @@ Follow the below steps to enable the port for your appliaction access.
 + Give the Job Name as `DBBuild` and click **Save**
 
 ![](images/AppDataLoad-DevCS-DBCS-04.png)
+
++ Click on **Source Control** and select **Git**
+
++ Under **Repository** select 'AlphaOfficeProductCatalogUIdvuk.git'
+
+![](images/AppDataLoad-DevCS-DBCS-15.png)
 
 + Click on **Build Steps**
 
