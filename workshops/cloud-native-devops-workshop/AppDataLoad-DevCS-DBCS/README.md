@@ -42,7 +42,7 @@ Follow the below steps to enable the port for your appliaction access.
 
 +	Click on **Open Service Console** 
 
-•	Select the hamburger symbol to the right of your DBCS instance and select **Access Rules**
+•	Select the hamburger symbol to the right of DBCS instance **Alpha01A-DBCS** and select **Access Rules**
 
 ![](images/AppDataLoad-DevCS-DBCS-02.png)
 
