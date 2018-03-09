@@ -6,7 +6,7 @@
 
 ### Introduction ###
 
-This lab goes through the steps to use the Oracle Cloud Stack Manager console to create and test a custom stack template. In this case, we shall be creating a template to setup a Data Hub Cloud Service .
+This lab goes through the steps to use the Oracle Cloud Stack Manager console to create and test a custom stack template. In this case, we shall be creating a template to setup a Database Cloud Service .
 
 ### Background ###
 
@@ -19,7 +19,7 @@ Cloud Stack Manager provides several standard templates, but you can quickly cre
 ### Prerequisites ###
 
 + Valid credentials for an Oracle Cloud account
-+ An active subscription to Oracle Data Hub Cloud Service
++ An active subscription to Oracle Database Cloud Service
 
 ### Concepts ###
 
@@ -97,7 +97,7 @@ If this is the first time for anyone in this Oracle Cloud account to work with t
 
 ![](../images/4.png)
 
-+ Above the toolbar, click Right Arrow Icon. In the first input field, set the template's name to ‘MyDHCSTemplate’. Set the templateDescription to ‘Create a DHCS instance’. Click 'Save current template' icon.
++ Above the toolbar, click Right Arrow Icon. In the first input field, set the template's name to ‘MyDBCSTemplate’. Set the templateDescription to ‘Create a DBCS instance’. Click 'Save current template' icon.
 
 ![](../images/5.png)
 
@@ -131,15 +131,15 @@ If this is the first time for anyone in this Oracle Cloud account to work with t
 
 #### Create a Resource ####
 
-+ In the left panel of the Template Builder, expand Resources and locate the Data Hub resource type. You can use the Search field if you prefer. 
++ In the left panel of the Template Builder, expand Resources and locate the Database resource type. You can use the Search field if you prefer. 
 
 ![](../images/9.png)
 
-+ Either drag and drop the Data Hub resource onto the canvas area (right side), or click Add resource (Plus Icon).
++ Either drag and drop the Database resource onto the canvas area (right side), or click Add resource (Plus Icon).
 
 ![](../images/10.png)
 
-+ Right Click on the 'Data Hub' Circle in the canvas and click on Edit.
++ Right Click on the 'Database' Circle in the canvas and click on Edit.
 
 ![](../images/11.png)
 
@@ -153,26 +153,29 @@ If this is the first time for anyone in this Oracle Cloud account to work with t
 	
 	Note: You do not have to explicitly define the serviceName parameter in your templates.
 
-+ Update this value and use the Fn::Join function to add the text "DHCS" to the end of the stack's name. Pass the arguments to this function as a sequence:
++ Update this value and use the Fn::Join function to add the text "DB" to the end of the stack's name. Pass the arguments to this function as a sequence:
 
 ![](../images/13.png)
 
 + For vmPublicKeyText, retrieve the value of your publicKey parameter: `'Fn::GetParam': publicKey`
-+ For serviceLevel, type in: ` PAAS `
-+ For serviceVersion, type in: ` 3.11 `
-+ For edition, type in: ` EE `
-+ For useHighPerformanceStorage, type in: ` false	 `
-+ For meteringFrequency, type in: ` HOURLY `
-+ For components -> CASSANDRA -> shape, type in: ` oc3 `
-+ For components -> CASSANDRA -> serverCount: ` 1 `
-+ For components -> CASSANDRA -> adminUserPassword: ` 'Fn::GetParam': dbPassword `
++ Expand parameters, and then expand 0.
+
+![](../images/13.1.png)
+ 
++ Update these required resource parameters:
+	+ type: `db`
+    + usableStorage: `15`
+    + adminPassword: `'Fn::GetParam': dbPassword`
+    + sid: `ORCL`
+    + backupDestination: `NONE`
+
 + Click Apply Changes. Click 'Save current template' icon. 
 
 #### Publish the Template ####
 
 + Click Validate current template icon. If there are any validation errors, click 'Open YAML editor' (Command Prompt Icon) to view the full template definition, and then correct the errors. 
 + If all is fine, then Save and click 'Publish current template'.
-+ Click the Published tab, if you search by the name of the template created just now (MyDHCSTemplate), you should see it.
++ Click the Published tab, if you search by the name of the template created just now (MyDBCSTemplate), you should see it.
 
 ![](../images/14.png)
 
@@ -188,4 +191,3 @@ Sample values: Name -> MyStack, Database Password -> Ach1z0#d.
 + On clicking the Confirm button, request for Stack provisioning is submitted.
 
 ![](../images/16.png)
-
