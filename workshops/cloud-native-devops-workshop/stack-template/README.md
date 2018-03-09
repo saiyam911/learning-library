@@ -69,7 +69,7 @@ If this is the first time for anyone in this Oracle Cloud account to work with t
 + Sign in to Oracle Cloud (https://cloud.oracle.com/home)
 + From the My Services Dashboard, locate the Storage Classic tile and click its name. If this tile is not visible, click Customize Dashboard.
 
-![](../images/1.png)
+![](images/1.png)
 
 + Record the value of the REST Endpoint. For example, https://foo.storage.oraclecloud.com/v1/MyService-bar.
 + Click Open Service Console at the top right corner of the page.
