@@ -10,7 +10,8 @@ This tutorial shows how to use an Oracle Java Cloud Service instance using a com
 
 ### Scenario ###
 
-We will first connect to our identity domain and check for available JCS instances. Then we will show number of PSM CLI command to manage JCS instance. Usage of PSM CLI will be shown on two examples, works with security access lists and backup.
+We will first connect to our identity domain and check for available JCS instances. Then we will show number of PSM CLI command to manage JCS instance. Usage of PSM CLI will be shown on three examples, works with security access lists, backup, and starting/stopping instance and components.
+
 Full list of available PSM CLI jcs command you can find here: https://docs.oracle.com/en/cloud/paas/java-cloud/pscli/psm-jcs-commands1.html
 
 If you get feedback of some command with job ID like “Job ID:    22598785”, then you can check status of command with “psm jcs operation-status -j 22598785”.
@@ -207,3 +208,47 @@ Let’s change backup configuration, full back up on Friday evening and incremen
 You can get payload for that example [here](payloads/jcs-update-backup-config.json), just update with your data.
 
 After you run command, go to jcs console and check backup configuration.
+
+### Starting/stopping jcs ###
+
+In order to stop jcs instance, managed Server and load balancer and its associated virtual machines (VMs), with one command:
+```
+>psm jcs stop -s Alpha01A-JCS -c [stop-jcs-allServiceHosts.json](payload/stop-jcs-allServiceHosts.json)
+```
+
+You can stop OTD instance with command below:
+```
+>psm jcs stop -s Alpha01A-JCS -c [stop-jcs-allServiceHosts-otd.json](payload/stop-jcs-allServiceHosts-otd.json)
+```
+For payload you have to look for host name where load balancer is running, OTD, you can check on service console or using PaaS CLI as shown below:
+```
+>psm jcs service -s Alpha01A-JCS -of json | grep -A17 '"OTD":{' | tail -n 1
+```
+
+You can stop WLS instance with command below:
+```
+>psm jcs stop -s Alpha01A-JCS -c [stop-jcs-allServiceHosts-wls.json](payload/stop-jcs-allServiceHosts-wls.json)
+```
+
+Find the host name of wls component:
+```
+>psm jcs service -s Alpha01A-JCS -of json | grep -A25 '"WLS":{' | tail -n 1
+```
+
+In order to start jcs instace or components you use the same arguments and payloads just change key argument stop --> start:
+- start instance
+```
+>psm jcs start -s Alpha01A-JCS -c [stop-jcs-allServiceHosts.json](payload/stop-jcs-allServiceHosts.json)
+```
+- start OTD
+```
+>psm jcs start -s Alpha01A-JCS -c [stop-jcs-allServiceHosts-otd.json](payload/stop-jcs-allServiceHosts-otd.json)
+```
+- start WLS
+```
+>psm jcs stop -s Alpha01A-JCS -c [stop-jcs-allServiceHosts-wls.json](payload/stop-jcs-allServiceHosts-wls.json)
+```
+
+
+
+
