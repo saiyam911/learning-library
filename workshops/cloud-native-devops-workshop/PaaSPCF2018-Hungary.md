@@ -52,9 +52,6 @@ The content contains several independent modules that cover different aspects of
 + [Create continuous build integration using Oracle Developer Cloud Service and Oracle Application Container Cloud Service](springboot-sample/devcs.accs.ci.md)
 + [Using Eclipse IDE (Oracle Enterprise Pack for Eclipse) with Oracle Developer Cloud Service](oepe/setup.oepe.md)
 
-<p>-</p>
-
-+ [Bind Frontend ACCS with with backend resources running on JCS](devops-bind/README.md)
 
 ---
 
