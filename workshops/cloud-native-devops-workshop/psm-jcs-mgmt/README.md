@@ -249,6 +249,6 @@ In order to start jcs instace or components you use the same arguments and paylo
 >psm jcs start -s Alpha01A-JCS -c start-stop-jcs-allServiceHosts-wls.json
 ```
 
-While executing psm command you can check status with ```psm jcs operation-status -j 'Job ID'```
+While executing psm command you can check status with ```psm jcs operation-status -j JobID```
 
 
