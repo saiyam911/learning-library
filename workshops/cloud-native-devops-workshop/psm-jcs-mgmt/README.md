@@ -211,23 +211,23 @@ After you run command, go to jcs console and check backup configuration.
 
 ### Starting/stopping jcs ###
 
-In order to stop jcs instance, managed Server and load balancer and its associated virtual machines (VMs), with one command:
+In order to stop jcs instance, managed Server and load balancer and its associated virtual machines (VMs), with one command, [payload](payload/start-stop-jcs-allServiceHosts.json):
 ```
->psm jcs stop -s Alpha01A-JCS -c [stop-jcs-allServiceHosts.json](payload/stop-jcs-allServiceHosts.json)
+>psm jcs stop -s Alpha01A-JCS -c start-stop-jcs-allServiceHosts.json
 ```
 
-You can stop OTD instance with command below:
+You can stop OTD instance with command below, [payload](payload/start-stop-jcs-allServiceHosts-otd.json):
 ```
->psm jcs stop -s Alpha01A-JCS -c [stop-jcs-allServiceHosts-otd.json](payload/stop-jcs-allServiceHosts-otd.json)
+>psm jcs stop -s Alpha01A-JCS -c start-stop-jcs-allServiceHosts-otd.json
 ```
 For payload you have to look for host name where load balancer is running, OTD, you can check on service console or using PaaS CLI as shown below:
 ```
 >psm jcs service -s Alpha01A-JCS -of json | grep -A17 '"OTD":{' | tail -n 1
 ```
 
-You can stop WLS instance with command below:
+You can stop WLS instance with command below, [payload](payload/start-stop-jcs-allServiceHosts-wls.json):
 ```
->psm jcs stop -s Alpha01A-JCS -c [stop-jcs-allServiceHosts-wls.json](payload/stop-jcs-allServiceHosts-wls.json)
+>psm jcs stop -s Alpha01A-JCS -c start-stop-jcs-allServiceHosts-wls.json
 ```
 
 Find the host name of wls component:
@@ -236,19 +236,19 @@ Find the host name of wls component:
 ```
 
 In order to start jcs instace or components you use the same arguments and payloads just change key argument stop --> start:
-- start instance
+- start instance, [payload](payload/start-stop-jcs-allServiceHosts.json)
 ```
->psm jcs start -s Alpha01A-JCS -c [stop-jcs-allServiceHosts.json](payload/stop-jcs-allServiceHosts.json)
+>psm jcs start -s Alpha01A-JCS -c start-stop-jcs-allServiceHosts.json
 ```
-- start OTD
+- start OTD, [payload](payload/start-stop-jcs-allServiceHosts-otd.json)
 ```
->psm jcs start -s Alpha01A-JCS -c [stop-jcs-allServiceHosts-otd.json](payload/stop-jcs-allServiceHosts-otd.json)
+>psm jcs start -s Alpha01A-JCS -c start-stop-jcs-allServiceHosts-otd.json
 ```
-- start WLS
+- start WLS, [payload](payload/start-stop-jcs-allServiceHosts-wls.json)
 ```
->psm jcs stop -s Alpha01A-JCS -c [stop-jcs-allServiceHosts-wls.json](payload/stop-jcs-allServiceHosts-wls.json)
+>psm jcs start -s Alpha01A-JCS -c start-stop-jcs-allServiceHosts-wls.json
 ```
 
-
+While executing psm command you can check status with ```psm jcs operation-status -j 22598785```
 
 
