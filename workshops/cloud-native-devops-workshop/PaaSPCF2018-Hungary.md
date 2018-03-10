@@ -46,13 +46,13 @@ The content contains several independent modules that cover different aspects of
 
 + [Anil - Twitter DHCS lab](https://??)
 
-<p></p>
+<p>-</p>
 
 + [Create Oracle Developer Cloud Service project for SpringBoot application](springboot-sample/create.devcs.project.md)
 + [Create continuous build integration using Oracle Developer Cloud Service and Oracle Application Container Cloud Service](springboot-sample/devcs.accs.ci.md)
 + [Using Eclipse IDE (Oracle Enterprise Pack for Eclipse) with Oracle Developer Cloud Service](oepe/setup.oepe.md)
 
-<p></p>
+<p>-</p>
 
 + [Bind Frontend ACCS with with backend resources running on JCS](devops-bind/README.md)
 
