@@ -1,1 +1,7 @@
-dd
+{ 
+    "username":"cloud.admin",
+    "password":"bahterEd@5LRey",
+    "identityDomain":"gse00014728",
+    "region":"us",
+    "outputFormat":"short"
+}
