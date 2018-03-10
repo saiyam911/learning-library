@@ -12,14 +12,15 @@ This tutorial shows how to use an Oracle Java Cloud Service instance using a com
 
 We will first connect to our identity domain and check for available JCS instances. Then we will show number of PSM CLI command to manage JCS instance. Usage of PSM CLI will be shown on two examples, works with security access lists and backup.
 Full list of available PSM CLI jcs command you can find here: https://docs.oracle.com/en/cloud/paas/java-cloud/pscli/psm-jcs-commands1.html
+
 If you get feedback of some command with job ID like “Job ID:    22598785”, then you can check status of command with “psm jcs operation-status -j 22598785”.
 
 ### Prerequisites ###
 To complete this tutorial, you need:
-•	Have the appropriate credentials for working with Oracle Java Cloud Service.
-•	Provisioned JCS
-•	Python 3.3 or later. For more information about downloading and using Python, go to python.org. You will also have to use the PIP tool pip3 to install the CLI Python package. Note: While installing Python, make sure to select the check box Add Python to PATH.
-You can check in this [lab how to setup PSM CLI tool](../jcs-on-oci-psm/README.md). 
+- Have the appropriate credentials for working with Oracle Java Cloud Service.
+- Provisioned JCS
+- Python 3.3 or later. For more information about downloading and using Python, go to python.org. You will also have to use the PIP tool pip3 to install the CLI Python package. Note: While installing Python, make sure to select the check box Add Python to PATH.
+You can check in this [lab, how to setup PSM CLI tool](../jcs-on-oci-psm/README.md). 
 
 ### Connect to Identity Domain ###
 Be aware that you can get help for any command by adding “h” in command line, for example, help for psm command “psm h”, help for jcs command “psm jcs h”, help for creating jcs instance with payload example “psm jcs create-service h”.
@@ -38,14 +39,14 @@ Here is how payload file looks like:
 { 
     "username":"required", 
     "password":"required",
-    "identityDomain":"required", // Traditional Cloud Account: Enter the identity domain ID.
+    "identityDomain":"gse00014728", // Traditional Cloud Account: Enter the identity domain ID.
 Account with Identity Cloud Service:  Enter the identity service ID. This ID is in the format, idcs-<32-character-GUID>. Example: idcs-6666bbbb11114becad9e649bfa144444
 To find out your identity domain ID or identity service ID, sign in to Oracle Cloud My Services, and click any Service Type (such as Java or Application Container). On the resulting Service Overview page, look for the “Identity Domain Id” or "Identity Service Id" field, depending on your account type.
     "region":"us", // Valid values are [us, emea, aucom]. Default is 'us'.
     "outputFormat":"short", // Desired output format. Valid values are [short, json, html]. Default is 'short'.
 ```
 
-Create your setup payload or use this example (scrips??) and just change your data and connect to your environment:
+Create your setup payload or use this [example](/payloads/gsexxx-classic-short.json) and just change your data and connect to your environment:
 ```
 >psm setup –c gse00012345-classic-short.json
 ```
@@ -58,7 +59,7 @@ You will get response with message of successful setup:
   o ANALYTICS : Oracle Analytics Cloud
 …
 ```
-Notice that in this example we are connecting to OCI-C region and that output of command will be short for all command afterword, but you can charge this with adding switch “–of json” on command where you want to change output format.
+Notice that in this example we are connecting to OCI-C region and that output of command will be "short" for all command afterword, but you can charge this with adding switch “–of json” on command where you want to change output format.
 
 
 ### Security access rules management ###
@@ -80,7 +81,6 @@ Try the same command with json output format and check what kind of details you 
 
 Details of particular service:
 ```
-
 > psm jcs service -s Alpha01A-JCS
 ```
 
@@ -99,7 +99,7 @@ Rule                       Type     Description                     Status
  ora_otd2ms_chttps          SYSTEM   Permit https connection to ...  enabled
  sys_wls2otd_ssh            SYSTEM   DO NOT MODIFY: Permit WLS a...  enabled
  ora_p2admin_ssh            DEFAULT  Permit ssh access to nodes      enabled
- ora_p2admin_ahttps         DEFAULT  Permit public access to htt...  enabled
+ #### ora_p2admin_ahttps         DEFAULT  Permit public access to htt...  enabled ####
  ora_wls2db_dbport          DEFAULT  Permit connection to Databa...  enabled
  ora_wls2appDB1_appDBPort1  DEFAULT  Permit connection to Databa...  enabled
  ora_sys_ms2db_ssh          DEFAULT  Permit ssh access to nodes      enabled
@@ -150,8 +150,7 @@ Delete backup
 >psm jcs delete-backup -s Alpha01A–JCS -b d16b092e-c41a-4c82-b242-8d2379d8c306
 ```
 
-Update backup configuration
-Again, let’s see configuration:
+Update backup configuration. First, let’s see configuration:
 ```
 > psm jcs view-backup-config –s Alpha01A-JCS -of json
 ```
@@ -197,11 +196,14 @@ Again, let’s see configuration:
 ```
 
 What we can read from output is that full backups are performed on Saturday at 13:10, incremental backups are performed at 13:10 but not on Saturday and retention time for backups is 30 days.
+
 By default, full backups are initiated weekly starting 12 hours after an instance was created, rounded to the nearest five-minute interval.
+
 Let’s change backup configuration, full back up on Friday evening and incremental should skip Friday, Saturday and Sunday.
 ```
 >psm jcs update-backup-config -s Alpha01A-JCS –c jcs-update-backup-config.json
 ```
 
-payload??
+You can get payload for that example [here](payloads/jcs-update-backup-config.json), just update with your data.
 
+After you run command, go to jcs console and check backup configuration.
