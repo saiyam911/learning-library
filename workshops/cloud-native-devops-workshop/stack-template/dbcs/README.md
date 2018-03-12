@@ -145,7 +145,7 @@ If this is the first time for anyone in this Oracle Cloud account to work with t
 
 + Update the following values
 	+ shape: `oc3`
-	+ subscriptionType: `MONTHLY`
+	+ subscriptionType: `HOURLY`
 	+ level: `PAAS`
 	+ version: `12.2.0.1`
 	+ edition: `SE`
