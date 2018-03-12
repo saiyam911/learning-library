@@ -143,6 +143,13 @@ If this is the first time for anyone in this Oracle Cloud account to work with t
 
 ![](images/11.png)
 
++ Update the following values
+	+ shape: `oc3`
+	+ subscriptionType: `MONTHLY`
+	+ level: `PAAS`
+	+ version: `12.2.0.1`
+	+ edition: `SE`
+
 + For serviceName, enter the text Fn to display a list of functions. Select the function Fn::GetParam.
 
 ![](images/12.png)
