@@ -85,7 +85,7 @@ Even though today in this lab, we will be using a pre-provisioned Data Hub insta
 
 ![](images/4.png)
 
-+ Here is an example of a basic single node cluster running Cassandra 3.1.1. 
++ Here is an example of a basic single node cluster running Cassandra 3.11.1 
 
 ![](images/5.PNG)
 
