@@ -6,29 +6,27 @@
 
 ### Introduction ###
 
-This lab goes through the steps to use the Oracle Public Cloud to build a Tweet analysis service on Oracle Public Cloud using Cassandra & Spring Data. 
+This lab goes through the steps to use the Oracle Public Cloud to build a simple Tweet analysis service on Oracle Public Cloud using **Apache Cassandra**, **Spring Data** & **twitter4j**
 
 ### Background ###
 
-Oracle Public Cloud now includes Data Hub Cloud Service which offers Cassandra as a managed solution.  And Application Container Cloud Service offers a polyglot, cloud native application development platform.
+Oracle Public Cloud now includes Data Hub Cloud Service which offers Apache Cassandra as a managed solution and Oracle Application Container Cloud Service offers a polyglot, cloud native application development platform.
 
-As part of this lab, a service (application) would be consuming a continuous stream of tweets (high velocity data) and persist it the Data Hub Cloud. And the same is queried from Data Hub Cloud using another service (application). The above mentioned (micro) services are deployed to Oracle Application Container Cloud and they enjoy the native integration capability which this platform provides with Data Hub Cloud.
+As part of this lab, a service (application) would be consuming a continuous stream of tweets (high velocity data) and persist it the Data Hub Cloud. These tweets will be later queried from Data Hub Cloud using another service (application). The above mentioned (micro) services are deployed to Oracle Application Container Cloud and they enjoy the native integration capability which this platform provides with Data Hub Cloud.
 
 ### Prerequisites ###
 
 + Valid credentials for an Oracle Cloud account
 + An active subscription to Oracle Application Container Cloud Service & Oracle Data Hub Cloud Service
-+ Code / App is available on [GitHub](https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app)
++ The code is available on [GitHub](https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app)
 + Twitter Account
-+ A development environment (Java, Maven, Python, PSM)
++ A development environment (Java, Maven, Python, PSM CLI)
 
 ### Architecture ###
 
-Here is a diagram to help us
+Here is high level diagram to depict the solution
 
 ![](images/1.png)
-
-As evident, the overall solution is pretty simple
 
 + Tweet Producer is a Java app which uses the Twitter streaming API to consume tweets and push them to Cassandra cluster on Data Hub
 	+ It’s a Java app and uses [twitter4j](http://twitter4j.org/en/) library to consume the tweet stream
@@ -43,29 +41,29 @@ As evident, the overall solution is pretty simple
 
 + Application Container Cloud provides out-of-the-box Service Binding for Data Hub Cloud (if both the services are in the same identity domain). This gives your app a secure communication channel without you having to do anything explicitly and no port related configuration is required at the database infrastructure level.
 
-+ And is here is how the Cassandra Data Model looks like
+Here is how the Cassandra data model looks like
 
 ![](images/2.png)
 
-	`tweeter` the twitter screen name e.g. vmotamar
-	`tweet`  the tweet itself (string format)
-	`tweet_id` the ID of the tweet
-	`created` the time stamp format of when the tweet was created
-	`created_date` the date in text format e.g. 2018–01–01
+	`tweeter` - the twitter screen name e.g. vmotamar
+	`tweet`  - the tweet itself (string format)
+	`tweet_id` - the ID of the tweet
+	`created` - the time stamp format of when the tweet was created
+	`created_date` - the date in text format e.g. 2018–01–01
 
 This table is meant to store tweets in time series style — the primary key is designed keeping this requirement in mind. It consists of a single partition key and clustering columns
 
 `created_date` is the partition key which implies that:
 
-	it is used to determine the partition in which a particular tweet will land
-	each partition will contain a day worth of tweets
-	only this column can be used in the WHERE clause (unless you create a secondary index) of your query i.e. it allows you to search for all tweets for a particular day (you will see this in action later)
+- it is used to determine the partition in which a particular tweet will land
+- each partition will contain a day worth of tweets
+- only this column can be used in the WHERE clause (unless you create a secondary index) of your query i.e. it allows you to search for all tweets for a particular day (you will see this in action later)
 
 `create` and `tweeter` are clustering columns
 	
-	they determine how data is sorted on disk and returned in queries
-	since created column is specified before tweeter, the tweet time stamp will be used for sorting (i.e. the latest tweet first) followed by the twitter screen name (alphabetical order)
-	you can use the tweeter column in a where clause (as well) by adding allow filtering to the query
+- they determine how data is sorted on disk and returned in queries
+- since `created` column is specified before `tweeter`, the tweet time stamp will be used for sorting (i.e. the latest tweet first) followed by the twitter screen name (alphabetical order)
+- you can use the `tweeter` column in a `where` clause (as well) by adding `allow filtering` to the query
 
 ### Infrastructure setup steps ###
 
@@ -106,8 +104,8 @@ Even though today in this lab, we will be using a pre-provisioned Data Hub insta
 + A DHCS instance has already been provisioned for the lab. The instructor will share the instance details with you.
 
 + SSH as `opc` with the `privatekey `to the VM using the `IP address` from the previous step. You could use PuTTY or the SSH command. Further information [here](https://docs.oracle.com/en/cloud/paas/data-hub-cloud/user/connecting-cluster-node-secure-shell-ssh.html#GUID-16765BDA-5713-43C7-82D4-5EE62E31C481)
-+ As `oracle` fire up cqlsh
-	+ sudo su oracle
++ As `oracle` user, log into Cassandra using `cqlsh`
+	+ `sudo su oracle`
 	+ cqlsh -u admin `hostname`   
 
 ![](images/7.PNG)
@@ -120,11 +118,11 @@ Choose a unique name for your keyspace and create it. Lets take `tweetspace9464`
 
 #### Create table to store tweets ####
 
-Execute the following at the cqlsh prompt
+Execute the following at the `cqlsh` prompt
 
-`USE tweetspace9464;`
-`CREATE TABLE tweets (tweeter text,tweet_id text,tweet text,created timestamp,created_date text,PRIMARY KEY ((created_date), created, tweeter)) WITH CLUSTERING ORDER BY (created DESC);`
-`desc tweetspace9464;`
+- `USE tweetspace9464;` //switch to the appropriate keyspace
+- `CREATE TABLE tweets (tweeter text,tweet_id text,tweet text,created timestamp,created_date text,PRIMARY KEY ((created_date), created, tweeter)) WITH CLUSTERING ORDER BY (created DESC);` //create the table
+- `desc tweetspace9464;` //confirm
 
 ![](images/8.PNG)
 
@@ -153,7 +151,7 @@ Execute the following at the cqlsh prompt
 + By default, the producer and query code is hard-coded to refer to `tweetspace` as the keyspace. This needs to be changed at both places to reflect the right keyspace value.
 + For the Tweet producer app, update the code to reflect the right keyspace. In this case, we are changing it to `tweetspace9464`
 
-	Modify line #9 in [TweetInfo.java](https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app/blob/master/accs-dhcs-cassandra-tweets-producer/src/main/java/com/oracle/cloud/accs/dhcs/cassandra/producer/TweetInfo.java)
+	Modify the `keyspace` element of the `@Table` annotation in [TweetInfo.java](https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app/blob/master/accs-dhcs-cassandra-tweets-producer/src/main/java/com/oracle/cloud/accs/dhcs/cassandra/producer/TweetInfo.java)
 
 	The updated line should read `@Table(keyspace = "tweetspace9464", name = "tweets",`
 
@@ -165,11 +163,7 @@ Execute the following at the cqlsh prompt
 
 + The build process will create `accs-cassandra-tweets-producer-dist.zip` in the target directory.
 
-+ For the Tweets Query Service, update the code to reflect the right keyspace. In this case, we are changing it to `tweetspace9464`
-
-	Modify line #15 in [CassandraConfig.java](https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app/blob/master/accs-dhcs-cassandra-tweets-api/src/main/java/com/oracle/cloud/accs/dhcs/cassandra/tweets/api/CassandraConfig.java)
-
-	The updated line should read `String keyspace = System.getenv().getOrDefault("CASSANDRA_TWEETS_KEYSPACE", "tweetspace9464");`
++ For the Tweets Query Service, you can use the `CASSANDRA_TWEETS_KEYSPACE` environment variable to specify the keyspace (details in the next section)
 
 + Build the Tweets Query Service.
 
@@ -259,7 +253,9 @@ Execute the following at the cqlsh prompt
 	
 	`"DHCS_NODE_LIST":"129.150.66.74",`
 
-	`"DHCS_CLIENT_PORT":"9042"`
+	`"DHCS_CLIENT_PORT":"9042",`
+	
+	`"CASSANDRA_TWEETS_KEYSPACE":"tweetspace9464"`
 
 	`}`
 	
@@ -285,7 +281,7 @@ Execute the following at the cqlsh prompt
 
 If you don’t want to use UI, you can use the following PSM CLI command to create the ACCS app in this case
 
-	`psm accs push -n TweetsQueryService -r java -s hourly -m manifest.json -d deployment.json –p accs-dhcs-cassandra-tweets-api-dist`
+`psm accs push -n TweetsQueryService -r java -s hourly -m manifest.json -d deployment.json –p accs-dhcs-cassandra-tweets-api-dist`
 
 ![](images/15.png)
 
@@ -298,15 +294,11 @@ If you don’t want to use UI, you can use the following PSM CLI command to crea
   
 + Start the Producer app using the PSM CLI Command. This should begin to load the tweets into the Cassandra DB.
 
-	`curl -X GET <tweet_producer_app_url>/tweets/producer` 
-	
-	e.g. `curl -X GET https://TweetsProducer-ocloud100.apaas.us2.oraclecloud.com/tweets/producer`
+`curl -X GET <tweet_producer_app_url>/tweets/producer` e.g. `curl -X GET https://TweetsProducer-ocloud100.apaas.us2.oraclecloud.com/tweets/producer`
 
 ![](images/21.PNG)
 
-	You can verify by logging into the Cassandra DB and querying the table
-
-	`select * from tweets;`
+You can verify by logging into the Cassandra DB and querying the table `select * from tweets;`
 
 ![](images/17.PNG)
 
@@ -316,26 +308,18 @@ If you don’t want to use UI, you can use the following PSM CLI command to crea
 
 + Use the Tweets Query service to query all the tweets.
 
-	`curl -X GET <tweets_query_app_url>/tweets` 
-
-	e.g. `curl -X GET https://TweetsQueryService-ocloud100.apaas.us2.oraclecloud.com/tweets/`
+`curl -X GET <tweets_query_app_url>/tweets` e.g. `curl -X GET https://TweetsQueryService-ocloud100.apaas.us2.oraclecloud.com/tweets/`
 
 + Use the Tweets Query service to query all the tweets on a given date.
 
-	`curl -X GET <tweets_query_app_url>/tweets/date/<date>` 
-
-	e.g. `curl -X GET https://TweetsQueryService-ocloud100.apaas.us2.oraclecloud.com/tweets/date/2018–03-08`
+`curl -X GET <tweets_query_app_url>/tweets/date/<date>` e.g. `curl -X GET https://TweetsQueryService-ocloud100.apaas.us2.oraclecloud.com/tweets/date/2018–03-08`
 
 + Use the Tweets Query service to query all the tweets by a particular tweeter.
 
-	`curl -X GET <tweets_query_app_url>/tweets/tweeter/<twitter id>` 
-
-	e.g. `curl -X GET https://TweetsQueryService-ocloud100.apaas.us2.oraclecloud.com/tweets/tweeter/anil9464`
+`curl -X GET <tweets_query_app_url>/tweets/tweeter/<twitter id>` e.g. `curl -X GET https://TweetsQueryService-ocloud100.apaas.us2.oraclecloud.com/tweets/tweeter/anil9464`
 
 + Stop the producer app from loading more tweets into the Cassandra DB
 
-	`curl -X DELETE <app_url>/tweets/producer`
-
-	eg `curl -X DELETE https://TweetsProducer-ocloud100.apaas.us2.oraclecloud.com/tweets/producer`
+`curl -X DELETE <app_url>/tweets/producer` eg `curl -X DELETE https://TweetsProducer-ocloud100.apaas.us2.oraclecloud.com/tweets/producer`
 
 ![](images/19.PNG)
