@@ -106,7 +106,7 @@ Even though today in this lab, we will be using a pre-provisioned Data Hub insta
 + SSH as `opc` with the `privatekey `to the VM using the `IP address` from the previous step. You could use PuTTY or the SSH command. Further information [here](https://docs.oracle.com/en/cloud/paas/data-hub-cloud/user/connecting-cluster-node-secure-shell-ssh.html#GUID-16765BDA-5713-43C7-82D4-5EE62E31C481)
 + As `oracle` user, log into Cassandra using `cqlsh`
 	+ `sudo su oracle`
-	+ cqlsh -u admin `hostname`   
+	+ `cqlsh -u admin `hostname` `  
 
 ![](images/7.PNG)
 
