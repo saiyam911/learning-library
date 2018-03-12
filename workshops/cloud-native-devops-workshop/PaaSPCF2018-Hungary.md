@@ -44,7 +44,7 @@ The content contains several independent modules that cover different aspects of
 
 #### Theme : Cloud Native Application Development ####
 
-+ [Anil - Twitter DHCS lab](accs-dhcs-twitter/README.md)
++ [Build a Tweet analysis service using Application Container CS + Data Hub CS Cassandra](accs-dhcs-twitter/README.md)
 
 <p>-</p>
 
