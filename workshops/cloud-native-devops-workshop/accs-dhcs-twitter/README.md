@@ -79,7 +79,7 @@ Even though today in this lab, we will be using a pre-provisioned Data Hub insta
 
 + Login to [Oracle Public Cloud](https://cloud.oracle.com/home). Navigate to Data Hub using the Dashboard or the Navigation Menu on the top left corner of the page.
 
-![](images/3.png)
+![](images/3.PNG)
 
 + Click on Create Instance and fill in the details on the next page. Important items to keep track of are the SSH Key and the Username / Password for the Cassandra Instance(s).
 
@@ -87,19 +87,19 @@ Even though today in this lab, we will be using a pre-provisioned Data Hub insta
 
 + Here is an example of a basic single node cluster running Cassandra 3.1.1. 
 
-![](images/5.png)
+![](images/5.PNG)
 
 	The `Public IP` is the IP address of the VM on which the Cassandra instance is running. 
 
 + By default, SSH access to the Data Hub Instance is not enabled. To enable access, click on the menu item on the top right and select `Access Rules`.
 
-![](images/6.png)
+![](images/6.PNG)
 
 + `ora_p2cass_ssh` is disabled by default. click on the menu item on the right corner corresponding to this rule and `Enable` the rule. It will take a short amount of time for the rule to be enabled.
 
 + If we want to allow communication from internet to the Cassandra DB, then we will have to create a new Access Rule. Click on `Create Rule` and fill in the details as shown in figure below
 
-![](images/20.png)
+![](images/20.PNG)
 
 #### SSH to the VM ####
 
@@ -110,7 +110,7 @@ Even though today in this lab, we will be using a pre-provisioned Data Hub insta
 	+ sudo su oracle
 	+ cqlsh -u admin `hostname`   
 
-![](images/7.png)
+![](images/7.PNG)
 
 #### Create a unique keyspace ####
 
@@ -126,7 +126,7 @@ Execute the following at the cqlsh prompt
 `CREATE TABLE tweets (tweeter text,tweet_id text,tweet text,created timestamp,created_date text,PRIMARY KEY ((created_date), created, tweeter)) WITH CLUSTERING ORDER BY (created DESC);`
 `desc tweetspace9464;`
 
-![](images/8.png)
+![](images/8.PNG)
 
 #### Create a Twitter app ####
 
@@ -294,7 +294,7 @@ If you don’t want to use UI, you can use the following PSM CLI command to crea
 + After both the apps have been deployed, navigate to their respective home pages to confirm that both are up and running and note down some key points
 + Click on the TweetsProducer app and navigate to its home page. Note down the App URL for the Producer app at the top of the page
  
-![](images/16.png)
+![](images/16.PNG)
   
 + Start the Producer app using the PSM CLI Command. This should begin to load the tweets into the Cassandra DB.
 
@@ -302,17 +302,17 @@ If you don’t want to use UI, you can use the following PSM CLI command to crea
 	
 	e.g. `curl -X GET https://TweetsProducer-ocloud100.apaas.us2.oraclecloud.com/tweets/producer`
 
-![](images/21.png)
+![](images/21.PNG)
 
 	You can verify by logging into the Cassandra DB and querying the table
 
 	`select * from tweets;`
 
-![](images/17.png)
+![](images/17.PNG)
 
 + Click on the Tweets Query Service app and navigate to its home page. Note down the App URL for the app at the top of the page
 
-![](images/18.png)
+![](images/18.PNG)
 
 + Use the Tweets Query service to query all the tweets.
 
@@ -338,4 +338,4 @@ If you don’t want to use UI, you can use the following PSM CLI command to crea
 
 	eg `curl -X DELETE https://TweetsProducer-ocloud100.apaas.us2.oraclecloud.com/tweets/producer`
 
-![](images/19.png)
+![](images/19.PNG)
