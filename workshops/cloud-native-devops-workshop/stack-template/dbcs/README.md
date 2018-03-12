@@ -186,6 +186,8 @@ If this is the first time for anyone in this Oracle Cloud account to work with t
 
 ![](images/14.png)
 
++ If you are unable to resolve the errors, then look up the `artifacts` folder and you shall find a working sample of `MyDBCSTemplate.yaml`. You could either import this directly or copy paste the same into the Template Builder and use it.
+
 #### Test the Template ####
 
 + Click on the + symbol (on the right corresponding to the template) in order to spin up a stack from this template. 
@@ -198,3 +200,5 @@ Sample values: Name -> MyStack, Database Password -> Ach1z0#d.
 + On clicking the Confirm button, request for Stack provisioning is submitted.
 
 ![](images/16.png)
+
++ Give it some time and your new Stack should be provisioned consisting of a Database Cloud Service instance
