@@ -3,7 +3,7 @@
 
 #### Client Image vm
 
-This workshop will use Client Image vm provisioned on Oracle Compute with required tools for this workshop, only VNC viewer is nedeed, link for download is on [client tools page](ClientTools.md). You can use your client environment if you have [required tools](ClientTools.md).
+This workshop will use Client Image vm provisioned on Oracle Compute with required tools for this workshop, only VNC viewer is nedeed, link for download is on [client tools page](ClientTools.md). You can use your client environment if you have [required tools](ClientTools.md). Client Image environment setup is [here](EnvSetup.md).
 
 #### Oracle Public Cloud PaaS  account
 
