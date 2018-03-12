@@ -155,7 +155,7 @@ If this is the first time for anyone in this Oracle Cloud account to work with t
 
 + Update this value and use the Fn::Join function to add the text "DB" to the end of the stack's name. Pass the arguments to this function as a sequence:
 
-![](images/13.png)
+![](images/13.PNG)
 
 + For vmPublicKeyText, retrieve the value of your publicKey parameter: `'Fn::GetParam': publicKey`
 + Expand parameters, and then expand 0.
