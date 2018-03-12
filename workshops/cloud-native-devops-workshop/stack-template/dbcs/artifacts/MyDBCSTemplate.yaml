@@ -1,0 +1,54 @@
+template:
+  templateName: MyDBCSTemplate
+  templateVersion: 1.0.0
+  templateDescription: Create a DBCS instance
+  parameters:
+    dbPassword:
+      label: Database Password
+      description: The password for the DB system administrator
+      type: Password
+      mandatory: true
+      minLength: 8
+      maxLength: 30
+    publicKey:
+      label: SSH Public Key
+      description: 'Generate a new key pair, enter a key value, or upload a key file'
+      type: Ssh
+      mandatory: true
+  parameterGroups: []
+  attributes: {}
+  conditions: {}
+  resources:
+    2ff90e6e:
+      type: DBaaS
+      parameters:
+        serviceName:
+          'Fn::Join':
+            - ''
+            - - 'Fn::GetParam': serviceName
+              - DB
+        shape: oc3
+        vmPublicKeyText:
+          'Fn::GetParam': publicKey
+        subscriptionType: HOURLY
+        level: PAAS
+        version: 12.2.0.1
+        edition: SE
+        parameters:
+          - type: db
+            usableStorage: 15
+            adminPassword:
+              'Fn::GetParam': dbPassword
+            sid: ORCL
+            backupDestination: NONE
+      depends_on: []
+viewMetadata:
+  zoom:
+    translate:
+      - 0
+      - 0
+    scale: 1
+  coordinates:
+    2ff90e6e:
+      x: 95.202117491357
+      y: 75
