@@ -147,6 +147,8 @@ Execute the following at the `cqlsh` prompt
 + Start by fetching the project from Github
 
 	`git clone https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app`
+	
+	Or navigate to the [GitHub URL](https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app) and click on the `Clone or Download ` button and choose the `Download as zip` option to get the code
 
 + By default, the producer and query code is hard-coded to refer to `tweetspace` as the keyspace. This needs to be changed at both places to reflect the right keyspace value.
 + For the Tweet producer app, update the code to reflect the right keyspace. In this case, we are changing it to `tweetspace9464`
