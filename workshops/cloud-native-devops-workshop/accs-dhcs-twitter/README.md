@@ -283,7 +283,8 @@ Execute the following at the `cqlsh` prompt
 
 If you don’t want to use UI, you can use the following PSM CLI command to create the ACCS app in this case
 
-```psm accs push -n PaaSForumTweetsQueryService -r java -s hourly -m manifest.json -d deployment.json -p target/accs-dhcs-cassandra-tweets-api-dist.zip
+```
+psm accs push -n PaaSForumTweetsQueryService -r java -s hourly -m manifest.json -d deployment.json -p target/accs-dhcs-cassandra-tweets-api-dist.zip
 ```
 
 ![](images/15.png)
