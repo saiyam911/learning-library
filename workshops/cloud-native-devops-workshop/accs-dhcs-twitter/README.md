@@ -101,7 +101,7 @@ Even though today in this lab, we will be using a pre-provisioned Data Hub insta
 
 #### SSH to the VM ####
 
-+ A DHCS instance has already been provisioned for the lab. The instructor will share the instance details with you.
++ A DHCS instance has already been provisioned for the lab. The instructor will [share](artifacts/dhcs-instance.md) the instance details with you.
 
 + SSH as `opc` with the `privatekey `to the VM using the `IP address` from the previous step. You could use PuTTY or the SSH command. Further information [here](https://docs.oracle.com/en/cloud/paas/data-hub-cloud/user/connecting-cluster-node-secure-shell-ssh.html#GUID-16765BDA-5713-43C7-82D4-5EE62E31C481)
 + As `oracle` user, log into Cassandra using `cqlsh`
