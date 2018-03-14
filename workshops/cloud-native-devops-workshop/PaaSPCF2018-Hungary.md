@@ -39,7 +39,7 @@ The content contains several independent modules that cover different aspects of
 
 #### Theme: Common Platform Tools  ####
 
-+ [Managing Oracle Java Cloud Service Instances Using the PSM CLI](../psm-jcs-mgmt/README.md)
++ [Managing Oracle Java Cloud Service Instances Using the PSM CLI](psm-jcs-mgmt/README.md)
 + [Creating a Template for Oracle Cloud Stack Manager](stack-template/dbcs/README.md)
 
 #### Theme : Cloud Native Application Development ####
