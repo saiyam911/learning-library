@@ -100,4 +100,5 @@ If you need to install newer Python version with pip tool (package management sy
 
 weblogic/Alpha2014_
 
-system/Alpha2014_@PDB1
+system/Alpha2014_
+@PDB1
