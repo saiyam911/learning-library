@@ -40,6 +40,7 @@ On the download page click the download image on the right and follow the instru
 
 Install the PaaS CLI as a Python package. Use the PIP tool pip3 to install the CLI Python package. PIP is already installed if you are using Python 2 >=2.7.9 or Python 3 >=3.4 binaries downloaded from [python.org](https://www.python.org/), if you need to upgrade you can follow this steps for [upgrade pip](https://pip.pypa.io/en/stable/installing/#upgrading-pip).
 ```
+sudo su
 >pip3 install -U psmcli.zip
 ```
 ![](images/psmcli-install-01.png)
