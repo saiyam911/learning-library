@@ -92,6 +92,11 @@ If you need to install newer Python version with pip tool (package management sy
 
         sudo yum install python34
         sudo yum install python34-pip
+        sudo su
+        unlink /bin/python 
+        exit
+        sudo ln -s /usr/bin/python3 /bin/python
+        sudo ln -s /bin/python3 python
 
 
 ## Alpha2014 passwords ##
