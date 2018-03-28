@@ -36,6 +36,9 @@ The content contains several independent modules that cover different aspects of
 
 + [Create Database Cloud Service Instance using user interface](dbcs-create/README.md)
 + [Create Java Cloud Service Instance using user interface on OCI-Classic](jcs-create/README.md)
+
+<p>-</p>
+
 + [Creating DB Schema, Loading Application Data and Creating WebLogic DataSource](AppDataLoad-DevCS-DBCS/README.md)
 + [Deploy J2EE Application on JCS using DevCS & DBCS](AppDeploy-JCS-DevCS-DBCS/README.md)
 
