@@ -88,15 +88,62 @@ In order to use PSM CLI tool you need to have Python 3.3+, you can check Python 
         
         python3 --version
 
-If you need to install newer Python version with pip tool (package management system used to install and manage software packages written in Python) run this commands and create soft links:
+If you need to install newer Python version with pip tool (package management system used to install and manage software packages written in Python) run this commands:
 
-        sudo yum install python34
-        sudo yum install python34-pip
-        sudo su
-        unlink /bin/python 
-        exit
-        sudo ln -s /usr/bin/python3 /bin/python
-        sudo ln -s /bin/python3 python
+        [oracle@ae42e9 OPCWorkshop]$ sudo yum install python34
+        
+and then:
+
+        [oracle@ae42e9 OPCWorkshop]$ sudo yum install python34-pip
+        
+You can check if Python 3.4 was properly installed with:        
+        
+        [oracle@ae42e9 OPCWorkshop]$ python3 --version
+
+and Python package management 
+
+        [oracle@ae42e9 OPCWorkshop]$ pip3 --version
+
+Now we can install psmcli tool, you can download it using UI or API, UI example is here, API example is below:
+
+        [oracle@ae42e9 OPCWorkshop]$ curl -X GET -u cloud.admin:minoR@3BEnding -H X-ID-TENANT-NAME:gse00003442 https://psm.europe.oraclecloud.com/paas/core/api/v1.1/cli/gse00003442/client -o psmcli.zip
+
+You should have now psmcli.zip in yor cuerrnt directory, and now we can istall it:
+
+        [oracle@ae42e9 OPCWorkshop]$ sudo -H pip3 install -U psmcli.zip
+
+Because of two version python on our Client Image we will create a virtual environment for our psm cli in our home directory:
+
+        [oracle@ae42e9 OPCWorkshop]$ pyvenv-3.4 ~/psmclivenv
+
+Now we can activate the virtual environment, where we will have proper version of Python, and invoke the psm cli setup to connect to environment:
+
+        [oracle@ae42e9 OPCWorkshop]$ source ~/psmclivenv/bin/activate
+        (psmclivenv) [oracle@ae42e9 OPCWorkshop]$ python --version
+        Python 3.4.5
+        (psmclivenv) [oracle@ae42e9 OPCWorkshop]$ psm setup
+        Username: cloud.admin
+        Password: 
+        Retype Password: 
+        Identity domain: gse00003442
+        Region [us]: emea
+        Output format [short]: 
+        Use OAuth? [n]: 
+        ----------------------------------------------------
+        'psm setup' was successful. Available services are:
+        
+        o ADWC : Oracle Autonomous Data Warehouse Cloud
+        o ADWCP : Oracle Autonomous Data Warehouse Cloud Platform
+        ...
+        o jcs : Oracle Java Cloud Service
+        o dbcs : Oracle Database Cloud Service
+        ...
+        o stack : Oracle Cloud Stack Manager
+        ----------------------------------------------------
+        (psmclivenv) [oracle@ae42e9 OPCWorkshop]$ psm jcs services
+        Service       Status  
+        Alpha01A-JCS  Ready   
+        (psmclivenv) [oracle@ae42e9 OPCWorkshop]$ 
 
 
 ## Alpha2014 passwords ##
