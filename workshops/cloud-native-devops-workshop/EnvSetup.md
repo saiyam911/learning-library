@@ -145,6 +145,14 @@ Now we can activate the virtual environment, where we will have proper version o
         Alpha01A-JCS  Ready   
         (psmclivenv) [oracle@ae42e9 OPCWorkshop]$ 
 
+Once you are done with virtual environment, you can deactivate it and will now have access to default python version installed in the machine:
+
+        (psmclivenv) [oracle@ae42e9 OPCWorkshop]$ deactivate
+        [oracle@ae42e9 OPCWorkshop]$ 
+        [oracle@ae42e9 OPCWorkshop]$ python --version
+        Python 2.7.5
+        [oracle@ae42e9 OPCWorkshop]$ 
+
 
 ## Alpha2014 passwords ##
 
