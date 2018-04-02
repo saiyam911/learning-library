@@ -198,7 +198,7 @@ Follow the below steps to enable the port for your appliaction access.
 
 **Name:** `AlphaProductsDB`
 
-**JNDI Name:** `jdbc/Alpha01A-DBCS-ds`
+**JNDI Name:** `jdbc/Alpha01A-DBCS-ds-CanDo`
 
 **Database type:** `Oracle`
 
