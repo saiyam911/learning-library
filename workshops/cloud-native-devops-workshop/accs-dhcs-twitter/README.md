@@ -10,9 +10,9 @@ This lab goes through the steps to use the Oracle Public Cloud to build a simple
 
 ### Background ###
 
-Oracle Public Cloud now includes Data Hub Cloud Service which offers Apache Cassandra as a managed solution and Oracle Application Container Cloud Service offers a polyglot, cloud native application development platform.
+Oracle Public Cloud now includes Data Hub Cloud Service which offers Apache Cassandra as a managed solution and Oracle Application Container Cloud Service that offers a polyglot, cloud native application development platform.
 
-As part of this lab, a service (application) would be consuming a continuous stream of tweets (high velocity data) and persist it the Data Hub Cloud. These tweets will be later queried from Data Hub Cloud using another service (application). The above mentioned (micro) services are deployed to Oracle Application Container Cloud and they enjoy the native integration capability which this platform provides with Data Hub Cloud.
+As part of this lab, a service (application) would be consuming a continuous stream of tweets (high velocity data) and persist it to the Data Hub Cloud. These tweets will be later queried from Data Hub Cloud using another service (application). The above mentioned (micro) services are deployed to Oracle Application Container Cloud and they enjoy the native integration capability which this platform provides with Data Hub Cloud.
 
 ### Prerequisites ###
 
@@ -67,13 +67,13 @@ This table is meant to store tweets in time series style — the primary key
 
 ### Infrastructure setup steps ###
 
-+ Setup a Cassandra cluster using Oracle Datahub Cloud console and bootstrap Cassandra (keyspace and table)
++ Setup a Cassandra cluster using Oracle Datahub Cloud console and bootstrap Cassandra (keyspace and table). In this lab, the Cassandra cluster is already setup - you do not have to create one.
 + Create a Twitter app which provides us with the required authentication tokens
 + Prepare the code for deployment to Application Container Cloud Service taking the environment variables into consideration
 
 #### Provision Cassandra on Oracle Data Hub Cloud ####
 
-Even though today in this lab, we will be using a pre-provisioned Data Hub instance, here are the steps to set it up.
+Today in this lab, we will be using a pre-provisioned Data Hub instance. The details of the instance are available [here](https://github.com/dvukmano/learning-library/blob/master/workshops/cloud-native-devops-workshop/accs-dhcs-twitter/artifacts/dhcs-instance.md). Please note that the following steps in this section are only for your knowledge, you do not have to setup the Data Hub instance. 
 
 + Login to [Oracle Public Cloud](https://cloud.oracle.com/home). Navigate to Data Hub using the Dashboard or the Navigation Menu on the top left corner of the page.
 
@@ -101,18 +101,19 @@ Even though today in this lab, we will be using a pre-provisioned Data Hub insta
 
 #### SSH to the VM ####
 
-+ A DHCS instance has already been provisioned for the lab. The instructor will [share](artifacts/dhcs-instance.md) the instance details with you.
++ A DHCS instance has already been provisioned for the lab. The instance details are available [here](artifacts/dhcs-instance.md), all the DHCS environment information that you would need to complete the lab and present in the file.
 
 + SSH as `opc` with the `privatekey `to the VM using the `IP address` from the previous step. You could use PuTTY or the SSH command. Further information [here](https://docs.oracle.com/en/cloud/paas/data-hub-cloud/user/connecting-cluster-node-secure-shell-ssh.html#GUID-16765BDA-5713-43C7-82D4-5EE62E31C481)
 + As `oracle` user, log into Cassandra using `cqlsh`
 	+ `sudo su oracle`
 	+ cqlsh -u admin \`hostname\`
+	+ the password is the same as the DHCS Password that is mentioned [here](https://github.com/dvukmano/learning-library/blob/master/workshops/cloud-native-devops-workshop/accs-dhcs-twitter/artifacts/dhcs-instance.md)
 
 ![](images/7.PNG)
 
 #### Create a unique keyspace ####
 
-Choose a unique name for your keyspace and create it. Lets take `tweetspace9464` to proceed. 
+Choose a unique name for your keyspace and create it. Lets take `tweetspace9464` in this case to proceed. 
 
 `CREATE KEYSPACE tweetspace9464 WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };`
 
@@ -143,7 +144,7 @@ Execute the following at the `cqlsh` prompt
 
 #### Build Application ####
 
-+ Ensure that a development environment is available (Java & Maven should be installed and configured). Get in touch with the instructore for further queries.
++ Ensure that a development environment is available (Java & Maven should be installed and configured). Get in touch with the instructor for further queries.
 + Start by fetching the project from Github
 
 	`git clone https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app`
@@ -177,11 +178,11 @@ Execute the following at the `cqlsh` prompt
 
 #### Application Deployment to ACCS ####
 
-+ To deploy the application to ACCS, you will need two more artifacts (deployment.json & manifest.json). The contents of both of them will be different for the Tweets Producer app and Tweets Query Service.
++ To deploy the application to ACCS, you will need two more artifacts (deployment.json & manifest.json) for each of the services. The contents of both of them will be different for the Tweets Producer app and Tweets Query Service. The github code does have a sample for the two json files but they need to be modified to suit our purpose.
 
 ##### Artifacts for Tweets Producer app #####
 
-+ An important point to note is, the Data Hub Cloud Service (Cassandra instance) is hosted in a different identity domain than the one that will be hosting the ACCS instances. Hence the out of box service binding between ACCS and DHCS cannot be utilized. Explicit references must be made as environment variables. Do not use the deployment.json file from GitHub. 
++ An important point to note is, the Data Hub Cloud Service (Cassandra instance) is hosted in a different identity domain than the one that will be hosting the ACCS instances. Hence the out of box service binding between ACCS and DHCS cannot be utilized. Explicit references must be made as environment variables. Do not use the deployment.json file from GitHub as is, it has to be modified along the values mentioned below. 
 + Sample deployment.json for the Tweets Producer App. Fill in the values as per your environment(s)
 
 	`{`
@@ -202,18 +203,18 @@ Execute the following at the `cqlsh` prompt
 	
 	`"TWITTER_TRACKED_TERMS":"nosql,cloud",`
 	
-	`"DHCS_USER_NAME":"Cassandra DB User Name", `
+	`"DHCS_USER_NAME":"<Cassandra DB User Name>", `
 	
-	`"DHCS_USER_PASSWORD":"Cassandra DB password", `
+	`"DHCS_USER_PASSWORD":"<Cassandra DB password>", `
 	
-	`"DHCS_NODE_LIST":"<IP Address of Cassandra DB VM",` 
+	`"DHCS_NODE_LIST":"<IP Address of Cassandra DB VM>",` 
 	
 	`"DHCS_CLIENT_PORT":"9042"`
 	
 	`}`
 	
 	`}`
-+ Sample manifest.json. No values to be changed here
++ Sample manifest.json. You can use the same one that has been downloaded from GitHub. No values are to be changed here.
 
 	`{`
 
@@ -239,7 +240,7 @@ Execute the following at the `cqlsh` prompt
 
 ##### Artifacts for Tweets Query Service #####
 
-+ Sample deployment.json for the Tweets Query Service App. Fill in the values as per your environment(s)
++ Sample deployment.json for the Tweets Query Service App. Fill in the values as per your environment details specified [here](https://github.com/dvukmano/learning-library/blob/master/workshops/cloud-native-devops-workshop/accs-dhcs-twitter/artifacts/dhcs-instance.md)
 
 	`{`
 
@@ -249,11 +250,11 @@ Execute the following at the `cqlsh` prompt
 
 	`"environment": {`
 	
-	`"DHCS_USER_NAME":"admin",`
+	`"DHCS_USER_NAME":"<Cassandra DB User Name>",`
 	
-	`"DHCS_USER_PASSWORD":"Ach1z0#d",`
+	`"DHCS_USER_PASSWORD":"<Cassandra DB password>",`
 	
-	`"DHCS_NODE_LIST":"129.150.66.74",`
+	`"DHCS_NODE_LIST":"<IP Address of Cassandra DB VM>",`
 
 	`"DHCS_CLIENT_PORT":"9042",`
 	
@@ -263,7 +264,7 @@ Execute the following at the `cqlsh` prompt
 	
 	`}`
 
-+ Sample manifest.json for the Tweets Query Service App. No values to be changed here.
++ Sample manifest.json for the Tweets Query Service App. You can use the same one that has been downloaded from GitHub. No values are to be changed here.
 
 	 `{`
 	
@@ -279,7 +280,7 @@ Execute the following at the `cqlsh` prompt
 
 ![](images/14.png)
 
-+ Click on Create Application and choose Java SE as the type that you want to create. Provide name for the instance (TweetsQueryService), manifest.json and deployment.json. Click on Create at the bottom.
++ Click on Create Application and choose Java SE as the type that you want to create. Provide name for the instance (TweetsQueryService) and the manifest.json and deployment.json files. Click on Create at the bottom.
 
 If you don’t want to use UI, you can use the following PSM CLI command to create the ACCS app in this case
 
@@ -291,7 +292,7 @@ psm accs push -n PaaSForumTweetsQueryService -r java -s hourly -m manifest.json 
 
 #### Verifying functionality ####
 
-+ After both the apps have been deployed, navigate to their respective home pages to confirm that both are up and running and note down some key points
++ After both the apps have been deployed, navigate to their respective home pages to confirm that both are up and running and note down some key values
 + Click on the TweetsProducer app and navigate to its home page. Note down the App URL for the Producer app at the top of the page
  
 ![](images/16.PNG)
