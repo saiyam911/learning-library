@@ -191,7 +191,7 @@ Now that we have the source code in our managed GIT repository, we need to creat
 
 **Username:** `weblogic`
 
-**Password:** `<Password provided during JCS instance creation>`
+**Password:** `Alpha2014_`
 
 ![](images/Alpha_Office_Application_Workshop-26.png)
 
@@ -223,7 +223,7 @@ Now that we have the source code in our managed GIT repository, we need to creat
 
 + Check the deployment status in the weblogic EM console
 
-     o Open a browser and go to https://<public ip of JCS instance>:7002/em
+     o Open a browser and go to `https://<public ip of JCS instance>:7002/em`
 	
      o Login using the weblogic credentials
 	
