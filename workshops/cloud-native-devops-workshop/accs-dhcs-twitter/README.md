@@ -101,7 +101,7 @@ Today in this lab, we will be using a pre-provisioned Data Hub instance. The det
 
 #### SSH to the VM ####
 
-+ A DHCS instance has already been provisioned for the lab. The instance details are available [here](artifacts/dhcs-instance.md), all the DHCS environment information that you would need to complete the lab and present in the file.
++ A DHCS instance has already been provisioned for the lab. The instance details are available [here](artifacts/dhcs-instance.md), all the DHCS environment information that you would need to complete the lab and present in this file. Also the private key to SSH to the VM is available [here](https://github.com/dvukmano/learning-library/blob/master/workshops/cloud-native-devops-workshop/accs-dhcs-twitter/artifacts/PrivateKey.zip)
 
 + SSH as `opc` with the `privatekey `to the VM using the `IP address` from the previous step. You could use PuTTY or the SSH command. Further information [here](https://docs.oracle.com/en/cloud/paas/data-hub-cloud/user/connecting-cluster-node-secure-shell-ssh.html#GUID-16765BDA-5713-43C7-82D4-5EE62E31C481)
 + As `oracle` user, log into Cassandra using `cqlsh`
@@ -149,12 +149,13 @@ Execute the following at the `cqlsh` prompt
 
 	`git clone https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app`
 	
-	Or navigate to the [GitHub URL](https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app) and click on the `Clone or Download ` button and choose the `Download as zip` option to get the code
+	Or navigate to the [GitHub URL](https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app) and click on the `Clone or Download ` button and choose the `Download as zip` option to get the code. 
+	Once you have the code, unzip it if required.
 
 + By default, the producer and query code is hard-coded to refer to `tweetspace` as the keyspace. This needs to be changed at both places to reflect the right keyspace value.
 + For the Tweet producer app, update the code to reflect the right keyspace. In this case, we are changing it to `tweetspace9464`
 
-	Modify the `keyspace` element of the `@Table` annotation in [TweetInfo.java](https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app/blob/master/accs-dhcs-cassandra-tweets-producer/src/main/java/com/oracle/cloud/accs/dhcs/cassandra/producer/TweetInfo.java)
+	Modify the `keyspace` element of the `@Table` annotation in [TweetInfo.java](https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app/blob/master/accs-dhcs-cassandra-tweets-producer/src/main/java/com/oracle/cloud/accs/dhcs/cassandra/producer/TweetInfo.java) present in the above downloaded code.
 
 	The updated line should read `@Table(keyspace = "tweetspace9464", name = "tweets",`
 
@@ -258,7 +259,7 @@ Execute the following at the `cqlsh` prompt
 
 	`"DHCS_CLIENT_PORT":"9042",`
 	
-	`"CASSANDRA_TWEETS_KEYSPACE":"tweetspace9464"`
+	`"CASSANDRA_TWEETS_KEYSPACE":"<Keyspace as specified by you, tweetspace9464 in this case>"`
 
 	`}`
 	
@@ -315,11 +316,11 @@ You can verify by logging into the Cassandra DB and querying the table `select *
 
 `curl -X GET <tweets_query_app_url>/tweets` e.g. `curl -X GET https://TweetsQueryService-ocloud100.apaas.us2.oraclecloud.com/tweets/`
 
-+ Use the Tweets Query service to query all the tweets on a given date.
++ Use the Tweets Query service to query all the tweets on a given date. From the list of tweets mentioned above choose a date and use it in the filter below
 
 `curl -X GET <tweets_query_app_url>/tweets/date/<date>` e.g. `curl -X GET https://TweetsQueryService-ocloud100.apaas.us2.oraclecloud.com/tweets/date/2018–03-08`
 
-+ Use the Tweets Query service to query all the tweets by a particular tweeter.
++ Use the Tweets Query service to query all the tweets by a particular tweeter. From the list of tweets mentioned above choose a twitter id and use it in the filter below
 
 `curl -X GET <tweets_query_app_url>/tweets/tweeter/<twitter id>` e.g. `curl -X GET https://TweetsQueryService-ocloud100.apaas.us2.oraclecloud.com/tweets/tweeter/anil9464`
 
