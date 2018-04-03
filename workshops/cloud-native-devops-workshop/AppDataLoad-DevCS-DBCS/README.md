@@ -138,7 +138,7 @@ Follow the below steps to enable the port for your appliaction access.
 
 **Username:** `system`
 
-**Password:** `Give the DBCS instance password`
+**Password:** `Alpha2014_`
 
 **Credentials File:** `leave it blank`
 
@@ -186,7 +186,7 @@ Follow the below steps to enable the port for your appliaction access.
 
 ![](images/AppDataLoad-DevCS-DBCS-11.png)
 
-+ Log into Weblogic sever console with the `Username / Password` provided
++ Log into Weblogic sever console with the `weblogic / Alpha2014_` 
 
 + From the left pane expand **Services** and select **Data Sources**
 
