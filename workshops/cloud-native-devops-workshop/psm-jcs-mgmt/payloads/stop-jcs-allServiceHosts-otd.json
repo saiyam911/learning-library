@@ -1,7 +1,0 @@
-{
-   "components": {
-      "OTD": {
-         "hosts": ["alpha01a-jcs-lb-1"]
-      }
-   }
-} 
