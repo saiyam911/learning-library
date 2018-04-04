@@ -211,12 +211,12 @@ After you run command, go to jcs console and check backup configuration.
 
 ### Starting/stopping jcs ###
 
-In order to stop jcs instance, managed Server and load balancer and its associated virtual machines (VMs), with one command, [payload](payload/start-stop-jcs-allServiceHosts.json):
+In order to stop jcs instance, managed Server and load balancer and its associated virtual machines (VMs), with one command, [payload](payloads/start-stop-jcs-allServiceHosts.json):
 ```
 >psm jcs stop -s Alpha01A-JCS -c start-stop-jcs-allServiceHosts.json
 ```
 
-You can stop OTD instance with command below, [payload](payload/start-stop-jcs-allServiceHosts-otd.json):
+You can stop OTD instance with command below, [payload](payloads/start-stop-jcs-allServiceHosts-otd.json):
 ```
 >psm jcs stop -s Alpha01A-JCS -c start-stop-jcs-allServiceHosts-otd.json
 ```
@@ -225,7 +225,7 @@ For payload you have to look for host name where load balancer is running, OTD, 
 >psm jcs service -s Alpha01A-JCS -of json | grep -A17 '"OTD":{' | tail -n 1
 ```
 
-You can stop WLS instance with command below, [payload](payload/start-stop-jcs-allServiceHosts-wls.json):
+You can stop WLS instance with command below, [payload](payloads/start-stop-jcs-allServiceHosts-wls.json):
 ```
 >psm jcs stop -s Alpha01A-JCS -c start-stop-jcs-allServiceHosts-wls.json
 ```
@@ -236,15 +236,15 @@ Find the host name of wls component:
 ```
 
 In order to start jcs instace or components you use the same arguments and payloads just change key argument stop --> start:
-- start instance, [payload](payload/start-stop-jcs-allServiceHosts.json)
+- start instance, [payload](payloads/start-stop-jcs-allServiceHosts.json)
 ```
 >psm jcs start -s Alpha01A-JCS -c start-stop-jcs-allServiceHosts.json
 ```
-- start OTD, [payload](payload/start-stop-jcs-allServiceHosts-otd.json)
+- start OTD, [payload](payloads/start-stop-jcs-allServiceHosts-otd.json)
 ```
 >psm jcs start -s Alpha01A-JCS -c start-stop-jcs-allServiceHosts-otd.json
 ```
-- start WLS, [payload](payload/start-stop-jcs-allServiceHosts-wls.json)
+- start WLS, [payload](payloads/start-stop-jcs-allServiceHosts-wls.json)
 ```
 >psm jcs start -s Alpha01A-JCS -c start-stop-jcs-allServiceHosts-wls.json
 ```
