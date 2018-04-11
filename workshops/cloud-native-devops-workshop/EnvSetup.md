@@ -106,7 +106,7 @@ and Python package management
 
 Now we can install psmcli tool, you can download it using UI or API, UI example is [here](jcs-on-oci-psm/psmcli-setup.md), API example is below:
 
-        [oracle@ae42e9 OPCWorkshop]$ curl -X GET -u cloud.admin:minoR@3BEnding -H X-ID-TENANT-NAME:gse00003442 https://psm.europe.oraclecloud.com/paas/core/api/v1.1/cli/gse00003442/client -o psmcli.zip
+        [oracle@ae42e9 OPCWorkshop]$ curl -X GET -u cloud.admin:minoR@3BEnding -H X-ID-TENANT-NAME:gse00003442 https://psm.us.oraclecloud.com/paas/core/api/v1.1/cli/gse00003442/client -o psmcli.zip
 
 You should have now psmcli.zip in yor cuerrnt directory, and now we can istall it:
 
