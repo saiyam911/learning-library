@@ -3,7 +3,7 @@
 
 #### Client Image vm
 
-This workshop will use Client Image vm provisioned on Oracle Compute with required tools for this workshop, only VNC viewer is needed, link for download is on [client tools page](https://github.com/dvukmano/learning-library/blob/PTF-India/workshops/cloud-native-devops-workshop/ClientTools.md). You can use your client environment if you have [required tools](https://github.com/dvukmano/learning-library/blob/PTF-India/workshops/cloud-native-devops-workshop/ClientTools.md).
+This workshop will use Client Image vm provisioned on Oracle Compute with required tools for this workshop, only VNC viewer is needed, link for download is on [client tools page](ClientTools.md). You can use your client environment if you have [required tools](ClientTools.md).
 
 #### Oracle Public Cloud PaaS  account
 
