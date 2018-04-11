@@ -22,7 +22,7 @@ Oracle Cloud is the industry’s broadest and most integrated public cloud. It o
 
 ### Prerequisites ###
 
-In order to run labs it is necessary to setup environment, including source code cloning from github, setup PATH variable for executing maven. Script for environment setup is [here](EnvSetup.md). It is not necessery to immediately go to environment setup, but when there is a specific requirement in some lab than you can check here how to make the required setting of the environment.
+In order to run labs it is necessary to setup environment, including source code cloning from github, setup PATH variable for executing maven. Script for [environment setup is here](EnvSetup.md). It is not necessery to immediately go to environment setup, but when there is a specific requirement in some lab than you can check here how to make the required setting of the environment.
 
 ### Important ###
 
