@@ -20,6 +20,7 @@ If you get feedback of some command with job ID like ```Job ID:    22598785```, 
 To complete this tutorial, you need:
 - Have the appropriate credentials for working with Oracle Java Cloud Service.
 - Provisioned JCS
+- Use of terminal window from Client Image, or terminal window/command prompt on laptop
 - Python 3.3 or later. For more information about downloading and using Python, go to python.org. You will also have to use the PIP tool pip3 to install the CLI Python package. Note: While installing Python, make sure to select the check box Add Python to PATH.
 You can check in this [lab, how to setup PSM CLI tool](../jcs-on-oci-psm/README.md). 
 
