@@ -1,3 +1,5 @@
+Before PSM CLI setup you must ensure that ypou have appropriate Python version, you can find ***Python*** chapter on [environment setup page](../EnvSetup.md).
+
 ### PSM CLI setup ###
 Documentation for PSM CLI setup that includes steps for Windows and Linux platform is [here](https://docs.oracle.com/en/cloud/paas/java-cloud/pscli/using-command-line-interface-1.html), I will show here steps for Windows platform.
 First, download PSM CLI binaries from any PaaS service console. Click on your username, then help and then Download Center.
