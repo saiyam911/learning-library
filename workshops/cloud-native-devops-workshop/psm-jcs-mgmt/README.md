@@ -14,7 +14,7 @@ We will first connect to our identity domain and check for available JCS instanc
 
 Full list of available PSM CLI jcs command you can find here: https://docs.oracle.com/en/cloud/paas/java-cloud/pscli/psm-jcs-commands1.html
 
-If you get feedback of some command with job ID like “Job ID:    22598785”, then you can check status of command with “psm jcs operation-status -j 22598785”.
+If you get feedback of some command with job ID like ```Job ID:    22598785```, then you can check status of command with ```psm jcs operation-status -j 22598785```.
 
 ### Prerequisites ###
 To complete this tutorial, you need:
