@@ -49,6 +49,9 @@ To find out your identity domain ID or identity service ID, sign in to Oracle Cl
 ```
 
 Create your setup payload or use this [example](payloads/gsexxx-classic-short.json) and just change your data and connect to your environment:
+
+**For every payload example you should create .json file**
+
 ```
 >psm setup –c gse00012345-classic-short.json
 ```
