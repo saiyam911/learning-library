@@ -61,10 +61,3 @@ Try those commands also with changing output format to json by adding “-of jso
 
 Note that default output was in “short” format since we setup this format in our profile file, if you want to use “json” as default format that you can change this parameter in profile file.
 
-Command that we wil use to provision jcs environment is:
-```> psm jcs create-service -c create-jcs-payload.json```
-
-Ful description of that command you can check with:
-```>psm jcs create-service h```
-
-We will continue with examples for provisioning different jcs environments. At the beginning of each lab you can see diagram of environment that will be provisioned, then payload file with comments (comments you have to remove if you will use copy/paste) and source code at the end. We will start with simpler environment and adding more details in subsequent environments. Attributes used in payload file are most common one; it is not full list of all attributes.
