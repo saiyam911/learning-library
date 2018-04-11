@@ -122,7 +122,7 @@ Follow the below steps to enable the port for your appliaction access.
 
 + Click on **Source Control** and select **Git**
 
-+ Under **Repository** select 'AlphaOfficeProductCatalogUIdvuk.git'
++ Under **Repository** select 'AlphaOfficeProductCatalogUI.git'
 
 ![](images/AppDataLoad-DevCS-DBCS-15.png)
 
