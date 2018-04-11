@@ -2,12 +2,12 @@
     "fullBackupSchedule":{
         "dayOfWeek":"Fri",
         "hour":"01",
-        "minute":""
+        "minute":"10"
     },
     "incrementalBackupSchedule":{
         "dayOfWeek":"Mon, Tue, Wed, Thu",
         "hour":"01",
-        "minute":""
+        "minute":"10"
     },
     "backups":""
 }
