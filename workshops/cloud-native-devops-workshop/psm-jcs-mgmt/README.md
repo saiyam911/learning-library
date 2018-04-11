@@ -22,7 +22,7 @@ To complete this tutorial, you need:
 - Provisioned JCS
 - Use of terminal window from Client Image, or terminal window/command prompt on laptop
 - Python 3.3 or later. For more information about downloading and using Python, go to python.org. You will also have to use the PIP tool pip3 to install the CLI Python package. Note: While installing Python, make sure to select the check box Add Python to PATH.
-You can check in this [lab, how to setup PSM CLI tool](../jcs-on-oci-psm/README.md). 
+If you are using ###Client Image### you can check in [lab, how to setup PSM CLI tool](../jcs-on-oci-psm/README.md). 
 
 ### Connect to Identity Domain ###
 Be aware that you can get help for any command by adding “h” in command line, for example, help for psm command “psm h”, help for jcs command “psm jcs h”, help for creating jcs instance with payload example “psm jcs create-service h”.
