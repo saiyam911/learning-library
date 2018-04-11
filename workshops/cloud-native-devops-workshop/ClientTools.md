@@ -13,7 +13,8 @@ Once when you installed TigerVNC or any other VNC viewer we need Client Image pu
 - on compute instances list you can find public IP for Client Image
 ![](common/vnc-setup/images/vnc-clientimage-ip-2.png)
 
-- connect to Client Image using VNC viewer ```<ClientImageIP:5911>``` or ```<ClientImageIP:5910>``` for lower resolution if there are bandwith issue, in our exapmple we will connect with ```140.86.14.197:5911```, password is the same password for cloud.admin user
+- connect to Client Image using VNC viewer ```<ClientImageIP:5911>``` or ```<ClientImageIP:5910>``` for lower resolution if there are bandwidth issue, in our example we will connect with ```140.86.14.197:5911```, password is the same password for cloud.admin user
+
 ![](common/vnc-setup/images/vnc-connect-3.png)
 
 - and we are connected
