@@ -140,7 +140,7 @@ If you want to enable access rule back then use this command:
 
 Check backup configurations of Oracle Java Cloud Service instances
 ```
->psm jcs view-backup-config –s Alpha01A-JCS
+>psm jcs view-backup-config -s Alpha01A-JCS
 ```
 Lists all backups of an Oracle Java Cloud Service instance
 ```
@@ -148,16 +148,16 @@ Lists all backups of an Oracle Java Cloud Service instance
 ```
 Check specific backup
 ```
->psm jcs view-backup -s Alpha01A-JCS –b d16b092e-c41a-4c82-b242-8d2379d8c306
+>psm jcs view-backup -s Alpha01A-JCS -b d16b092e-c41a-4c82-b242-8d2379d8c306
 ```
 Delete backup
 ```
->psm jcs delete-backup -s Alpha01A–JCS -b d16b092e-c41a-4c82-b242-8d2379d8c306
+>psm jcs delete-backup -s Alpha01A-JCS -b d16b092e-c41a-4c82-b242-8d2379d8c306
 ```
 
 Update backup configuration. First, let’s see configuration:
 ```
-> psm jcs view-backup-config –s Alpha01A-JCS -of json
+>psm jcs view-backup-config -s Alpha01A-JCS -of json
 ```
 ```
 {
@@ -206,7 +206,7 @@ By default, full backups are initiated weekly starting 12 hours after an instanc
 
 Let’s change backup configuration, full back up on Friday evening and incremental should skip Friday, Saturday and Sunday.
 ```
->psm jcs update-backup-config -s Alpha01A-JCS –c jcs-update-backup-config.json
+>psm jcs update-backup-config -s Alpha01A-JCS -c jcs-update-backup-config.json
 ```
 
 You can get payload for that example [here](payloads/jcs-update-backup-config.json), just update with your data.
