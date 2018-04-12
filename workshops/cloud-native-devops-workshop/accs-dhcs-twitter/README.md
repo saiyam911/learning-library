@@ -73,7 +73,7 @@ This table is meant to store tweets in time series style — the primary key
 
 #### Provision Cassandra on Oracle Data Hub Cloud ####
 
-Today in this lab, we will be using a pre-provisioned Data Hub instance. The details of the instance are available [here](https://github.com/dvukmano/learning-library/blob/master/workshops/cloud-native-devops-workshop/accs-dhcs-twitter/artifacts/dhcs-instance.md). Please note that the following steps in this section are only for your knowledge, you do not have to setup the Data Hub instance. 
+***Today in this lab, we will be using a pre-provisioned Data Hub instance.*** The details of the instance are available [here](https://github.com/dvukmano/learning-library/blob/master/workshops/cloud-native-devops-workshop/accs-dhcs-twitter/artifacts/dhcs-instance.md). Please note that the following steps in this section are only for your knowledge, you do not have to setup the Data Hub instance. 
 
 + Login to [Oracle Public Cloud](https://cloud.oracle.com/home). Navigate to Data Hub using the Dashboard or the Navigation Menu on the top left corner of the page.
 
