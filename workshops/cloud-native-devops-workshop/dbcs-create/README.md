@@ -28,7 +28,7 @@ This is the Database Cloud Service Console page. To create new instance click **
 ![](images/02.png)
 
 The following parameters have to be provided:
-+ **Service Name**: the name of the service instance e.g. techcoDB.
++ **Instance Name**: the name of the service instance e.g. techcoDB.
 + **Description**: any description for your service.
 + **Notification Email**: optional parameter, provisioning status update(s) will be sent to the specified e-mail.
 + **Region**: a region where your instance will be provisioned, it depends on data region for your cloud account, you can leave 'No preference' and instance will be created in default region for your cloud account.
