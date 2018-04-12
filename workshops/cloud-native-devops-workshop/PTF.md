@@ -13,6 +13,8 @@ The workshop is intended to work with an Oracle GSE account. You will get enviro
 + Oracle Cloud **identity domain**
 + **Data center/region**
 
+If you have to free up space on Developer Cloud Service here you can find the steps: [delete Developer Cloud Service project](DevCS-delete-project.md).
+
 ---
 # ORACLE Cloud-Native DevOps workshop #
 
