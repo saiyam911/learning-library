@@ -33,7 +33,7 @@ The following parameters have to be provided:
 + **Notification Email**: optional parameter, provisioning status update(s) will be sent to the specified e-mail.
 + **Region**: a region where your instance will be provisioned, it depends on data region for your cloud account, you can leave 'No preference' and instance will be created in default region for your cloud account.
 + **Service Level**: Oracle Database Cloud Service.
-+ **Metering Frequency**: Monthly. For more details about subscription types see the [documentation](https://docs.oracle.com/cloud/latest/dbcs_dbaas/CSDBI/GUID-F1E6807A-D283-4170-AB2B-9D43CD8DCD92.htm#CSDBI3395).
++ **Metering Frequency**: Hourly. For more details about subscription types see the [documentation](https://docs.oracle.com/cloud/latest/dbcs_dbaas/CSDBI/GUID-F1E6807A-D283-4170-AB2B-9D43CD8DCD92.htm#CSDBI3395).
 + **Software Release**: Oracle Database 12c Release 2.
 + **Software Edition**: Enterprise edition.
 + **Database Type**: Single Instance.
