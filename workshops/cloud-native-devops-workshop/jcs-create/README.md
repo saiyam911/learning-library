@@ -28,51 +28,63 @@ This is the Java Cloud Service Console page. If this is the first time opening J
 
 ![](images/02.png)
 
-To create new instance click **Create Service** button.
+To create new instance click **Create Instance** button and then Java.
 
 ![](images/03.png)
 
-Select subscription type. Select the fully managed Oracle Java Cloud Service and the desired billing format. For more details about subscription types see the [documentation](https://docs.oracle.com/cloud/latest/jcs_gs/JSCUG/GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#JSCUG-GUID-98DD6CE1-480F-4AA9-8131-A1D3D274440F).
-![](images/create.jcs.03.png)
+The following parameters have to be provided:
 
-Select the latest 12c Software Release.
++ **Instance Name**: the name of the service instance e.g. techco
++ **Description**: any description for your service.
++ **Notification Email**: optional parameter, provisioning status update(s) will be sent to the specified e-mail.
++ **Region**: a region where your instance will be provisioned, it depends on data region for your cloud account, you can leave 'No preference' and instance will be created in default region for your cloud account.
++ **Service Level**: Oracle Java Cloud Service.
++ **Software Release**: Oracle WebLogic Server 12c, 12.2.1.3.
++ **Software Edition**: Enterprise edition.
++ **Metering Frequency**: Hourly. For more details about subscription types see the [documentation](https://docs.oracle.com/cloud/latest/dbcs_dbaas/CSDBI/GUID-F1E6807A-D283-4170-AB2B-9D43CD8DCD92.htm#CSDBI3395).
 
 ![](images/05.png)
 
-Select the Enterprise Edition software edition.
+The next input page is the Instance Details page, Simple. The following parameters have to be provided:
+	
++ **Compute Shape**: number of OCPU and size of the RAM. Choose the smallest (default) one, OC3.
++ **Server Count**: number of managed servers in the cluster. Choose 1.
++ **SSH Public Key**: public key which will be uploaded to the VM during the creation. It allows to connect to the VM through ssh connection using the private key. When you click on buton 'Edit' you will have option to generate keypairs with select Create a New Key option and download the newly generated keypair for later usage. Download the generated keypairs zip file to your local folder and unzip for later usage.
+![](images/04.png) 
+If you want to use Putty to connect to VM than you will have to convert generated private key to Putty format. If you are using ssh utility on Linux than before using privateKey it is required to change the mode of the file to rw by owner only.
+
+		$ [oracle@localhost cloud-utils]$  chmod 600 privateKey
+
++ **Local Administrative Username**: username of WebLogic administrator. For demo purposes you can use: weblogic
++ **Password**: WebLogic administrator's password. Don't forget to note the provided password.
++ **Database Configuration - Database Instance Name**: Database Cloud Service name to store WebLogic repository data. Basically the list populated with database services within the same identity domain.
++ **Database Configuration - PDB Name**: pluggable database service identifier of the Database Cloud Service instance -provided above- which will be used to store repository schema. If you have choosen default (PDB1) during Database Cloud Service creation then leave the default here too.
++ **Database Configuration - Administrator User Name**: DBA admin to create repository schema for Java Cloud Service instance. Enter: sys.
++ **Database Configuration - Password**: DBA admin password you provided during Database Cloud Service creation.
+
+Now on the Instance Details page click on Advanced button. 
 
 ![](images/06.png)
 
-The last input page is the Service Details page. The following parameters have to be provided:
-	
-+ **Service Name**: the name of the service instance e.g. techco
-+ **Shape**: number of OCPU and size of the RAM. Choose the smallest (default) one.
-+ **Description**: any description for your service.
-+ **Cluster size**: to save resources leave the default 1. Which means one managed server.
-+ **Domain Partitions**: Create mutitenant instance. Select 1 to enable partitioning.
-+ **SSH Public Key**: public key which will be uploaded to the VM during the creation. It allows to connect to the VM through ssh connection using the private key. Use the same publicKey what was generated for Database Cloud Service instance. Click on Edit button and select [previously saved (during Database Cloud Service creation)](../dbcs-create/README.md) `GIT_REPO_LOCAL_CLONE/cloud-utils/publicKey`. You can also copy the content of *publicKey* into Key Value field. If you don't have or want to  to create different keypair select **Create a New Key** option and download the newly generated keypair for later usage.
-![](images/07.png)
-+ **Enable Administration Console**: because this instance will be available on public internet the default is that the WebLogic Admin console is not enabled. Do not forget to check in to get access to the Admin console.
-+ **Username**: username of WebLogic administrator. For demo purposes you can use: weblogic
-+ **Password**: WebLogic administrator's password. Don't forget to note the provided password.
+The following Advanced parameters have to be provided:
+
++ **Domain Partitions**: Create mutitenant instance. Select 1 to enable partitioning, you can leave default 0 for our example.
++ **Enable access to Administration Consoles**: because this instance will be available on public internet the default is that the WebLogic Admin console is not enabled. Do not forget to check in to get access to the Admin console.
 + **Deploy Sample Application**: deploy the sample application. It can be useful to test accessibility (correct LB configuration, etc.) of the Java Cloud Service Instance.
-+ **Database Configuration / Name**: Database Cloud Service name to store WebLogic repository data. Basically the list populated with database services within the same identity domain.
-+ **Database Configuration / PDB Name**: pluggable database service identifier of the Database Cloud Service instance -provided above- which will be used to store repository schema. If you have choosen default (PDB1) during Database Cloud Service creation then leave the default here too.
-+ **Database Configuration / Administrator User Name**: DBA admin to create repository schema for Java Cloud Service instance. Enter: sys.
-+ **Database Configuration / Password**: DBA admin password you provided during Database Cloud Service creation.
-+ **Database Configuration / For Application Schema**: It is an option to add different database service instance accessibility. For example different database used by the application and different for Java Cloud Service instance repository. You can configure later another Database Cloud Service, but here it is easier to define.
 + **Provision Load Balancer**: the save resources for sample application we will not create Load Balancer instance. Leave default: No
-+ **Cloud Storage Container**: the name of the container for Database Cloud Service instance. The format is the following: Storage-IDENTITYDOMAIN/CONTAINERNAME. The container don't need to be created in advance, because -see below- there is an option to create automatically. Now give the same container what you provided (created) earlier for Database Cloud Service instance.
++ **Database Configuration - Add Application Schema**: It is an option to add different database service instance accessibility. For example different database used by the application and different for Java Cloud Service instance repository. You can configure later another Database Cloud Service, but here it is easier to define.
++ **Backup Destination**: Both Remote and Disk Storage.
++ **Cloud Storage Container**: URL of the Oracle Storage Cloud Service container for your service instance backups. The format is the following: https://IDENTITYDOMAIN.storage.oraclecloud.com/v1/Storage-IDENTITYDOMAIN/MyContainer. Replace the identitydomain value according to your environment and specify a container name. Container name is up to you. To identify the URL of your storage account, see the [documentation](https://docs.oracle.com/en/cloud/iaas/storage-cloud/cssto/accessing-object-storage-classic.html#GUID-221133EF-F408-4DCF-9BF7-7A1F12C3E8A6). If this container doesn't exist, use the provided checkbox to create it.
 + **Cloud Storage User Name and Password**: the credentials for storage. Usually it is the same what was used to sign in to Oracle Cloud Services.
 + **Create Cloud Storage Containers**: if the container defined above does not exist then check in.
 
-![](images/08.png)
+![](images/07.png)
 
 For more details about parameters see the [documentation](https://docs.oracle.com/cloud/latest/jcs_gs/JSCUG/GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#JSCUG-GUID-88BD737C-8DA9-419A-8DBF-489BDFF9C512). Click **Next**.
 
 The final page is the summary page about the configuration before submit the instance creation request. Click **Create** to start the provisioning of the new service instance.
-![](images/09.png)
+![](images/08.png)
 
-When the request has been accepted the Java Cloud Service Console page appears and shows the new instance. The instance now is in Maintenance (Progress) mode. Click **In Progress** link to get more information about the status.
-![](images/10.png)
+When the request has been accepted the Java Cloud Service Console page appears and shows the new instance. The instance now is in Maintenance mode. Click **Creating instance...** link to get more information about the status.
+![](images/09.png)
 
