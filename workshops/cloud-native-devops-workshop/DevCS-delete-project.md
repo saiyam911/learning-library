@@ -2,7 +2,7 @@
 
 If DevCS environment that you have has allready soem projects and you are not able to create a new one then here are steps to delete existing projects:
 
-- on the dashboard open you DevCS consoleBefore PSM CLI setup you must ensure that ypou have appropriate Python version, you can find ***Python*** chapter on [environment setup page](../EnvSetup.md).
+- on the dashboard open you DevCS console
 ![](common/DevCS-delete/images/01.png)
 
 - in this example we will delete **SampleProject**, click on SampleProject
