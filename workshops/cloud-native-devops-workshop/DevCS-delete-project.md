@@ -1,6 +1,6 @@
-### Deleiting existing DevCS projects ###
+### Deleting existing DevCS projects ###
 
-If DevCS environment that you have has allready soem projects and you are not able to create a new one then here are steps to delete existing projects:
+If DevCS environment that you have has already some projects and you are not able to create a new one then here are steps to delete existing projects:
 
 - on the dashboard open you DevCS console
 ![](common/DevCS-delete/images/01.png)
