@@ -30,6 +30,9 @@ In order to run labs it is necessary to setup environment, including source code
 --Script for environment setup is [here](EnvSetup.md). 
 --DevCS setup??
 
+DevCS setup
+Before you start creating projects in Oracle Developer Cloud Service, configure Oracle Cloud Infrastructure Compute Classic and Oracle Cloud Infrastructure Object Storage Classic services of your identity domain with Oracle Developer Cloud Service, then create Build VM template with selecting software for your build and create Build VM. Detailed steps are [here](DevCS-setup.md).
+
 ### Important ###
 
 During the execution you will create several public cloud service instances what will be available on the world wide web. Even if these instances are for demo purposes keep in mind it is not a best practice to use weak or known (stored here in the tutorial) passwords especially in such open environment. Thus this workshop content does not recommend any password so you need to define those. You will be asked to provide password at certain points and please remember them for later usage.
