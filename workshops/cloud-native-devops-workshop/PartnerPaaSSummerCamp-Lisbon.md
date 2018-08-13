@@ -5,7 +5,7 @@
 
 This workshop will use Client Image vm with required tools for this workshop, link for download is on ??
 
-provisioned on Oracle Compute with required tools for this workshop, only VNC viewer is nedeed, link for download is on [client tools page](ClientTools.md). You can use your client environment if you have [required tools](ClientTools.md). Client Image environment setup is [here](EnvSetup.md).
+--provisioned on Oracle Compute with required tools for this workshop, only VNC viewer is nedeed, link for download is on [client tools page](ClientTools.md). You can use your client environment if you have [required tools](ClientTools.md). Client Image environment setup is [here](EnvSetup.md).
 
 #### Oracle Public Cloud PaaS  account
 
@@ -16,7 +16,7 @@ The workshop is intended to work with an Oracle GSE account. You should receive 
 + **Data center/region**
 
 ---
-# ORACLE Cloud-Native DevOps workshop #
+# ORACLE Java and Cloud Native Application Development with the Oracle Cloud #
 
 ## Introduction ##
 
@@ -24,7 +24,10 @@ Oracle Cloud is the industry’s broadest and most integrated public cloud. It o
 
 ### Prerequisites ###
 
-In order to run labs it is necessary to setup environment, including source code cloning from github, setup PATH variable for executing maven. Script for environment setup is [here](EnvSetup.md). 
+In order to run labs it is necessary to setup environment, including source code cloning from github.
+
+--, setup PATH variable for executing maven. 
+--Script for environment setup is [here](EnvSetup.md). 
 
 ### Important ###
 
@@ -39,10 +42,10 @@ The content contains several independent modules that cover different aspects of
 + [Deploy J2EE Application on JCS using DevCS & DBCS](AppDeploy-JCS-DevCS-DBCS/README.md)
 
 
-#### Theme: Common Platform Tools  ####
+#### Theme: (JCS) Java Cloud Service scalability and cloning ####
 
-+ [Managing Oracle Java Cloud Service Instances Using the PSM CLI](psm-jcs-mgmt/README.md)
-+ [Creating a Template for Oracle Cloud Stack Manager](stack-template/dbcs/README.md)
++ [JCS Policy Based Auto Scaling](jcs-autoscale/README.md)
++ [Cloning an JCS Instance Using a Snapshot](jcs-clone/README.md)
 
 #### Theme : Cloud Native Application Development ####
 
@@ -50,6 +53,7 @@ The content contains several independent modules that cover different aspects of
 
 <p>-</p>
 
+?? what else from ACCS lab?
 + [Create Oracle Developer Cloud Service project for SpringBoot application](springboot-sample/create.devcs.project.md)
 + [Create continuous build integration using Oracle Developer Cloud Service and Oracle Application Container Cloud Service](springboot-sample/devcs.accs.ci.md)
 + [Using Eclipse IDE (Oracle Enterprise Pack for Eclipse) with Oracle Developer Cloud Service](oepe/setup.oepe.md)
