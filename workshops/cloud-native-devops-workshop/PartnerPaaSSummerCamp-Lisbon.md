@@ -28,6 +28,7 @@ In order to run labs it is necessary to setup environment, including source code
 
 --, setup PATH variable for executing maven. 
 --Script for environment setup is [here](EnvSetup.md). 
+--DevCS setup??
 
 ### Important ###
 
