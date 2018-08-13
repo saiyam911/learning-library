@@ -6,13 +6,17 @@ You can create virtual machines (VMs) on Oracle Cloud Infrastructure Compute Cla
 
 Before you start creating projects in Oracle Developer Cloud Service, configure Oracle Cloud Infrastructure Compute Classic and Oracle Cloud Infrastructure Object Storage Classic services of your identity domain with Oracle Developer Cloud Service, then create Build VM template with selecting software for your build and create Build VM.
 
-Configure a connection to Oracle Cloud Infrastructure Storage Classic!(http://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/developer/config_compute_storage/devcs_config_storage.html)
+After sign in if you do not see Developer service than, on the My Services   Dashboard page, in the **developer _id_** tile, click **Action**![the Action menu icon](./Linking Oracle Cloud Infrastructure Object Storage Classic with Oracle Developer Cloud Service_files/dashboard_actions_menu.png), and select **Open Service Console.**If Oracle Developer Cloud Service isn't listed on the dashboard, click **Customize Dashboard.** Under **Platform,** find **developer _id_,** click **Show,** and then close the **Customize Dashboard** window.
 
-Configure a connection to Oracle Cloud Infrastructure Compute Classic()
+[Configure a connection to Oracle Cloud Infrastructure Storage Classic](http://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/developer/config_compute_storage/devcs_config_storage.html)
 
-Create a Build VM template()
+[Configure a connection to Oracle Cloud Infrastructure Compute Classic](http://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/developer/config_compute_storage/devcs_config_compute.html)
 
-Add Build VMs()
+[Create a Build VM template](http://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/developer/config_buildvm/devcs_create_buildvmtemplate.html)
+
+Software??
+
+[Add Build VMs](http://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/developer/config_buildvm/devcs_create_buildvm.html)
 
 
 
