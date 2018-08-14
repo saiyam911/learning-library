@@ -180,15 +180,15 @@ Follow the below steps to enable the port for your appliaction access.
 
 + Click on **Open Service console** in the next page
 
-+ Select the hamburger symbol to the right of your JCS instance and select **Open Weblogic Server Console**
++ Select the hamburger symbol to the right of your JCS instance (AlphaJCS) and select **Open Weblogic Server Console**
 
 ![](images/AppDataLoad-DevCS-DBCS-11.png)
 
-+ Log into Weblogic sever console with the `weblogic / Alpha2014_` 
++ Log into Weblogic sever console with the `weblogic / Alpha2018#` 
 
 + From the left pane expand **Services** and select **Data Sources**
 
-+ Click on **New** and then select **Generic Data Source**
++ Lock domain, click on **New** and then select **Generic Data Source**
 
 ![](images/AppDataLoad-DevCS-DBCS-12.png)
 
@@ -216,7 +216,7 @@ Follow the below steps to enable the port for your appliaction access.
 
 **Password:** `Alpha2017_`
 
-+ Change the Connection URL to the format below and click **Test Connection**
++ Change the Connection URL to the format below and click **Test Configuration**
 
  `jdbc:oracle:thin:@< Public IP address of DBCS>:1521:ORCL`
  
@@ -225,33 +225,6 @@ Follow the below steps to enable the port for your appliaction access.
 •	In the next screen select **All Servers in the Cluster** and click **Finish**
 
 ![](images/AppDataLoad-DevCS-DBCS-14.png) 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
