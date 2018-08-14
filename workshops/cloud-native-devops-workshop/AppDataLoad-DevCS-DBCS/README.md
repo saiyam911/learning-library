@@ -102,7 +102,7 @@ Follow the below steps to enable the port for your appliaction access.
 
 +	Click on **Open Service Console** 
 
-•	Select the hamburger symbol to the right of DBCS instance **Alpha01A-DBCS** and select **Access Rules**
+•	Select the hamburger symbol to the right of DBCS instance **AlphaDBCS** and select **Access Rules**
 
 ![](images/AppDataLoad-DevCS-DBCS-02.png)
 
@@ -116,43 +116,41 @@ Follow the below steps to enable the port for your appliaction access.
 
 + On navigation panel, click **Build** to access the build page and click **New Job**.
 
-+ Give the Job Name as `DBBuild` and click **Save**
++ Give the Job Name as `DBBuild` and choose your software template `myLabTemplate` and click **Create Job**
 
-![](images/AppDataLoad-DevCS-DBCS-04.png)
+![](images/DevCS-create-job.png)
 
-+ Click on **Source Control** and select **Git**
++ Click on **Source Control**, click on **Add Source Code** and select **Git**
+
+![](images/DevCS-add-git.png)
 
 + Under **Repository** select 'AlphaOfficeProductCatalogUI.git'
 
-![](images/AppDataLoad-DevCS-DBCS-15.png)
+![](images/DevCS-choose-rep.png)
 
-+ Click on **Build Steps**
++ Click on tab **Builders**, click on **Add Builder** and select **SQLcl Builder**
 
-![](images/AppDataLoad-DevCS-DBCS-05.png)
-
-+ Click **Add Build Step**  and select **Invoke SQLcl**
-
-![](images/AppDataLoad-DevCS-DBCS-06.png)
+![](images/DevCS-add-sql-builder.png)
 
 + Enter the following details
 
 **Username:** `system`
 
-**Password:** `Alpha2014_`
+**Password:** `Alpha2018#`
 
 **Credentials File:** `leave it blank`
 
-**Connect String:** `<public IP of DBCS insatce>:1521:ORCL`
+**Connect String:** `<public IP of DBCS instance>:1521:ORCL`
 
 **Source:** `SQL File` 
 
 **SQL File Path:** `AlphaOfficeProductCatalogUI/AlphaProducts/ConfigFiles/DB/createUserAlpha.sql`
 
-![](images/AppDataLoad-DevCS-DBCS-16.png)
+![](images/DevCS-build-step1.png.png)
 
-+ Click **Add Build Step**  and select **Invoke SQLcl**
++ Click **Add Builder** and select **SQLcl Builder**
 
-![](images/AppDataLoad-DevCS-DBCS-06.png)
+![](images/Devcs-add-build-step2.png)
 
 + Enter the following details
 
@@ -162,13 +160,13 @@ Follow the below steps to enable the port for your appliaction access.
 
 **Credentials File:** `leave it blank`
 
-**Connect String:** `<public IP of DBCS insatce>:1521:ORCL`
+**Connect String:** `<public IP of DBCS instance>:1521:ORCL`
 
 **Source:** `SQL File` 
 
 **SQL statements:** `AlphaOfficeProductCatalogUI/AlphaProducts/ConfigFiles/DB/createProducts.sql`
 
-![](images/AppDataLoad-DevCS-DBCS-17.png)
+![](images/DevCS-build-step2.png)
 
 + Click **Save**
 
