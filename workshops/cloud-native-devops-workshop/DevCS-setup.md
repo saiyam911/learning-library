@@ -14,7 +14,7 @@ If you see two DevCS services, choose 2nd, and then you can close Dialog window.
 Now go to DevCS instance, on the My Services Dashboard page, in the **developer _id_** tile, click **Action** and select **View Details**
 ![](common/DevCS-setup/DevCS-details.png)
 
-On the upper right corner click on Open Service Console.
+On the upper right corner, click on Open Service Console.
 ![](common/DevCS-setup/DevCS-open-console.png)
 
 If this is first time you access DevCS than you will have to create instance, click on create instance button:
@@ -54,7 +54,7 @@ Here you configure Compute connection:
 
 Name: myLabTemplate
 Platform: Oracle Linux 7
-Software: Include SQLcl 4 - SQL command line interface  (Already included: Git, Java, JUnit, Maven, Ruby and Ant.)
+Software: Include SQLcl 4 - SQL command line interface (Already included: Git, Java, JUnit, Maven, Ruby and Ant.)
 ![](common/DevCS-setup/DevCS-Build-software.png)
 
 
