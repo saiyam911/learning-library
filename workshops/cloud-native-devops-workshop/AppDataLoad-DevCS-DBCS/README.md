@@ -28,26 +28,26 @@ Once the data loading is complete we would create a DataSocurce in weblogic usin
 
 + Click Sign In from cloud.oracle.com
 
-![](images/Alpha_Office_Application_Workshop-01.png)
+![](images/Sign-In.png)
 
-+ From the next page select the appropriate Data Center from the dropdown and click **My Services**
++ On the next page enter your Cloud Account and click **My Services**
 
-![](images/Alpha_Office_Application_Workshop-02.png)
+![](images/MyService.png)
 
-+ In the next screen provide the appropriate identity Domain assigned to you and login using the username password provided.
++ In the next screen provide the appropriate username and password.
 
 ##### 2. Create a Project in Developer Cloud Service #####
 
 Oracle Developer Cloud Service provides a complete development platform that streamlines team development processes and automates software delivery. The integrated platform includes an issue tracking system, agile development dashboards, code versioning and review platform, continuous integration and delivery automation, as well as team collaboration features such as wikis and live activity stream. With a rich web based dashboard and integration with popular development tools, Oracle Developer Cloud Service helps deliver better applications faster.
 
 +	Open Developer Cloud Service console
-+	From the Cloud UI dashboard click on the **Developer** service. In our example, the Developer Cloud Service is named **developer#####**.
++	From the Cloud UI dashboard click on the Instance on **Developer** service.
 
-![](images/Alpha_Office_Application_Workshop-03.png)
+![](images/devCS-instance.png)
 
-+	Click on **Open Service Console** 
++	Click on **Access Service Instance** 
 
-![](images/Alpha_Office_Application_Workshop-04.png)
+![](images/DevCS-access.png)
 
 + Click **New Project** to start the project create wizard. **Note:** Depending on the status of your developer cloud service, it is possible that the button may be labeled **Create Project**
 
@@ -61,7 +61,7 @@ Oracle Developer Cloud Service provides a complete development platform that str
 
 + Leave default template set to **Empty Project** and click **Next**
 
-![](images/Alpha_Office_Application_Workshop-06.png)
+![](images/DevCS-project-template.png)
 
 + Select your **Wiki Markup** preference to **MARKDOWN** and click **Finish**.
 
