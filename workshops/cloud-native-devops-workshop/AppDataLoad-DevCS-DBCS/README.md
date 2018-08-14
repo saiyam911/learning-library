@@ -222,7 +222,7 @@ Follow the below steps to enable the port for your appliaction access.
  
 ![](images/AppDataLoad-DevCS-DBCS-13.png) 
 
-•	In the next screen select **All Servers in the Cluster** and click **Finish**
+•	In the next screen select **All Servers in the Cluster** and click **Finish** and **Activate Changes**
 
 ![](images/AppDataLoad-DevCS-DBCS-14.png) 
 
