@@ -25,7 +25,7 @@ This tutorial demonstrates how to:
 
 #### Build and Deploy Sample Load Generator Application ####
 
-First you need to download the application which will generate load on the service instance's CPU. This is a simple Web Application which creates a large collection and repeatedly shuffle/order the elements in the list. Application load.war is [here](load.war)
+First you need to download the application which will generate load on the service instance's CPU. This is a simple Web Application which creates a large collection and repeatedly shuffle/order the elements in the list. Application load.war is [here](load.war), click on link and click download to store on local disk.
 
 Now [sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/sign_in](https://cloud.oracle.com) and on the Dashboard Page click the **Java Instances** link. 
 ![](images/01.dashboard.png)
