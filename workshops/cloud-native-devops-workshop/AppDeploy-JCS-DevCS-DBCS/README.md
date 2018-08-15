@@ -206,6 +206,7 @@ For repository item select **AlphaOfficeProductCatalogUI.git** from the drop dow
 + Check **XXXXX_cluster** to deploy to the entire cluster and click **OK**
 
 ![](images/Alpha_Office_Application_Workshop-28.png)
+DevCS-deploy.png
 
 + Set the following Properties and click **Save**
 
@@ -246,29 +247,3 @@ For repository item select **AlphaOfficeProductCatalogUI.git** from the drop dow
 + You should now see the **Alpha Office Product Catalog UI**
 
 ![](images/Alpha_Office_Application_Workshop-35.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
