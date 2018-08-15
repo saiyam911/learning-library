@@ -59,8 +59,9 @@ Now you need to click **Upload your file(s)** link because the WAR file not loca
 Click **Choose File** to open File Open dialog.
 ![](images/07.choose.file.png)
 
-Select the previously built `load.war` (web archive) in folder: `GIT_REPO_LOCAL_CLONE/jcs.autoscale/target`.
+Select the previously built `load.war` from your local disk.
 ![](images/08.select.file.png)
+Delete image.
 
 After the file is uploaded, its name appears next to the **Browse** button. Click **Next**.
 ![](images/09.file.choosen.png)
@@ -103,6 +104,7 @@ Open a browser and write the following URL: `https://<public-ip-address>/load/cp
 
 Create rule for Java Cloud Service which triggers auto scaling based on the defined criteria. Go back to the Java Cloud Service instance details page and click **Overview** on the left menu. Click **Add Node** and select **Auto Scaling** item.
 ![](images/25.topology.add.node.png)
+C:\Users\DVUKMANO\Documents\A_openProjects\Lisabon-PartnerEvent\pictures\JCSAutoScaling\JCS-autoscaling.png
 
 On the Rules page click **Create Rule**. 
 ![](images/26.create.rule.png)
@@ -120,6 +122,7 @@ Define the rule parameters.
 Click **Create**.
 
 ![](images/27.rule.details.png)
+C:\Users\DVUKMANO\Documents\A_openProjects\Lisabon-PartnerEvent\pictures\JCSAutoScaling\JCS-new-rule.png
 
 Wait till the rule will be complete.
 ![](images/27.rule.ready.png)
