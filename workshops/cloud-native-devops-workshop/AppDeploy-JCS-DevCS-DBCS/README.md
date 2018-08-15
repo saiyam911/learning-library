@@ -34,29 +34,29 @@ There are three major steps in order to deploy an Applcation on JCS:
 
 + Click Sign In from cloud.oracle.com
 
-![](images/Alpha_Office_Application_Workshop-01.png)
+![](images/Sign-In.png)
 
-+ From the next page select the appropriate Data Center from the dropdown and click **My Services**
++ On the next page enter your Cloud Account and click **My Services**
 
-![](images/Alpha_Office_Application_Workshop-02.png)
+![](images/MyService.png)
 
-+ In the next screen provide the appropriate identity Domain assigned to you and login using the username password provided.
++ In the next screen provide the appropriate username and password.
 
 
 ##### 2. Create a Project in Developer Cloud Service #####
 
-**Skip this step you have already completed lab to load data into DBCS and directly got Step 4:- Creating a Build Process **
+**Skip this step if you have already completed lab to load data into DBCS and directly got Step 4:- Creating a Build Process **
 
 Oracle Developer Cloud Service provides a complete development platform that streamlines team development processes and automates software delivery. The integrated platform includes an issue tracking system, agile development dashboards, code versioning and review platform, continuous integration and delivery automation, as well as team collaboration features such as wikis and live activity stream. With a rich web based dashboard and integration with popular development tools, Oracle Developer Cloud Service helps deliver better applications faster.
 
 +	Open Developer Cloud Service console
-+	From the Cloud UI dashboard click on the **Developer** service. In our example, the Developer Cloud Service is named **developer#####**.
++	From the Cloud UI dashboard click on the Instance on **Developer** service.
 
-![](images/Alpha_Office_Application_Workshop-03.png)
+![](images/DevCs-instance.png)
 
-+	Click on **Open Service Console** 
++	Click on **Access Service Instance** 
 
-![](images/Alpha_Office_Application_Workshop-04.png)
+![](images/DevCS-access.png)
 
 + Click **New Project** to start the project create wizard. **Note:** Depending on the status of your developer cloud service, it is possible that the button may be labeled **Create Project**
 
@@ -70,7 +70,7 @@ Oracle Developer Cloud Service provides a complete development platform that str
 
 + Leave default template set to **Empty Project** and click **Next**
 
-![](images/Alpha_Office_Application_Workshop-06.png)
+![](images/DevCS-project-template.png)
 
 + Select your **Wiki Markup** preference to **MARKDOWN** and click **Finish**.
 
@@ -82,7 +82,7 @@ Oracle Developer Cloud Service provides a complete development platform that str
 
 ##### 3. Create Initial GIT Repository  #####
 
-**Skip this step you have already completed lab to load data into DBCS**
+**Skip this step if you have already completed lab to load data into DBCS**
 
 + Click on **New Repository** to create a new Git Repository.
 
@@ -106,33 +106,33 @@ Now that we have the source code in our managed GIT repository, we need to creat
 
 + On navigation panel, click **Build** to access the build page and click **New Job**.
 
-![](images/Alpha_Office_Application_Workshop-11.png)
+![](images/DevCS-new-job.png)
 
-+ In the New Job popup enter `Alpha Office Product Catalog UI` for the Job Name, and then click **Save**.
++ In the New Job popup enter `Alpha Office Product Catalog UI` for the Job Name, choose your software template 'myLabTemplate' and then click **Create Job**.
 
-![](images/Alpha_Office_Application_Workshop-12.png)
+![](images/DevCS-create-job.png)
 
 + You are now placed into the job configuration screen.
 
-![](images/Alpha_Office_Application_Workshop-13.png)
+![](images/DevCS-build-config.png)
 
-+ On the Main tab on the Configure Build screen change the **JDK** drop down to **JDK8**.
++ In order to configure Java version click configuration icon and then on Software tab, on this page you can check is selected Java version is 1.8.x, if not, change to 1.8.x version.
 
-![](images/Alpha_Office_Application_Workshop-14.png)
+![](images/DevCS-JDK.png)
 
-+ Click the **Source Control** tab. Click Git and select **AlphaOfficeProductCatalogUI.git** from the drop down.
++ Click back on setup icon, then the **Source Control** tab. Click Add Source Control and select Git.
 
-![](images/Alpha_Office_Application_Workshop-15.png)
+![](images/DevCS-git.png)
 
-+ Click the **Triggers** tab. Select **Based on SCM polling schedule**.
+For repository item select **AlphaOfficeProductCatalogUI.git** from the drop down and select check box 'Automatically perform build on SCM commit'.
 
-![](images/Alpha_Office_Application_Workshop-16.png)
+![](images/DevCS-repo.png)
 
-+ Click the **Build Steps** tab. Click **Add Build Step**, and select **Invoke Maven 3**.
++ Click the **Builders** tab. Click **Add Builder**, and select **Maven Builder**.
 
-![](images/Alpha_Office_Application_Workshop-17.png)
+![](images/DevCS-config-builder.png)
 
-+ In the Maven Build Step set the following:
++ In the Maven Builder set the following:
 
 **Goal:** `clean -Dmaven.test.skip=true install`
 
@@ -140,11 +140,15 @@ Now that we have the source code in our managed GIT repository, we need to creat
 
 **POM File:** `AlphaOfficeProductCatalogUI/AlphaProducts/pom.xml`
 
-![](images/Alpha_Office_Application_Workshop-18.png)
+![](images/DevCS-maven.png)
 
-+ Click the **Post Build** tab. Check **Archive the artifacts** and enter `**/AlphaProducts/target/*` for the Files to Archive.
++ Click the **Post Build** tab. Click **Add Post Build Action** and check **Artifact Archiver**.
 
-![](images/Alpha_Office_Application_Workshop-19.png)
+![](images/DevCS-post-build.png)
+
++ Enter `**/AlphaProducts/target/*` for the Files to Archive.
+
+![](images/DevCS-files-to-archive.png)
 
 + Click **Save** to complete the configuration.
 
