@@ -25,39 +25,7 @@ This tutorial demonstrates how to:
 
 #### Build and Deploy Sample Load Generator Application ####
 
-First you need to build the application which will generate load on the service instance's CPU. This is a simple Web Application which creates a large collection and repeatedly shuffle/order the elements in the list. Open a terminal and go to the folder `GIT_REPO_LOCAL_CLONE/jcs.autoscale` and run `mvn install`.
-
-	[oracle@localhost u01]$ cd /u01/content/cloud-native-devops-workshop/jcs.autoscale/
-	[oracle@localhost jcs.autoscale]$ mvn install
-	[INFO] Scanning for projects...
-	[INFO]                                                                         
-	[INFO] ------------------------------------------------------------------------
-	[INFO] Building Sample Load Generator Webapp 0.0.1
-	[INFO] ------------------------------------------------------------------------
-	Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.2/maven-war-plugin-2.2.pom
-	...
-	...
-	...
-	Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0-beta-2/maven-filtering-1.0-beta-2.jar (33 KB at 74.5 KB/sec)
-	[INFO] Packaging webapp
-	[INFO] Assembling webapp [load] in [/u01/content/cloud-native-devops-workshop/jcs.autoscale/target/load]
-	[INFO] Processing war project
-	[INFO] Copying webapp resources [/u01/content/cloud-native-devops-workshop/jcs.autoscale/src/main/webapp]
-	[INFO] Webapp assembled in [68 msecs]
-	[INFO] Building war: /u01/content/cloud-native-devops-workshop/jcs.autoscale/target/load.war
-	[INFO] WEB-INF/web.xml already added, skipping
-	[INFO] 
-	[INFO] --- maven-install-plugin:2.4:install (default-install) @ load ---
-	[INFO] Installing /u01/content/cloud-native-devops-workshop/jcs.autoscale/target/load.war to /home/oracle/.m2/repository/com/oracle/sample/load/0.0.1/load-0.0.1.war
-	[INFO] Installing /u01/content/cloud-native-devops-workshop/jcs.autoscale/pom.xml to /home/oracle/.m2/repository/com/oracle/sample/load/0.0.1/load-0.0.1.pom
-	[INFO] ------------------------------------------------------------------------
-	[INFO] BUILD SUCCESS
-	[INFO] ------------------------------------------------------------------------
-	[INFO] Total time: 6.958 s
-	[INFO] Finished at: 2016-10-21T08:10:02-07:00
-	[INFO] Final Memory: 14M/491M
-	[INFO] ------------------------------------------------------------------------
-	[oracle@localhost jcs.autoscale]$ 
+First you need to download the application which will generate load on the service instance's CPU. This is a simple Web Application which creates a large collection and repeatedly shuffle/order the elements in the list. Application load.war is [here](load.war)
 
 Now [sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/sign_in](https://cloud.oracle.com) and on the Dashboard Page click the **Java Instances** link. 
 ![](images/01.dashboard.png)
