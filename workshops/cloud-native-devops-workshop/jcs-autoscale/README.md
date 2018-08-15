@@ -29,18 +29,23 @@ First you need to download the application which will generate load on the servi
 
 Now [sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/sign_in](https://cloud.oracle.com) and on the Dashboard Page click the **Java Instances** link. 
 ![](images/01.dashboard.png)
+JCS-instance.png
 
 On the Console page select and click the Java Cloud Service name link where you want to deploy the Load Application.
 ![](images/02.jcs.select.png)
+C:\Users\DVUKMANO\Documents\A_openProjects\Lisabon-PartnerEvent\pictures\JCSAutoScaling\JCS-console.png
 
-Click the hamburger menu on the top middle, next to the instance name. Select **Open WebLogic Server Console**.
+Click the hamburger menu on the top right. Select **Open WebLogic Server Console**.
 ![](images/03.open.wls.console.png)
+C:\Users\DVUKMANO\Documents\A_openProjects\Lisabon-PartnerEvent\pictures\JCSAutoScaling\JCS-wls-console.png
 
 A new browser (tab) opens and you are redirected to the selected console’s log-in page. If the server is protected with a self-signed certificate, you will be warned that this certificate is not trusted. This is the default configuration and you can configure your certification. Select **I Understand the Risk**, and **Add Exception** (accept certificate).
 ![](images/04.security.exception.png)
+This picture should be removed.
 
 When dialog appears select **Confirm Security Exception**.
 ![](images/04.confirm.exception.png)
+This remove too.
 
 When the console log-in page appears, enter the log-in credentials you entered for WebLogic Administrator when you created the service instance. Click **Login**.
 ![](images/04.wls.console.login.png)
