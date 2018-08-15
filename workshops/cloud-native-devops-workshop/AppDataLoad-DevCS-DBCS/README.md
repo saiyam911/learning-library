@@ -43,7 +43,7 @@ Oracle Developer Cloud Service provides a complete development platform that str
 +	Open Developer Cloud Service console
 +	From the Cloud UI dashboard click on the Instance on **Developer** service.
 
-![](images/DevCS-instance.png)
+![](images/DevCs-instance.png)
 
 +	Click on **Access Service Instance** 
 
