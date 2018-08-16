@@ -47,7 +47,7 @@ In a 3 minutes snapshot will be created.
 Sign in to the web console, click the name of the instance that you want to create a clone of, click the Administration tile, click the Snapshots tab, click Menu icon for the snapshot that you want to clone from and click Create Clone. The instance creation wizard starts.
 ![](images/JCS-clone-start.png)
 
-On the Instance page of the wizard, specify the following attributes and click Next (notice that some fields are selected automatically; same as the original instance,cannot be changed):
+On the Instance page of the wizard, specify the following attributes and click Next (notice that some fields are selected automatically; same as the original instance, cannot be changed):
 
 Instance Name: AlphaJCSc1
 ![](images/JCS-clone-instance.png)
