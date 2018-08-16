@@ -70,7 +70,7 @@ On the Confirmation page, review the attributes you configured and proceed with 
 After the clone is created (22 min on OCI-C), the Snapshots tab shows the cloned instance under Cloned Services. 
 ![](images/JCS-cloned-services.png)
 
-On the Instances page of the web console, cloned instances are indicated by the Cloud with different icon.
+On the Instances page of the web console, cloned instances are indicated by the different icon.
 ![](images/JCS-clone-done.png)
 
 You can delete cloned JCS instance as any other JCS instance. To delete snapshot, navigate to Snapshots tab, select snapshot and click delete, select OK when confirmation dialog popup.
