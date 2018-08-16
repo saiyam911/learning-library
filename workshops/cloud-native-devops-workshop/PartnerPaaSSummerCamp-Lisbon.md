@@ -18,13 +18,7 @@ Oracle Cloud is the industry’s broadest and most integrated public cloud. It o
 
 ### Prerequisites ###
 
-In order to run labs it is necessary to setup environment, including source code cloning from github.
-
---, setup PATH variable for executing maven. 
---Script for environment setup is [here](EnvSetup.md). 
-
-
-DevCS setup
+[DevCS setup](DevCS-setup.md)
 
 Before you start creating projects in Oracle Developer Cloud Service, configure Oracle Cloud Infrastructure Compute Classic and Oracle Cloud Infrastructure Object Storage Classic services of your identity domain with Oracle Developer Cloud Service, then create Build VM template with selecting software for your build and create Build VM. Detailed steps are [here](DevCS-setup.md).
 
