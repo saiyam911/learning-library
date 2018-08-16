@@ -1,12 +1,6 @@
 ![](common/images/Lisbon-SummerCamp-header.jpg)
 ## Prerequisites
 
-#### Client Image vm
-
-This workshop will use Client Image vm with required tools for this workshop, link for download is on ??
-
---provisioned on Oracle Compute with required tools for this workshop, only VNC viewer is nedeed, link for download is on [client tools page](ClientTools.md). You can use your client environment if you have [required tools](ClientTools.md). Client Image environment setup is [here](EnvSetup.md).
-
 #### Oracle Public Cloud PaaS  account
 
 The workshop is intended to work with an Oracle GSE account. You should receive email with access details prior to this event. Get the following account details ready to complete the tutorial and replace to your values when it is required:
