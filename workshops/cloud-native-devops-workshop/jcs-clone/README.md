@@ -9,11 +9,9 @@ A snapshot is a point-in-time image of a service instance. You can use snapshots
 
 The snapshot does not include the database associated with the instance. You must take a snapshot of the database separately.
 
-+ Typical use cases:
-+ Move applications from development or testing to production rapidly.
-After deploying your applications to a service instance and testing them, when the applications are ready for production use, you can take a snapshot of the instance, create a clone of the instance using the snapshot, and then scale the cloned instance to the required size.
-+ Debug issues in a production environment without interrupting service availability
-Say a web application that’s deployed on one of your service instances has a performance issue. You can take a snapshot of the instance, clone it, and use the cloned instance to diagnose and debug the issue. The production instance continues to be available while your engineers debug the performance issue offline in the cloned instance.
+Typical use cases:
++ Move applications from development or testing to production rapidly - After deploying your applications to a service instance and testing them, when the applications are ready for production use, you can take a snapshot of the instance, create a clone of the instance using the snapshot, and then scale the cloned instance to the required size.
++ Debug issues in a production environment without interrupting service availability - Say a web application that’s deployed on one of your service instances has a performance issue. You can take a snapshot of the instance, clone it, and use the cloned instance to diagnose and debug the issue. The production instance continues to be available while your engineers debug the performance issue offline in the cloned instance.
 
 ### About this tutorial ###
 This tutorial demonstrates how to:
