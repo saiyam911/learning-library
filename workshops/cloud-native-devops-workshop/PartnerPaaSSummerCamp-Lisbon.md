@@ -49,8 +49,8 @@ The content contains several independent modules that cover different aspects of
 
 #### Theme: (JCS) Java Cloud Service scalability and cloning ####
 
-+ [JCS Policy Based Auto Scaling](jcs-autoscale/README.md)
 + [Cloning an JCS Instance Using a Snapshot](jcs-clone/README.md)
++ [JCS Policy Based Auto Scaling](jcs-autoscale/README.md)
 
 #### Theme : Cloud Native Application Development ####
 
