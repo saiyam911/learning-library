@@ -28,24 +28,15 @@ This tutorial demonstrates how to:
 First you need to download the application which will generate load on the service instance's CPU. This is a simple Web Application which creates a large collection and repeatedly shuffle/order the elements in the list. Application load.war is [here](load.war), click on link and click download to store on local disk.
 
 Now [sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/sign_in](https://cloud.oracle.com) and on the Dashboard Page click the **Java Instances** link. 
-![](images/01.dashboard.png)
-JCS-instance.png
+![](images/JCS-instance.png)
 
 On the Console page select and click the Java Cloud Service name link where you want to deploy the Load Application.
-![](images/02.jcs.select.png)
-C:\Users\DVUKMANO\Documents\A_openProjects\Lisabon-PartnerEvent\pictures\JCSAutoScaling\JCS-console.png
+![](images/JCS-console.png)
 
 Click the hamburger menu on the top right. Select **Open WebLogic Server Console**.
-![](images/03.open.wls.console.png)
-C:\Users\DVUKMANO\Documents\A_openProjects\Lisabon-PartnerEvent\pictures\JCSAutoScaling\JCS-wls-console.png
+![](images/JCS-wls-console.png)
 
-A new browser (tab) opens and you are redirected to the selected console’s log-in page. If the server is protected with a self-signed certificate, you will be warned that this certificate is not trusted. This is the default configuration and you can configure your certification. Select **I Understand the Risk**, and **Add Exception** (accept certificate).
-![](images/04.security.exception.png)
-This picture should be removed.
-
-When dialog appears select **Confirm Security Exception**.
-![](images/04.confirm.exception.png)
-This remove too.
+A new browser (tab) opens and you are redirected to the selected console’s log-in page. If the server is protected with a self-signed certificate, you will be warned that this certificate is not trusted. This is the default configuration and you can configure your certification. Select **I Understand the Risk**, and **Add Exception** (accept certificate). When dialog appears select **Confirm Security Exception**.
 
 When the console log-in page appears, enter the log-in credentials you entered for WebLogic Administrator when you created the service instance. Click **Login**.
 ![](images/04.wls.console.login.png)
@@ -56,12 +47,8 @@ After a successful login the WebLogic Server Administration Console is displayed
 Now you need to click **Upload your file(s)** link because the WAR file not located on the server, hence it requires upload.
 ![](images/06.upload.select.png)
 
-Click **Choose File** to open File Open dialog.
+Click **Choose File** to open File Open dialog and select the previously built `load.war` from your local disk.
 ![](images/07.choose.file.png)
-
-Select the previously built `load.war` from your local disk.
-![](images/08.select.file.png)
-Delete image.
 
 After the file is uploaded, its name appears next to the **Browse** button. Click **Next**.
 ![](images/09.file.choosen.png)
@@ -94,7 +81,7 @@ The application is now in the *Active* state and is ready to accept requests.
 
 To hit the application first you need to get more information about your Java Cloud Service  topology. You need to have a public IP address which belongs to your Load Balancer if that exists. Otherwise you need the IP address of the VM instance which runs one of your Managed Server. 
 
-Go back to the browser (tab) where you opened WebLogic console. That page is the Java Cloud Service details page where you can check the instance topology and the public IP addresses. Make sure that the **Overview** is selected on the left menu. If you have Load Balancer then use its IP address to hit the sample application. If you don't have Load Balancer then use IP address of VM which runs the Managed Server. Even if you have Load Balancer please note the IP address of the VM hosts WebLogic for further usage. You will access using `ssh` to the VM to check CPU load.
+Go back to the browser (tab) where you opened WebLogic console. That page is the Java Cloud Service details page where you can check the instance topology and the public IP addresses. Make sure that the **Overview** is selected on the left menu. If you have Load Balancer then use its IP address to hit the sample application. If you don't have Load Balancer then use IP address of VM which runs the Managed Server. 
 ![](images/19.ip.details.png)
 
 Open a browser and write the following URL: `https://<public-ip-address>/load/cpu.jsp` You should now see a simple application what will be used later for load generation.
@@ -103,8 +90,7 @@ Open a browser and write the following URL: `https://<public-ip-address>/load/cp
 #### Create Auto Scaling Rule ####
 
 Create rule for Java Cloud Service which triggers auto scaling based on the defined criteria. Go back to the Java Cloud Service instance details page and click **Overview** on the left menu. Click **Add Node** and select **Auto Scaling** item.
-![](images/25.topology.add.node.png)
-C:\Users\DVUKMANO\Documents\A_openProjects\Lisabon-PartnerEvent\pictures\JCSAutoScaling\JCS-autoscaling.png
+![](images/JCS-autoscaling.png)
 
 On the Rules page click **Create Rule**. 
 ![](images/26.create.rule.png)
@@ -122,61 +108,50 @@ Define the rule parameters.
 Click **Create**.
 
 ![](images/27.rule.details.png)
-C:\Users\DVUKMANO\Documents\A_openProjects\Lisabon-PartnerEvent\pictures\JCSAutoScaling\JCS-new-rule.png
 
 Wait till the rule will be complete.
-![](images/27.rule.ready.png)
+![](images/JCS-rule.png)
 
-Before the load generation create `ssh` access to the VM hosts Managed Server to check CPU load during the utilization. Open a terminal and run `ssh -i privateKey opc@VM_PUBLIC_IP` command. The `privateKey` is your private key pair of the public key you defined during Java Cloud Service creation. If your private key has passphrase you need to provide when `ssh` requires
+Before the load generation here is how you can check CPU load during the utilization. On the JCS console click on upper right icon `Display monitoring information`, and after short time CPU usage and free memory will be displayed. During load generation you can check few times cpu usage.
+![](images/JCS-display-monitoring-info.png)
 
-	[oracle@localhost jcs.autoscale]$ ssh -i ./cloud-utils/gse00012625labkey opc@144.21.73.75
-	The authenticity of host '144.21.73.75 (144.21.73.75)' can't be established.
-	RSA key fingerprint is b7:3b:1a:a0:9b:f0:e4:44:78:ac:c2:a8:81:4f:03:a3.
-	Are you sure you want to continue connecting (yes/no)? yes
-	Warning: Permanently added '144.21.73.75' (RSA) to the list of known hosts.
-	[opc@winsdemowls-wls-1 ~]$ 
+![](images/JCS-cpu-usage.png)
 
-Now you have established `ssh` connection to the VM. Run `top` to check the CPU utilization  of the VM hosting Managed Server during the load generation.
+Another option to check cpu usage is by using REST API. Here is curl command that returns healthcheck monitoring data and metrics for the specified Oracle Java Cloud Service instance. In the event you encounter a status 500 error when attempting to retrieve data for your service instance, append the ?format=v4 query parameter and try again. Change appropriate values for your environment.
 
-	[opc@winsdemowls-wls-1 ~]$ top
+	curl -i -X GET -u USERNAME:PASSWORD -H "X-ID-TENANT-NAME:idcs-YOURID"
+	https://jaas.oraclecloud.com/paas/api/v1.1/instancemgmt/idcs-YOURID/services/jaas/instances/YOURJCSINSTANCE/healthcheck
 
-The top program provides a dynamic real-time view of a running system. It can display system summary information as well as a list of tasks currently being managed by the Linux kernel. At the beginning of the second line you can see the real time CPU utilization.
+Here is the snippet of responses, look for "hostName":
 
-	top - 16:22:15 up  5:36,  1 user,  load average: 1.49, 3.42, 1.77
-	  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                                                                            
-	24145 oracle    20   0 5141m 1.6g  60m S  0.7 22.3   1:47.42 java                                                                                                               
-	21526 oracle    20   0 5687m 1.5g  41m S  0.3 21.4 142:52.14 java                                                                                                               
-	    1 root      20   0 19408 1308 1232 S  0.0  0.0   0:00.63 init                                                                                                               
-	    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd                                                                                                           
-	    3 root      20   0     0    0    0 S  0.0  0.0   0:00.04 ksoftirqd/0                                                                                                        
-	    5 root       0 -20     0    0    0 S  0.0  0.0   0:00.00 kworker/0:0H                                                                                                       
-	    6 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kworker/u:0                                                                                                        
-	    7 root       0 -20     0    0    0 S  0.0  0.0   0:00.00 kworker/u:0H                                                                                                       
-	    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.04 migration/0                                                                                                        
+	...
+	  "hostName": "alphajcs-wls-1",
+          "label": "AlphaJCS wls 1",
+          "vmId": 1135097,
+          "healthData": {
+            "VMCpuUtil": {
+              "unit": "%",
+              "value": "100",
+              "displayName": "VM CPU Usage"
+            },
+            "VMmemory": {
+              "unit": "MB",
+              "value": "1935",
+              "displayName": "VM Free Memory"
+            }
+          },
+          "statusMessage": "Running"
+        }
+      },
+      ...
 
-Leave this terminal open and on top to check later the CPU load.
+Again, durin the load yo can run health check command few times to check CPU load.
 
-Here is the time to generate load for Java Cloud Service. Switch to the browser where the simple Load Generator Web Application was opened. Select `mid` load, enter 400000 milliseconds long run and click **Submit**.
+Now is the time to generate load for Java Cloud Service. Switch to the browser where the simple Load Generator Web Application was opened. Select `mid` load, enter 400000 milliseconds long run and click **Submit**.
 ![](images/28.generate.load.png)
 
-Switch back to the terminal where `top` is running to check the CPU utilization and wait till the Auto Scaling rule triggers scale out operation for Java Cloud Service. 
+Using one of the option you check the CPU utilization and wait till the Auto Scaling rule triggers scale out operation for Java Cloud Service. In that moment you will notice on JCS console that JCS instance is in maintenance mode and operational message on the bottom.
+![](images/JCS-scale-out-start.png)
 
-	top - 16:24:37 up  3:19,  1 user,  load average: 1.46, 0.35, 0.15
-	Tasks: 115 total,   1 running, 114 sleeping,   0 stopped,   0 zombie
-	Cpu(s): 99.8%us,  0.0%sy,  0.0%ni,  0.2%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
-	Mem:   7397060k total,  4541608k used,  2855452k free,    91212k buffers
-	Swap:  4194300k total,        0k used,  4194300k free,   802920k cached
-	
-	  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                                                                            
-	21526 oracle    20   0 5686m 1.6g  41m S 200.3 22.2   4:00.00 java                                                                                                              
-	 4251 oracle    20   0 4953m 1.6g  58m S  0.3 23.2   3:33.46 java                                                                                                               
-	22930 opc       20   0 95896 1772  856 S  0.3  0.0   0:00.23 sshd                                                                                                               
-	    1 root      20   0 19408 1540 1232 S  0.0  0.0   0:00.63 init                                                                                                               
-	    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd                                                                                                           
-	    3 root      20   0     0    0    0 S  0.0  0.0   0:00.03 ksoftirqd/0                                                                                                        
-	    5 root       0 -20     0    0    0 S  0.0  0.0   0:00.00 kworker/0:0H                                                                                                       
-	    6 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kworker/u:0                                                                                                        
-	    7 root       0 -20     0    0    0 S  0.0  0.0   0:00.00 kworker/u:0H                                                                                                       
-	    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.04 migration/0                                                                                                        
-
-
+After scaling is finished you will see two node JCS instance.
+![](images/JCS-scale-out-done.png)
