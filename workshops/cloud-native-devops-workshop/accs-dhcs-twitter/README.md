@@ -18,7 +18,7 @@ As part of this lab, a service (application) would be consuming a continuous str
 
 + Valid credentials for an Oracle Cloud account
 + An active subscription to Oracle Application Container Cloud Service & Oracle Data Hub Cloud Service
-+ The code is available on [GitHub](https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app)
++ The code is available on [GitHub](https://github.com/dvukmano/cloud-native-devops-workshop/accs-cassandra-twitter-timeseries-app)
 + Twitter Account
 + A development environment (Java, Maven, Python, PSM CLI)
 
@@ -39,7 +39,7 @@ Here is high level diagram to depict the solution
 	+ The [Cassandra module](https://projects.spring.io/spring-data-cassandra/) in Spring Data is used to interact with Cassandra
 	+ `spring-boot-starter-web module` is used to expose a REST API to query tweet related info
 
-+ Application Container Cloud provides out-of-the-box Service Binding for Data Hub Cloud (if both the services are in the same identity domain). This gives your app a secure communication channel without you having to do anything explicitly and no port related configuration is required at the database infrastructure level.
++ Application Container Cloud provides out-of-the-box Service Binding for Data Hub Cloud (if both the services are in the same identity domain). This gives your app a secure communication channel without you having to do anything explicitly and no port related configuration is required at the database infrastructure level. Since in our GSE environment we do not have Data Hub Cloud Service we will use DHCS on another cloud account, all participants will use the same DHCS where they will create their own schema.
 
 Here is how the Cassandra data model looks like
 
@@ -67,7 +67,7 @@ This table is meant to store tweets in time series style — the primary key
 
 ### Infrastructure setup steps ###
 
-+ Setup a Cassandra cluster using Oracle Datahub Cloud console and bootstrap Cassandra (keyspace and table). In this lab, the Cassandra cluster is already setup - you do not have to create one.
++ Setup a Cassandra cluster using Oracle Data Hub Cloud console and bootstrap Cassandra (keyspace and table). In this lab, the Cassandra cluster is already setup - you do not have to create one.
 + Create a Twitter app which provides us with the required authentication tokens
 + Prepare the code for deployment to Application Container Cloud Service taking the environment variables into consideration
 
@@ -145,37 +145,47 @@ Execute the following at the `cqlsh` prompt
 #### Build Application ####
 
 + Ensure that a development environment is available (Java & Maven should be installed and configured). Get in touch with the instructor for further queries.
-+ Start by fetching the project from Github
++ Start by fetching the project from Github into Developer Cloud Service. You can continue to use existing Alpha Office project and add new repository, go to Project, click on '+ New Repository':
+![](images/DHCS-new-repo.png)
 
-	`git clone https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app`
-	
-	Or navigate to the [GitHub URL](https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app) and click on the `Clone or Download ` button and choose the `Download as zip` option to get the code. 
-	Once you have the code, unzip it if required.
+Enter name for repository: twitterlab and check 'import from existing repository' and link to repo existing repo is: https://github.com/dvukmano/accs-cassandra-twitter-timeseries-app, then click Create:
+![](images/DHCS-repo-create.png)
 
 + By default, the producer and query code is hard-coded to refer to `tweetspace` as the keyspace. This needs to be changed at both places to reflect the right keyspace value.
 + For the Tweet producer app, update the code to reflect the right keyspace. In this case, we are changing it to `tweetspace9464`
 
-	Modify the `keyspace` element of the `@Table` annotation in [TweetInfo.java](https://github.com/abhirockzz/accs-cassandra-twitter-timeseries-app/blob/master/accs-dhcs-cassandra-tweets-producer/src/main/java/com/oracle/cloud/accs/dhcs/cassandra/producer/TweetInfo.java) present in the above downloaded code.
+Modify the `keyspace` element of the `@Table` annotation in [TweetInfo.java](accs-dhcs-cassandra-tweets-producer/src/main/java/com/oracle/cloud/accs/dhcs/cassandra/producer/TweetInfo.java) present in the above downloaded code.
+![](images/DHCS-TweetInfo-code.png)
 
+A new "pencil" icon let's you edit code in your private git repositories hosted in Developer Cloud Service directly in your browser. Once you edited the code you can commit the changes to your branch directly providing commit messages.
+	
 	The updated line should read `@Table(keyspace = "tweetspace9464", name = "tweets",`
 
-+ Build the Tweet Producer app.
-	
-	`cd accs-dhcs-cassandra-tweets-producer`
+Update this line of code and click Commit, provide Commit message. 
+![](images/DHCS-commit.png)
 
-	`mvn clean install`
++ Build the Tweet Producer application with creating new Build job in ODCS (Oracle Developer CLoud Service). On the menu on the left side go to Build and click '+ New Job':
+![](images/DHCS-new-job.png)
 
-+ The build process will create `accs-cassandra-tweets-producer-dist.zip` in the target directory.
+Enter Job Name (tweetsproducer), choose Create New and Software Template is myLabTemplate, click Create Job:
+![](images/DHCS-create-job.png)
+
+Add git repository, click on 'Add Source Control', select Git and choose twitterlab.git repository.
+![](images/DHCS-git.png)
+
+Go to tab Builders and add Maven Builder, POM file is 'accs-dhcs-cassandra-tweets-producer/pom.xml'
+![](images/DHCS-mvn.png)
+
+Go to Post Build and add Artifact Archiver, Files to archive: `**/target/*.zip`
+![](images/DHCS-post-build.png)
+
+Save your Build job and click Build Now. The build process will create `accs-cassandra-tweets-producer-dist.zip` in the target directory.
 
 + For the Tweets Query Service, you can use the `CASSANDRA_TWEETS_KEYSPACE` environment variable to specify the keyspace (details in the next section)
 
-+ Build the Tweets Query Service.
++ Using the same stps create Build job for the Tweets Query Service. Job name could be `tweetsquery`, POM file `accs-dhcs-cassandra-tweets-api/pom.xml`
 
-	`cd accs-dhcs-cassandra-tweets-api` 
-
-	`mvn clean install`
-
-+ The build process will create `accs-dhcs-cassandra-tweets-api-dist.zip` in the target directory.
++ The build job will create `accs-dhcs-cassandra-tweets-api-dist.zip` in the target directory.
 
 #### Application Deployment to ACCS ####
 
@@ -184,7 +194,8 @@ Execute the following at the `cqlsh` prompt
 ##### Artifacts for Tweets Producer app #####
 
 + An important point to note is, the Data Hub Cloud Service (Cassandra instance) is hosted in a different identity domain than the one that will be hosting the ACCS instances. Hence the out of box service binding between ACCS and DHCS cannot be utilized. Explicit references must be made as environment variables. Do not use the deployment.json file from GitHub as is, it has to be modified along the values mentioned below. 
-+ Sample deployment.json for the Tweets Producer App. Fill in the values as per your environment(s)
++ Sample deployment.json for the Tweets Producer App. Fill in the values as per your environment(s) using ODCS edit capability.
+![](images/DHCS-producer.png)
 
 	`{`
 	
@@ -225,9 +236,9 @@ Execute the following at the `cqlsh` prompt
 
 	`}`
 
-##### Deploy Tweet Producers app #####
+##### Deploy Tweet Producers app ???#####
 
-+ Let us use command line (PSM CLI) to create the Tweets Producer ACCS instance. You can [download and setup](https://docs.oracle.com/en/cloud/paas/java-cloud/pscli/using-command-line-interface-1.html) PSM CLI on your machine (using psm setup). Ensure that the deployment.json, manifest.json and accs-cassandra-tweets-producer-dist.zip are in the same directory and execute the following
++ Using ODCS Deploy capability create new configuration to deploy Tweets Producer as an ACCS instance. You can [download and setup](https://docs.oracle.com/en/cloud/paas/java-cloud/pscli/using-command-line-interface-1.html) PSM CLI on your machine (using psm setup). Ensure that the deployment.json, manifest.json and accs-cassandra-tweets-producer-dist.zip are in the same directory and execute the following
 
 	`psm accs push -n TweetsProducer -r java -s hourly -m manifest.json -d deployment.json -p accs-cassandra-tweets-producer-dist.zip`
 
@@ -275,7 +286,12 @@ Execute the following at the `cqlsh` prompt
 	
 	`}`
 
-##### Deploy Tweets Query Service app #####
+
+
+C:\Users\DVUKMANO\Documents\A_openProjects\Lisabon-PartnerEvent\pictures\DHCS-twitter\DHCS-accs-conn.png
+
+
+##### Deploy Tweets Query Service app ??? #####
 
 + We shall be using the Oracle Public Cloud UI to deploy the App to ACCS. When we login and navigate to the ACCS home page, we should see the TweetsProducer app either being provisioned or completed
 
