@@ -238,6 +238,9 @@ Save your Build job and click Build Now. The build process will create `accs-cas
 
 ##### Deploy Tweet Producers app ???#####
 
+go to accs console and create application
+
+
 + Using ODCS Deploy capability create new configuration to deploy Tweets Producer as an ACCS instance. You can [download and setup](https://docs.oracle.com/en/cloud/paas/java-cloud/pscli/using-command-line-interface-1.html) PSM CLI on your machine (using psm setup). Ensure that the deployment.json, manifest.json and accs-cassandra-tweets-producer-dist.zip are in the same directory and execute the following
 
 	`psm accs push -n TweetsProducer -r java -s hourly -m manifest.json -d deployment.json -p accs-cassandra-tweets-producer-dist.zip`
