@@ -154,9 +154,11 @@ For repository item select **AlphaOfficeProductCatalogUI.git** from the drop dow
 
 + Click the **Build Now** button to start the build. This will trigger for the build to be placed in the build queue.
 
-+ After the build is successful you will be able to see the artifacts from the build process as shown below
++ After the build is successful you will be able to see the artifacts from the build process, click on Artifacts icon:
 
-![](images/Alpha_Office_Application_Workshop-20.png)
+![](images/JCS-artifacts.png)
+
+![](images/JCS-artifacts2.png)
 
 
 ##### 5. Deploy the application you built into JCS instance #####
@@ -167,15 +169,12 @@ For repository item select **AlphaOfficeProductCatalogUI.git** from the drop dow
 
 + Click on **XXXXXXX** to view the details of the service. Copy down the **Public IP** to be used later in the lab.
 
-![](images/Alpha_Office_Application_Workshop-21.png)
+![](images/JCS-ip.png)
 
-+ Expand the **Load Balancer** section and copy down the **Aliases** to be used later in the workshop.
-
-![](images/Alpha_Office_Application_Workshop-22.png)
 
 + Switch back to **Developer Cloud Service**. On the navigation panel click **Deploy** to access the Deployment page. Click **New Configuration**
 
-![](images/Alpha_Office_Application_Workshop-23.png)
+![](images/JCS-deploy-new.png)
 
 + Enter the following data:
 
@@ -195,7 +194,7 @@ For repository item select **AlphaOfficeProductCatalogUI.git** from the drop dow
 
 **Username:** `weblogic`
 
-**Password:** `Alpha2014_`
+**Password:** `Alpha2018#`
 
 ![](images/Alpha_Office_Application_Workshop-26.png)
 
@@ -203,10 +202,10 @@ For repository item select **AlphaOfficeProductCatalogUI.git** from the drop dow
 
 ![](images/Alpha_Office_Application_Workshop-27.png)
 
-+ Check **XXXXX_cluster** to deploy to the entire cluster and click **OK**
++ Check **AlphaJCS_cluster** to deploy to the entire cluster and click **OK**
 
-![](images/Alpha_Office_Application_Workshop-28.png)
-DevCS-deploy.png
+![](images/JCS-alphajcscluster.png)
+
 
 + Set the following Properties and click **Save**
 
@@ -238,7 +237,7 @@ DevCS-deploy.png
 
 ![](images/Alpha_Office_Application_Workshop-33.png)
 
-+ Open a new tab in the browser and enter the following URL: `https://<Public IP of Load Balancer>/AlphaProducts`
++ Open a new tab in the browser and enter the following URL: `https://<Public IP of JCS instance/AlphaProducts`
 
 + On the security warning click **ADVANCED** and then click **Proceed to ...**
 
