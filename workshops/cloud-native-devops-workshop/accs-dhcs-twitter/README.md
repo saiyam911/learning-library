@@ -18,7 +18,7 @@ As part of this lab, a service (application) would be consuming a continuous str
 
 + Valid credentials for an Oracle Cloud account
 + An active subscription to Oracle Application Container Cloud Service & Oracle Data Hub Cloud Service
-+ The code is available on [GitHub](https://github.com/dvukmano/cloud-native-devops-workshop/accs-cassandra-twitter-timeseries-app)
++ The code is available on [GitHub](https://github.com/dvukmano/accs-cassandra-twitter-timeseries-app)
 + Twitter Account
 + A development environment (Java, Maven, Python, PSM CLI)
 
