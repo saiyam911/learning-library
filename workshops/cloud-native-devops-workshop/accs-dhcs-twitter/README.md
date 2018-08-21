@@ -199,7 +199,9 @@ Save your Build job and click Build Now. The build process will create `accs-cas
 ![](images/DHCS-producer.png)
 
 	`{`
+	
 	`"instances":1,`
+	
 	`"memory":"2G",`
 	`"environment": {`
 	`"TWITTER_CONSUMER_KEY":"<as per your setup>",`
@@ -227,10 +229,15 @@ Save your Build job and click Build Now. The build process will create `accs-cas
 ![](images/DHCS-new-config.png)
 
 Fulfill following attributes:
+
 Configuration Name: tweetsproducer
+
 Application Name: TweetsProducer
+
 Type: Automatic - Deploy stabile builds only
+
 Job: tweetsproducer
+
 Artifact: accs-dhcs-cassandra-tweets-producer/target/accs-cassandra-tweets-producer-dist.zip
 
 ![](images/DHCS-config-atributes.png)
@@ -283,46 +290,47 @@ Using the same steps now prepare and deploy Tweets Query Service App. Go to Code
 
 ##### Deploy Tweets Query Service app #####
 
-Again, usign the same steps create deployment configuration for tweetsqueryapp and deploy.
+Again, usign the same steps create deployment configuration for tweetsqueryapp and deploy. You already have defined Deployment target.
 
 ![](images/DHCS-query-deploy-config.png)
 
 
 #### Verifying functionality ####
 
-+ After both the apps have been deployed, navigate to their respective home pages to confirm that both are up and running and note down some key values
-+ Click on the TweetsProducer app and navigate to its home page. Note down the App URL for the Producer app at the top of the page
- 
-![](images/16.PNG)
-  
-+ Start the Producer app using the PSM CLI Command. This should begin to load the tweets into the Cassandra DB.
++ After both the apps have been deployed, navigate to their respective home pages to confirm that both are up and running and notice the App URL
 
-`curl -X GET <tweet_producer_app_url>/tweets/producer` e.g. `curl -X GET https://TweetsProducer-ocloud100.apaas.us2.oraclecloud.com/tweets/producer`
+![](images/DHCS-apps-deployed.png)
 
-![](images/21.PNG)
++ Start the Producer app using the app URL, click on URL and this will open new browser tab, append `/tweets/producer` on URL and press Enter. This should begin to load the tweets into the Cassandra DB.
+
+Instead ACCS console, you can use curl to start the Producer app.
+
+`curl -X GET <tweet_producer_app_url>/tweets/producer` e.g. `curl -X GET https://tweetsproducerapp-gse00013953.uscom-east-1.oraclecloud.com/tweets/producer`
 
 You can verify by logging into the Cassandra DB and querying the table `select * from tweets;`
 
 ![](images/17.PNG)
 
-+ Click on the Tweets Query Service app and navigate to its home page. Note down the App URL for the app at the top of the page
++ With the same steps, click on the Tweets Query Service app URL and in new browser tab append `/tweets` on URL and press Enter. This should give you .json response with all the tweets.
 
-![](images/18.PNG)
+![](images/DHCS-query-tweets.png)
 
-+ Use the Tweets Query service to query all the tweets.
++ Use the Tweets Query service with curl to query all the tweets.
 
-`curl -X GET <tweets_query_app_url>/tweets` e.g. `curl -X GET https://TweetsQueryService-ocloud100.apaas.us2.oraclecloud.com/tweets/`
+`curl -X GET <tweets_query_app_url>/tweets` e.g. `curl -X GET https://tweetsqueryapp-gse00013953.uscom-east-1.oraclecloud.com/tweets`
 
-+ Use the Tweets Query service to query all the tweets on a given date. From the list of tweets mentioned above choose a date and use it in the filter below
++ Use the Tweets Query service to query all the tweets on a given date. From the list of tweets mentioned above choose a date and use it in the filter below, you cal also use browser with the same syntax
 
-`curl -X GET <tweets_query_app_url>/tweets/date/<date>` e.g. `curl -X GET https://TweetsQueryService-ocloud100.apaas.us2.oraclecloud.com/tweets/date/2018–03-08`
+`curl -X GET <tweets_query_app_url>/tweets/date/<date>` e.g. `curl -X GET https://tweetsqueryapp-gse00013953.uscom-east-1.oraclecloud.com/tweets/date/2018–08-30`
 
 + Use the Tweets Query service to query all the tweets by a particular tweeter. From the list of tweets mentioned above choose a twitter id and use it in the filter below
 
-`curl -X GET <tweets_query_app_url>/tweets/tweeter/<twitter id>` e.g. `curl -X GET https://TweetsQueryService-ocloud100.apaas.us2.oraclecloud.com/tweets/tweeter/anil9464`
+`curl -X GET <tweets_query_app_url>/tweets/tweeter/<twitter id>` e.g. `curl -X GET https://tweetsqueryapp-gse00013953.uscom-east-1.oraclecloud.com/tweets/tweeter/VamsiTalksTech`
 
-+ Stop the producer app from loading more tweets into the Cassandra DB
++ Stop the producer app from loading more tweets into the Cassandra DB with curl, or go to ACCS console and stop application.
 
-`curl -X DELETE <app_url>/tweets/producer` eg `curl -X DELETE https://TweetsProducer-ocloud100.apaas.us2.oraclecloud.com/tweets/producer`
+![](images/DHCS-stop-producer.png)
 
-![](images/19.PNG)
+`curl -X DELETE <app_url>/tweets/producer` eg `curl -X DELETE https://tweetsproducerapp-gse00013953.uscom-east-1.oraclecloud.com/tweets/producer`
+
+
