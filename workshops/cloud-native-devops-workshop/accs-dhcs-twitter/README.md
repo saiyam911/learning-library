@@ -198,35 +198,23 @@ Save your Build job and click Build Now. The build process will create `accs-cas
 + Sample deployment.json for the Tweets Producer App. Fill in the values as per your environment(s) using ODCS edit capability.
 ![](images/DHCS-producer.png)
 
-	`{`
-	
-	`"instances":1,`
-	
-	`"memory":"2G",`
-	
-	`"environment": {`
-	
-	`"TWITTER_CONSUMER_KEY":"<as per your setup>",`
-	
-	`"TWITTER_CONSUMER_SECRET":"<as per your setup>",`
-	
-	`"TWITTER_ACCESS_TOKEN":"<as per your setup>",`
-	
-	`"TWITTER_ACCESS_TOKEN_SECRET":"<as per your setup>",`
-	
-	`"TWITTER_TRACKED_TERMS":"nosql,cloud",`
-	
-	`"DHCS_USER_NAME":"<Cassandra DB User Name>", `
-	
-	`"DHCS_USER_PASSWORD":"<Cassandra DB password>", `
-	
-	`"DHCS_NODE_LIST":"<IP Address of Cassandra DB VM>",` 
-	
-	`"DHCS_CLIENT_PORT":"9042"`
-	
-	`}`
-	
-	`}`
+	```
+	{
+	"instances":1,
+	"memory":"2G",
+	"environment": {
+	"TWITTER_CONSUMER_KEY":"<as per your setup>",
+	"TWITTER_CONSUMER_SECRET":"<as per your setup>",
+	"TWITTER_ACCESS_TOKEN":"<as per your setup>",
+	"TWITTER_ACCESS_TOKEN_SECRET":"<as per your setup>",
+	"TWITTER_TRACKED_TERMS":"nosql,cloud",
+	"DHCS_USER_NAME":"<Cassandra DB User Name>",
+	"DHCS_USER_PASSWORD":"<Cassandra DB password>",
+	"DHCS_NODE_LIST":"<IP Address of Cassandra DB VM>", 
+	"DHCS_CLIENT_PORT":"9042"
+	}
+	}
+	```
 + Sample manifest.json. You can use the same one that has been downloaded from GitHub. No values are to be changed here.
 
 	```
@@ -282,25 +270,28 @@ Using the same steps now prepare and deploy Tweets Query Service App. Go to Code
 
 + Sample deployment.json for the Tweets Query Service App. Fill in the values as per your environment details specified [here](https://github.com/dvukmano/learning-library/blob/master/workshops/cloud-native-devops-workshop/accs-dhcs-twitter/artifacts/dhcs-instance.md)
 
-	`{`
-	`"instances":1,`
-	`"memory":"2G",`
-	`"environment": {`
-	`"DHCS_USER_NAME":"<Cassandra DB User Name>",`
-	`"DHCS_USER_PASSWORD":"<Cassandra DB password>",`
-	`"DHCS_NODE_LIST":"<IP Address of Cassandra DB VM>",`
-	`"DHCS_CLIENT_PORT":"9042",`
-	`"CASSANDRA_TWEETS_KEYSPACE":"<Keyspace as specified by you, tweetspace9464 in this case>"`
-	`}`
-	`}`
+	```
+	{
+	"instances":1,
+	"memory":"2G",
+	"environment": {
+	"DHCS_USER_NAME":"<Cassandra DB User Name>",
+	"DHCS_USER_PASSWORD":"<Cassandra DB password>",
+	"DHCS_NODE_LIST":"<IP Address of Cassandra DB VM>",
+	"DHCS_CLIENT_PORT":"9042",
+	"CASSANDRA_TWEETS_KEYSPACE":"<Keyspace as specified by you, tweetspace9464 in this case>"
+	}
+	}
+	```
 
 + Sample manifest.json for the Tweets Query Service App. You can use the same one that has been downloaded from GitHub. No values are to be changed here.
 
-	 `{
+	 ```
+	 {
 	   "runtime":{"majorVersion":"8"},
 	   "command":"java -jar accs-dhcs-cassandra-tweets-api.jar"
-	 }`
-
+	 }
+	 ```
 
 ##### Deploy Tweets Query Service app #####
 
