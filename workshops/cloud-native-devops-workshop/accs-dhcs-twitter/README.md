@@ -128,7 +128,7 @@ Execute the following at the `cqlsh` prompt
 
 ![](images/8.PNG)
 
-#### Create a Twitter app (Start doing dteps frpom here) ####
+#### Create a Twitter app (Start doing steps frpom here) ####
 
 + We need a Twitter account. If you dont have already create one.
 + Once the Twitter account is ready, go to https://apps.twitter.com and create a new app. Provide the Name, Description and website values.
