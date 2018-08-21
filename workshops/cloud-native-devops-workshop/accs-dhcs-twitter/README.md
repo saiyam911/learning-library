@@ -198,7 +198,7 @@ Save your Build job and click Build Now. The build process will create `accs-cas
 + Sample deployment.json for the Tweets Producer App. Fill in the values as per your environment(s) using ODCS edit capability.
 ![](images/DHCS-producer.png)
 
-	```json
+	```source.json
 	{
 	"instances":1,
 	"memory":"2G",
