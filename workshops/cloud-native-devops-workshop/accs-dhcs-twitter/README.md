@@ -229,13 +229,12 @@ Save your Build job and click Build Now. The build process will create `accs-cas
 	`}`
 + Sample manifest.json. You can use the same one that has been downloaded from GitHub. No values are to be changed here.
 
-	`{`
-	
-	`"runtime":{"majorVersion":"8"},`
-	
-	`"command":"java -jar accs-cassandra-tweets-producer.jar"`
-	
-	`}`
+	```
+	{
+	"runtime":{"majorVersion":"8"},
+	"command":"java -jar accs-cassandra-tweets-producer.jar"
+	}
+	```
 
 ##### Deploy Tweet Producers app #####
 
