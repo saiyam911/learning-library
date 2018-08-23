@@ -1,5 +1,12 @@
 ![](common/images/Lisbon-SummerCamp-header.jpg)
-## Prerequisites
+
+# ORACLE Java and Cloud Native Application Development with the Oracle Cloud #
+
+## Introduction ##
+
+Oracle Cloud is the industry’s broadest and most integrated public cloud. It offers best-in-class services across software as a service (SaaS), platform as a service (PaaS), and infrastructure as a service (IaaS), and even lets you put Oracle Cloud in your own data center. Oracle Cloud helps organizations drive innovation and business transformation by increasing business agility, lowering costs, and reducing IT complexity. The workshop content shows different aspects of Application Development in the cloud with different set of Oracle Cloud Services.
+
+### Prerequisites ###
 
 #### Oracle Public Cloud PaaS  account
 
@@ -8,15 +15,6 @@ The workshop is intended to work with an Oracle GSE account. You should receive 
 + Oracle Cloud account **username** and **password**
 + Oracle Cloud **identity domain**
 + **Data center/region**
-
----
-# ORACLE Java and Cloud Native Application Development with the Oracle Cloud #
-
-## Introduction ##
-
-Oracle Cloud is the industry’s broadest and most integrated public cloud. It offers best-in-class services across software as a service (SaaS), platform as a service (PaaS), and infrastructure as a service (IaaS), and even lets you put Oracle Cloud in your own data center. Oracle Cloud helps organizations drive innovation and business transformation by increasing business agility, lowering costs, and reducing IT complexity. The workshop content shows different aspects of Application Development in the cloud with different set of Oracle Cloud Services.
-
-### Prerequisites ###
 
 [DevCS setup](DevCS-setup.md)
 
