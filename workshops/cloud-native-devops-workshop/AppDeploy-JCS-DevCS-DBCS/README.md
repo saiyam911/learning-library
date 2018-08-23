@@ -2,7 +2,7 @@
 ---
 # ORACLE Cloud-Native DevOps workshop #
 
-## Deploy J2EE Application on JCS using DevCS & DBCS ##
+## Deploy Java EE Application on JCS using DevCS & DBCS ##
 
 ### Introduction ###
 
