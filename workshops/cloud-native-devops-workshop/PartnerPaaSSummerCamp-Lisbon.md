@@ -24,7 +24,7 @@ Before you start creating projects in Oracle Developer Cloud Service, configure 
 
 Client tools
 
-To complete certain labs you you must have installed:
+To complete certain labs you must have installed:
 
 - [Git client](https://git-scm.com/downloads)
 - [Java runtime environment](https://www.java.com/en/download/)
