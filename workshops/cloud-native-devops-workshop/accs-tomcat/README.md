@@ -15,6 +15,10 @@ This tutorial demonstrates how to
 ### Prerequisites ###
 
 - Oracle Cloud Services account including Application Cloud Container Service.
+- [Git client](https://git-scm.com/downloads)
+- [Java runtime environment](https://www.java.com/en/download/)
+- [Maven](https://maven.apache.org/download.cgi)
+- Clone [https://github.com/dvukmano/cloud-native-devops-workshop.git](https://github.com/dvukmano/cloud-native-devops-workshop.git) repository.
 
 ### Steps ###
 
