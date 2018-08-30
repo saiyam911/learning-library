@@ -133,9 +133,11 @@ Execute the following at the `cqlsh` prompt
 + We need a Twitter account. If you dont have already create one or use this values:
 
 Consumer Key (API Key)	NfBDjcXk4kGXPz1L3FgQPRJtS
+
 Consumer Secret (API Secret)	0cYqT1H2dA9v4v85rhJ8qRNlsT1saduDuXv3O6QY5nZSjNXoTm
 
 Access Token	959955702-2TIWkTSOMwEC0GL6CZ9Upy2TCkNN2nkHyuG7FMO0
+
 Access Token Secret	eGRJGsBMYssMTuUoCTl0cTpqS1rOQx4fINLVgUZQqkpWk
 
 
