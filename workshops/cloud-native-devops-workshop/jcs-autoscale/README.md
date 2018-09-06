@@ -21,6 +21,8 @@ This tutorial demonstrates how to:
 + [Create Database Cloud Service Instance using user interface](../dbcs-create/README.md)
 + [Create Java Cloud Service Instance using user interface](../jcs-create/README.md)
 
++ [Download the Sample Load Generator Application](load.war)
+
 ### Steps ###
 
 #### Build and Deploy Sample Load Generator Application ####
