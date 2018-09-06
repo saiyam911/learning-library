@@ -38,7 +38,7 @@ Click the hamburger menu on the top right. Select **Open WebLogic Server Console
 
 A new browser (tab) opens and you are redirected to the selected console’s log-in page. If the server is protected with a self-signed certificate, you will be warned that this certificate is not trusted. This is the default configuration and you can configure your certification. Select **I Understand the Risk**, and **Add Exception** (accept certificate). When dialog appears select **Confirm Security Exception**.
 
-When the console log-in page appears, enter the log-in credentials you entered for WebLogic Administrator when you created the service instance. Click **Login**.
+When the console log-in page appears, enter the log-in credentials you entered for WebLogic Administrator when you created the service instance (weblogic/Alpha2018#). Click **Login**.
 ![](images/04.wls.console.login.png)
 
 After a successful login the WebLogic Server Administration Console is displayed. On the left side in the navigation tree click **Deployments**. Then click **Lock & Edit** above and finally click the **Install** button.
