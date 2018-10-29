@@ -111,10 +111,10 @@ Enter a name for the bucket, and click Create Bucket. :memo: Note this name. You
 
 Also create bucket for DBCS.
 
-##### 1.5. Generate a Swift password #####
-In the Oracle Cloud Infrastructure web console, click your user name near the upper-right corner and click User Settings.
+##### 1.5. Generate a Auth Token which acts as a swift password #####
+In the Oracle Cloud Infrastructure Dashboard, click Identity > users > api.user and click Auth Tokens on the left  
 
-![](images/oci.11.png)
+![](images/comp2.png)
 
 In the navigation pane on the left, click Swift Passwords.
 Click Generate Password.
