@@ -55,7 +55,7 @@ Click **Identity**, and then click **Compartments**.
 
 Enter a name and description for the new compartment, and click **Create Compartment**.
 
-![](images/oci.5.png)
+![](images/comp.png)
 
 ##### 1.2. Create a Virtual Cloud Network #####
 In the Oracle Cloud Infrastructure web console, click **Networking**, :grey_exclamation: select the compartment that you created earlier, then **Virtual Cloud Networks**.
