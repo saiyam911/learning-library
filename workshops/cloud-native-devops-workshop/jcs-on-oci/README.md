@@ -41,7 +41,7 @@ Go to Compute, click the hamburger icon, Open Service Console and log in to OCI 
 
 Here is OCI console where you can see your tenancy and default region and Oracle Cloud Identifier (OCID). 
 
-![](images/oci.3.png)
+![](images/newimg.png)
 
 :information_source: Every Oracle Cloud Infrastructure resource has an Oracle-assigned unique ID called an Oracle Cloud Identifier (OCID). For PaaS provisioning, the OCI tenancy has an additional compartment and two policies provisioned by default. Compartment name is ManagedCompartmenForPAAS. One policy (PSM-mgd-comp-policy) is under ManagedCompartmenForPAAS compartment. And second policy (PSM-root-policy) is under root compartment.
 
