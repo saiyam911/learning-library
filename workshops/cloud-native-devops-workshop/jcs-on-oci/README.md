@@ -116,15 +116,15 @@ In the Oracle Cloud Infrastructure Dashboard, click Identity > users > api.user 
 
 ![](images/comp2.png)
 
-In the navigation pane on the left, click Swift Passwords.
-Click Generate Password.
-Enter a description for the password, and click Generate Password.
+
+Click Generate Auth Token.
+Enter a description for the Token, and click Generate Token.
 
 ![](images/oci.12.png)
 
-:memo: Copy and store the generated password. You will need it later while creating the Java Cloud Service instance.
+:memo: Copy and store the generated Token. You will need it later while creating the Java Cloud Service instance.
 
-:information_source: Swift Password is used for Swift client to access Object Storage for the purposes of backing
+:information_source: Auth Token  is used for Swift client to access Object Storage for the purposes of backing
 up an Oracle Database System (DB System) database and JCS. OpenStack Object Storage (swift) is used for redundant, scalable data storage using clusters of standardized servers to store petabytes of accessible data. It is a long-term storage system for large amounts of static data, which can be retrieved and updated.
 
 #### 2. Provision DBCS service in OCI using PSM ####
@@ -162,7 +162,7 @@ Backup destination: Both Cloud Storage and Local Storage
 
 Cloud Storage Container: https://swiftobjectstorage.us-ashburn-1.oraclecloud.com/v1/gse0000255/myDBCSbucket (URL for the object storage bucket you created as one of your infrastructure resources, https://swiftobjectstorage.REGION.oraclecloud.com/v1/NAMESPACE/CONTAINER, the variables in that format are the region, tenant, & bucket, REGION = us-ashburn-1, NAMESPACE = tenant/cloud account, CONTAINER = bucket name)
 
-Now enter your username and the swift password you generated earlier, then accept the remaining defaults and click Next.
+Now enter your username and the Auth Token you generated earlier, then accept the remaining defaults and click Next.
 
 ![](images/dbcs.3.png)
 
