@@ -65,7 +65,7 @@ Click **Create Virtual Cloud Network**.
 
 Enter a name for the Virtual Cloud Network, and let the service create a Virtual Cloud Network and related resources.
 
-![](images/oci.7.png)
+![](images/comp1.png)
 
 Scroll down, and click **Create Virtual Cloud Network**.
 
