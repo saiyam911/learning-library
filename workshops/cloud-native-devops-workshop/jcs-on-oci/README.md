@@ -120,7 +120,7 @@ In the Oracle Cloud Infrastructure Dashboard, click Identity > users > api.user 
 Click Generate Auth Token.
 Enter a description for the Token, and click Generate Token.
 
-![](images/oci.12.png)
+![](images/oci..png)
 
 :memo: Copy and store the generated Token. You will need it later while creating the Java Cloud Service instance.
 
