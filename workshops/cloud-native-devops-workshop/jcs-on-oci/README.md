@@ -10,8 +10,8 @@ The Oracle Java Cloud Service (JCS) provides a cloud-based application server (O
 
 The Oracle Cloud Infrastructure (OCI) platform can run both Oracle workloads and cloud native applications, it offer highly available infrastructure ideal for enterprise applications and provide greater control over the network. This all adds up to great price-performance for Weblogic deployment.
 
-### About this tutorial ###
-This tutorial demonstrates how to:
+### About this Workshop ###
+This workshop demonstrates how to:
 	
 + Create Java Cloud Service based on OCI using the user interface.
 
